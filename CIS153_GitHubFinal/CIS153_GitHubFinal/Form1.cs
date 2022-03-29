@@ -23,5 +23,18 @@ namespace CIS153_GitHubFinal
         {
             InitializeComponent();
         }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void btn_multiplayer_Click(object sender, EventArgs e)
+        {
+            Multiplayer Dual = new Multiplayer(this);
+
+            Dual.Show();
+            this.Hide();
+        }
     }
 }
