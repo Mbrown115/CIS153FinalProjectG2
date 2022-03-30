@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 
+// Adds a tool that turns the picture box into a circle border.
 
 namespace CIS153_GitHubFinal
 {
