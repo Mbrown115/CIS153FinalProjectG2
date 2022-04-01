@@ -17,9 +17,9 @@ using System.Windows.Forms;
 namespace CIS153_GitHubFinal
 {
     
-    public partial class Form1 : Form
+    public partial class Welcome : Form
     {
-        public Form1()
+        public Welcome()
         {
             InitializeComponent();
         }
@@ -36,8 +36,24 @@ namespace CIS153_GitHubFinal
             Multiplayer Dual = new Multiplayer(this);
 
             Dual.Show();
-            this.Hide();
+            Hide();
 
+        }
+
+        private void btn_stats_Click (object sender , EventArgs e)
+        {
+            Stats viewStats = new Stats (this);
+            
+            viewStats.Show ();
+            Hide ();
+        }
+
+        private void btn_single_Click (object sender , EventArgs e)
+        {
+            Single solo = new Single (this);
+
+            solo.Show ();
+            Hide ();
         }
     }
 }

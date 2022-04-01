@@ -12,7 +12,7 @@ namespace CIS153_GitHubFinal
 {
     public partial class Multiplayer : Form
     {
-        Form1 menu;
+        Welcome menu;
         int[,] b = new int[6,7];
 
         public Multiplayer()
@@ -23,8 +23,8 @@ namespace CIS153_GitHubFinal
             theBoard.setcolumns(new Rectangle[7]);
             theBoard.setBoard(b);
         }
-        s
-        public Multiplayer(Form1 fml)
+        
+        public Multiplayer(Welcome fml)
         {
             InitializeComponent();
             menu = fml;
@@ -34,7 +34,12 @@ namespace CIS153_GitHubFinal
         private void btn_menu_Click(object sender, EventArgs e)
         {
             menu.Show();
-            this.Close();
+            Close(); 
+        }
+
+        private void btn_Exit_Click (object sender , EventArgs e)
+        {
+            Environment.Exit (0);
         }
     }
 }
