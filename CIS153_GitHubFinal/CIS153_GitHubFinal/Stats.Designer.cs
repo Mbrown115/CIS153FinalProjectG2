@@ -31,7 +31,7 @@ namespace CIS153_GitHubFinal
             {
             this.btn_Menu = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBx_Stats = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -55,15 +55,15 @@ namespace CIS153_GitHubFinal
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
-            // listBox1
+            // listBx_Stats
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(151, 92);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(374, 464);
-            this.listBox1.TabIndex = 2;
+            this.listBx_Stats.FormattingEnabled = true;
+            this.listBx_Stats.ItemHeight = 20;
+            this.listBx_Stats.Location = new System.Drawing.Point(151, 92);
+            this.listBx_Stats.Name = "listBx_Stats";
+            this.listBx_Stats.ScrollAlwaysVisible = true;
+            this.listBx_Stats.Size = new System.Drawing.Size(374, 464);
+            this.listBx_Stats.TabIndex = 2;
             // 
             // label1
             // 
@@ -81,7 +81,7 @@ namespace CIS153_GitHubFinal
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 674);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBx_Stats);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Menu);
             this.Name = "Stats";
@@ -94,7 +94,7 @@ namespace CIS153_GitHubFinal
         #endregion
         private System.Windows.Forms.Button btn_Menu;
         private System.Windows.Forms.Button btn_Exit;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBx_Stats;
         private System.Windows.Forms.Label label1;
     }
     }

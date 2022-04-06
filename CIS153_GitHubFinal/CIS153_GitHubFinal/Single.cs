@@ -34,13 +34,6 @@ namespace CIS153_GitHubFinal
             //{
             //    Environment.Exit (0);
             //}
-            //else
-            //{
-
-            //}
-
-            Environment.Exit (0);
-
         }
     }
 }

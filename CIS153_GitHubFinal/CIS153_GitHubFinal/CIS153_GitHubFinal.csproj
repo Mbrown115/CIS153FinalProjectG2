@@ -124,5 +124,8 @@
   <ItemGroup>
     <None Include="Resources\black poker chip.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\WinRecord.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
