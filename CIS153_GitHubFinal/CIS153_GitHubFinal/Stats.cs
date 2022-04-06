@@ -36,6 +36,8 @@ namespace CIS153_GitHubFinal
 
         private void DisplayStats ()
         {
+            //Placed the textfile in the "Debug" folder, from reading the default behavior is to look here
+            //this way the filepath below should work, more concise that using the entire fielpath
             string filePath = "WinRecord.txt";
             string line = "";
 
