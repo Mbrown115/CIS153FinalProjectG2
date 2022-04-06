@@ -30,17 +30,17 @@ namespace CIS153_GitHubFinal
         {
             //*********************************************************************************************
             //Working on a dialogbox to confirm "Exit" option
-            //Works if you only make a selection once, but if the user selects "No" after clicking exit
-            //and then  proceeds to click "Exit" again and "No" 2+ times before clicking "Yes"
-            // there is a weird unhandled exception. Tryin to reslove.
+            //Works the first time, but if you run the program multiple times it gives you a weird
+            //unhandled exception when trying to terminate. Websearches haven't been helpful so far,
+            //working to resolve. 4/5/22 - BT
             //*********************************************************************************************
-            
-            //DialogResult result = MessageBox.Show ("Confirm Exit. Clicking Yes will end the game." , "Exiting Game!" , MessageBoxButtons.YesNo , MessageBoxIcon.Exclamation);
 
-            //if (result == DialogResult.Yes)
-            //{
-            //    Environment.Exit (0);
-            //}
+            DialogResult result = MessageBox.Show ("Confirm Exit. Clicking Yes will end the game." , "Exiting Game!" , MessageBoxButtons.YesNo , MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.Yes)
+            {
+                Environment.Exit (0);
+            }
         }
     }
 }
