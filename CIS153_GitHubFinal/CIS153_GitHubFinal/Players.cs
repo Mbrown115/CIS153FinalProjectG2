@@ -9,8 +9,11 @@ using System.Threading.Tasks;
 
 namespace CIS153_GitHubFinal
 {
-    class Players
+    public class Players
     {
+        private string name;
+        private int wins;
+
         //Constructor
         public Players()
         {
@@ -19,30 +22,29 @@ namespace CIS153_GitHubFinal
 
         //--------------------SETTERS--------------------------
 
-        public void setPlayerName()
+        public void setPlayerName(string n)
         {
-
+            name = n;
         }
 
-        public void setPlayerWins()
+        public void setPlayerWins(int w)
         {
-
+            wins = w;
         }
-
         //-----------------------------------------------------
 
+
+
         //--------------------GETTERS--------------------------
-
-        public void getPlayerName()
+        public string getPlayerName()
         {
-
+            return name;
         }
 
-        public void getPlayerWins()
+        public int getPlayerWins()
         {
-
+            return wins;
         }
-
         //-----------------------------------------------------
 
     }
