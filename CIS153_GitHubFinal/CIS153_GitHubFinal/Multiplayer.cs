@@ -12,6 +12,7 @@ namespace CIS153_GitHubFinal
 {
     public partial class Multiplayer : Form
     {
+        NewPlayer players;
         Welcome menu;
         int[,] b = new int[6,7];
 
@@ -24,10 +25,11 @@ namespace CIS153_GitHubFinal
             theBoard.setBoard(b);
         }
         
-        public Multiplayer(Welcome fml)
+        public Multiplayer(Welcome fml, NewPlayer p)
         {
             InitializeComponent();
             menu = fml;
+            players = p;
         }
 
         // Brings up menu form

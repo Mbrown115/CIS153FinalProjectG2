@@ -34,6 +34,7 @@ namespace CIS153_GitHubFinal
             this.lbl_P2Name = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_Start = new System.Windows.Forms.Button();
+            this.btn_MainMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txBx_P1Name
@@ -83,11 +84,23 @@ namespace CIS153_GitHubFinal
             this.btn_Start.UseVisualStyleBackColor = true;
             this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
             // 
+            // btn_MainMenu
+            // 
+            this.btn_MainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MainMenu.Location = new System.Drawing.Point(496, 436);
+            this.btn_MainMenu.Name = "btn_MainMenu";
+            this.btn_MainMenu.Size = new System.Drawing.Size(148, 50);
+            this.btn_MainMenu.TabIndex = 5;
+            this.btn_MainMenu.Text = "Main Menu";
+            this.btn_MainMenu.UseVisualStyleBackColor = true;
+            this.btn_MainMenu.Click += new System.EventHandler(this.btn_MainMenu_Click);
+            // 
             // NewPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 599);
+            this.Controls.Add(this.btn_MainMenu);
             this.Controls.Add(this.btn_Start);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbl_P2Name);
@@ -107,5 +120,6 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.Label lbl_P2Name;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_Start;
+        private System.Windows.Forms.Button btn_MainMenu;
     }
 }

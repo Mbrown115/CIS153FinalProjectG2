@@ -33,9 +33,11 @@ namespace CIS153_GitHubFinal
         // Brings up the multiplayer form
         private void btn_multiplayer_Click(object sender, EventArgs e)
         {
-            Multiplayer Dual = new Multiplayer(this);
+            int gameMode = 2;
+            
+            NewPlayer name = new NewPlayer(this, gameMode);
 
-            Dual.Show();
+            name.Show();
             Hide();
 
         }
