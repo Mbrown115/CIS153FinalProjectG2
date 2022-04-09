@@ -13,6 +13,7 @@ namespace CIS153_GitHubFinal
     {
         private string name;
         private int wins;
+        private int loss;
 
         //Constructor
         public Players()
@@ -31,6 +32,11 @@ namespace CIS153_GitHubFinal
         {
             wins = w;
         }
+
+        public void setPlayerLoss(int l)
+        {
+            loss = l;
+        }
         //-----------------------------------------------------
 
 
@@ -44,6 +50,11 @@ namespace CIS153_GitHubFinal
         public int getPlayerWins()
         {
             return wins;
+        }
+
+        public int getPlayerLoss()
+        {
+            return loss;
         }
         //-----------------------------------------------------
 
