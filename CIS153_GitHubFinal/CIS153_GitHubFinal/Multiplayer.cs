@@ -41,5 +41,13 @@ namespace CIS153_GitHubFinal
         {
             Environment.Exit (0);
         }
+
+        private void displayTurn()
+        {
+            //this will display the current players turn status in the label at the bottom
+            //of the game screen.
+
+           // lbl_PlayTurn.Text = 
+        }
     }
 }

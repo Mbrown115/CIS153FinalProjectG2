@@ -42,5 +42,12 @@ namespace CIS153_GitHubFinal
                 Environment.Exit (0);
             }
         }
+
+        private void displayTurn()
+        {
+            //Display the player turn status in the label at the bottom of form
+
+           // lbl_PlayerTurn.Text = 
+        }
     }
 }

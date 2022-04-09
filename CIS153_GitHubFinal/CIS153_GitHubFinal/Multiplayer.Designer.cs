@@ -31,6 +31,7 @@ namespace CIS153_GitHubFinal
         {
             this.btn_menu = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
+            this.lbl_PlayTurn = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_menu
@@ -57,17 +58,29 @@ namespace CIS153_GitHubFinal
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
+            // lbl_PlayTurn
+            // 
+            this.lbl_PlayTurn.AutoSize = true;
+            this.lbl_PlayTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PlayTurn.Location = new System.Drawing.Point(12, 450);
+            this.lbl_PlayTurn.Name = "lbl_PlayTurn";
+            this.lbl_PlayTurn.Size = new System.Drawing.Size(159, 29);
+            this.lbl_PlayTurn.TabIndex = 2;
+            this.lbl_PlayTurn.Text = "Player\'s Turn!";
+            // 
             // Multiplayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1244, 488);
+            this.Controls.Add(this.lbl_PlayTurn);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_menu);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Multiplayer";
             this.Text = "Multiplayer";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -75,5 +88,6 @@ namespace CIS153_GitHubFinal
 
         private System.Windows.Forms.Button btn_menu;
         private System.Windows.Forms.Button btn_Exit;
+        private System.Windows.Forms.Label lbl_PlayTurn;
     }
 }

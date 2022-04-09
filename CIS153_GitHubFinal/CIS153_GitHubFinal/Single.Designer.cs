@@ -31,6 +31,7 @@ namespace CIS153_GitHubFinal
         {
             this.btn_Menu = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
+            this.lbl_PlayerTurn = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Menu
@@ -53,16 +54,28 @@ namespace CIS153_GitHubFinal
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
+            // lbl_PlayerTurn
+            // 
+            this.lbl_PlayerTurn.AutoSize = true;
+            this.lbl_PlayerTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PlayerTurn.Location = new System.Drawing.Point(12, 412);
+            this.lbl_PlayerTurn.Name = "lbl_PlayerTurn";
+            this.lbl_PlayerTurn.Size = new System.Drawing.Size(159, 29);
+            this.lbl_PlayerTurn.TabIndex = 2;
+            this.lbl_PlayerTurn.Text = "Player\'s Turn!";
+            // 
             // Single
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_PlayerTurn);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Menu);
             this.Name = "Single";
             this.Text = "Single";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -70,5 +83,6 @@ namespace CIS153_GitHubFinal
 
         private System.Windows.Forms.Button btn_Menu;
         private System.Windows.Forms.Button btn_Exit;
+        private System.Windows.Forms.Label lbl_PlayerTurn;
     }
 }
