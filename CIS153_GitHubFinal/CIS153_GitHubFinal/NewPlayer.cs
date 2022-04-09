@@ -20,6 +20,8 @@ namespace CIS153_GitHubFinal
         private void btn_Start_Click(object sender, EventArgs e)
         {
             //Here is where the game board should be loaded
+            //Names should save to STATS file to display individual player Stats vs. computer
+            //AND display TOTAL Player Wins vs TOTAL Computer wins.
         }
     }
 }

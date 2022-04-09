@@ -54,6 +54,7 @@
     <Compile Include="NewPlayer.Designer.cs">
       <DependentUpon>NewPlayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Players.cs" />
     <Compile Include="Single.cs">
       <SubType>Form</SubType>
     </Compile>
