@@ -39,7 +39,7 @@ namespace CIS153_GitHubFinal
 
             if (result == DialogResult.Yes)
             {
-                Environment.Exit (0);
+                Environment.Exit(0);
             }
         }
     }
