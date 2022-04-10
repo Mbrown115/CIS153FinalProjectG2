@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CIS153_GitHubFinal.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,7 @@ namespace CIS153_GitHubFinal
 
         public Single (Welcome sp)
         {
-            InitializeComponent ();
+            InitializeComponent ();            
             menu = sp;
         }
 

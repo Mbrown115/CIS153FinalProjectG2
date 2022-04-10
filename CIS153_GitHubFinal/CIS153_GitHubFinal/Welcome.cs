@@ -17,6 +17,79 @@ using System.Threading;
 
 namespace CIS153_GitHubFinal
 {
+
+    public partial class Welcome : Form
+    {
+        public Welcome()
+        {
+            InitializeComponent();
+            GameTest();
+        }
+
+        // Exits the program
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        // Brings up the multiplayer form
+        private void btn_multiplayer_Click(object sender, EventArgs e)
+        {
+            Multiplayer Dual = new Multiplayer(this);
+
+            Dual.Show();
+            Hide();
+
+        }
+
+        private void btn_stats_Click(object sender, EventArgs e)
+        {
+            Stats viewStats = new Stats(this);
+
+            viewStats.Show();
+            Hide();
+        }
+
+        private void btn_single_Click(object sender, EventArgs e)
+        {
+            Single solo = new Single(this);
+
+            solo.Show();
+            Hide();
+        }
+        public void GameTest()
+        {
+            int columns = 7;
+            int rows = 6;
+            int streak = 4;
+            C4 game = new C4(columns, rows, streak);
+            //game.find_lines();
+            //game.find_playable();
+            //game.points_on_line();
+
+
+            game.board = new string[6, 7] {
+            { "x", "x", "-", "-", "-", "-", "-"},
+            { "-", "-", "x", "-", "-", "-", "-"},
+            { "-", "-", "-", "x", "-", "-", "-"},
+            { "-", "-", "-", "-", "x", "-", "-"},
+            { "-", "-", "-", "-", "-", "-", "-"},
+            { "-", "-", "-", "-", "-", "-", "-"},
+        };
+
+
+            if (game.streak_of(4) == true)
+            {
+                Console.WriteLine("Winner");
+            }
+            else
+            {
+                Console.WriteLine("Play On!!!");
+            }
+        }
+
+    }
+
     class C4
     {
         int columns;
@@ -453,79 +526,5 @@ namespace CIS153_GitHubFinal
         {
             Console.WriteLine("x: {0} y: {1} column: {2} row: {3}", this.x, this.y, this.column, this.row);
         }
-    }
-
-    
-
-    public partial class Welcome : Form
-    {
-        public Welcome()
-        {
-            InitializeComponent();
-            GameTest();
-        }
-
-        // Exits the program
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
-        // Brings up the multiplayer form
-        private void btn_multiplayer_Click(object sender, EventArgs e)
-        {
-            Multiplayer Dual = new Multiplayer(this);
-
-            Dual.Show();
-            Hide();
-
-        }
-
-        private void btn_stats_Click (object sender , EventArgs e)
-        {
-            Stats viewStats = new Stats (this);
-            
-            viewStats.Show ();
-            Hide ();
-        }
-
-        private void btn_single_Click (object sender , EventArgs e)
-        {
-            Single solo = new Single (this);
-
-            solo.Show ();
-            Hide ();
-        }
-        public void GameTest()
-        {
-            int columns = 7;
-            int rows = 6;
-            int streak = 4;
-            C4 game = new C4(columns, rows, streak);
-            //game.find_lines();
-            //game.find_playable();
-            //game.points_on_line();
-
-
-            game.board = new string[6, 7] {
-            { "x", "x", "x", "x", "-", "-", "-"},
-            { "-", "-", "-", "-", "-", "-", "-"},
-            { "-", "-", "-", "-", "-", "-", "-"},
-            { "-", "-", "-", "-", "-", "-", "-"},
-            { "-", "-", "-", "-", "-", "-", "-"},
-            { "-", "-", "-", "-", "-", "-", "-"},
-        };
-
-
-            if (game.streak_of(4) == true)
-            {
-                Console.WriteLine("Winner");
-            }
-            else
-            {
-                Console.WriteLine("Play On!!!");
-            }
-        }
-
     }
 }
