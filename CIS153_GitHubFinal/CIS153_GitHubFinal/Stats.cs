@@ -31,7 +31,12 @@ namespace CIS153_GitHubFinal
 
         private void btn_Exit_Click (object sender , EventArgs e)
         {
-            Environment.Exit (0);
+            DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void DisplayStats ()
