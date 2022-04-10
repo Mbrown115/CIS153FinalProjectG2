@@ -50,5 +50,12 @@ namespace CIS153_GitHubFinal
 
            // lbl_PlayerTurn.Text = 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Picture Box clicked!");
+
+            pictureBox1.BackgroundImage = Resources.black_poker_chip;
+        }
     }
 }
