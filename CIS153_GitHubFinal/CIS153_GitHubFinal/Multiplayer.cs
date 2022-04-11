@@ -13,8 +13,10 @@ namespace CIS153_GitHubFinal
 {
     public partial class Multiplayer : Form
     {
+        board game; 
         Welcome menu;
         int[,] b = new int[6,7];
+        bool PlayerTurn = false;
 
         public Multiplayer()
         {
@@ -61,7 +63,7 @@ namespace CIS153_GitHubFinal
             int columns = 7;
             int rows = 6;
             int streak = 4;
-            board game = new board(columns, rows, streak);
+            game = new board(columns, rows, streak);
             //game.find_lines();
             //game.find_playable();
             //game.points_on_line();
@@ -131,12 +133,43 @@ namespace CIS153_GitHubFinal
                         button.BackColor = Color.Black;
                     }
                     //button.Text = string.Format("{0}{1}", i, j);
-                    button.Name = string.Format("button_{0}{1}", i, j);
+                    button.Name = string.Format("{0}:{1}", i, j);
+                    button.Click += MyButtonClick;
                     button.Dock = DockStyle.Fill;
                     this.tableLayoutPanel1.Controls.Add(button, j, i);
                 }
             }
         }
+
+        void MyButtonClick(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            //Console.WriteLine(button.Name);
+            String[] indexes = button.Name.Split(':');
+            int row = Int16.Parse(indexes[0]);
+            int column = Int16.Parse(indexes[1]);
+            Console.WriteLine("{0}  {1}", row, column);
+            string token = game.get_token(row, column);
+            Console.WriteLine("token: {0}", token);
+            //Console.WriteLine("{0}  {1}", indexes[0], indexes[1]);
+            if (token == "-")
+            {
+                if (PlayerTurn == false)
+                {
+                    button.BackColor = Color.Red;
+                    game.set_token(row, column, "x");
+                    PlayerTurn = true;
+                }
+                else if (PlayerTurn == true)
+                {
+                    button.BackColor = Color.Black;
+                    game.set_token(row, column, "o");
+                    PlayerTurn = false;
+                }
+            }
+            //here you can check which button was clicked by the sender
+        }
+
     }
     class board
     {
@@ -164,6 +197,15 @@ namespace CIS153_GitHubFinal
             this.find_lines();
             this.find_playable();
             this.points_on_line();
+        }
+        public string get_token(int row, int col)
+        {
+            string token = this.grid[row, col];
+            return(token);
+        }
+        public void set_token(int row, int col, string token)
+        {
+            this.grid[row, col] = token;
         }
 
         public bool streak_of(int streak_size)
