@@ -30,19 +30,16 @@ namespace CIS153_GitHubFinal
             menu = fml;
         }
 
-        private void displayTurn()
+        // Brings up menu form
+        private void btn_menu_Click(object sender, EventArgs e)
         {
-            //this will display the current players turn status in the label at the bottom
-            //of the game screen.
-
-           // lbl_PlayTurn.Text = 
+            menu.Show();
+            Close(); 
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btn_Exit_Click (object sender , EventArgs e)
         {
-            DialogResult result = MessageBox.Show
-                ("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", 
-                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
             if (result == DialogResult.Yes)
             {
@@ -50,18 +47,12 @@ namespace CIS153_GitHubFinal
             }
         }
 
-        private void tStrip_Options_Menu_Click(object sender, EventArgs e)
+        private void displayTurn()
         {
-            DialogResult result = MessageBox.Show
-                ("Would you like to quit the game? Click Yes to continue and end the current game.", "End Game?", 
-                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            //this will display the current players turn status in the label at the bottom
+            //of the game screen.
 
-            if (result == DialogResult.Yes)
-            {
-                menu.Show();
-                Close();
-            }
-
+           // lbl_PlayTurn.Text = 
         }
     }
 }
