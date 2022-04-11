@@ -86,8 +86,63 @@ namespace CIS153_GitHubFinal
             {
                 Console.WriteLine("Play On!!!");
             }
+
+            //var rowCount = 10;
+            //var columnCount = 10;
+            var rowCount = game.board.GetLength(0);
+            var columnCount = game.board.GetLength(1);
+
+            this.tableLayoutPanel1.ColumnCount = columnCount;
+            this.tableLayoutPanel1.RowCount = rowCount;
+
+            this.tableLayoutPanel1.ColumnStyles.Clear();
+            this.tableLayoutPanel1.RowStyles.Clear();
+
+            for (int i = 0; i < columnCount; i++)
+            //for(int i = 0; i < game.board.GetLength(0); i++)
+            {
+                this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100 / columnCount));
+            }
+            for (int i = 0; i < rowCount; i++)
+            //for (int i = 0; i < game.board.GetLength(1); i++)
+            {
+                this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100 / rowCount));
+            }
+
+            for (int i = 0; i < rowCount; i++)
+            //for (int i = 0; i < game.board.GetLength(0); i++)
+            {
+                for (int j = 0; j < columnCount; j++)
+                //for (int j = 0; j < game.board.GetLength(1); j++)
+                {
+                    var button = new Button();
+                    if (game.board[i, j] == "-")
+                    {
+                        Console.WriteLine("set color to white");
+                        button.BackColor = Color.White;
+                    }
+                    else if (game.board[i, j] == "x")
+                    {
+                        Console.WriteLine("set color to red");
+                        button.BackColor = Color.Red;
+                    }
+                    else if (game.board[i, j] == "o")
+                    {
+                        Console.WriteLine("set color to black");
+                        button.BackColor = Color.Black;
+                    }
+                    //button.Text = string.Format("{0}{1}", i, j);
+                    button.Name = string.Format("button_{0}{1}", i, j);
+                    button.Dock = DockStyle.Fill;
+                    this.tableLayoutPanel1.Controls.Add(button, j, i);
+                }
+            }
         }
 
+        private void Welcome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
     class C4

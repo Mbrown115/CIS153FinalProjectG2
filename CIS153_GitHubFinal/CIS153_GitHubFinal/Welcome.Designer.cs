@@ -34,6 +34,7 @@ namespace CIS153_GitHubFinal
             this.btn_stats = new System.Windows.Forms.Button();
             this.btn_multiplayer = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
             // lbl_welcome
@@ -90,11 +91,25 @@ namespace CIS153_GitHubFinal
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(431, 378);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.30556F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.69444F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(338, 288);
+            this.tableLayoutPanel1.TabIndex = 5;
+            // 
             // Welcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 700);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_multiplayer);
             this.Controls.Add(this.btn_stats);
@@ -103,6 +118,7 @@ namespace CIS153_GitHubFinal
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Welcome";
             this.Text = "Connect 4";
+            this.Load += new System.EventHandler(this.Welcome_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,6 +131,7 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.Button btn_stats;
         private System.Windows.Forms.Button btn_multiplayer;
         private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 
