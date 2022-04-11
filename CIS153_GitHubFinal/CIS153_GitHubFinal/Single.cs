@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace CIS153_GitHubFinal
 {
@@ -15,19 +16,19 @@ namespace CIS153_GitHubFinal
     {
         Welcome menu;
 
-        public Single (Welcome sp)
+        public Single(Welcome sp)
         {
-            InitializeComponent ();            
+            InitializeComponent();
             menu = sp;
         }
 
-        private void btn_Menu_Click (object sender , EventArgs e)
+        private void btn_Menu_Click(object sender, EventArgs e)
         {
-            menu.Show ();
-            Close ();
+            menu.Show();
+            Close();
         }
 
-        private void btn_Exit_Click (object sender , EventArgs e)
+        private void btn_Exit_Click(object sender, EventArgs e)
         {
             //*********************************************************************************************
             //Working on a dialogbox to confirm "Exit" option
@@ -36,7 +37,7 @@ namespace CIS153_GitHubFinal
             //working to resolve. 4/5/22 - BT
             //*********************************************************************************************
 
-            DialogResult result = MessageBox.Show ("Confirm Exit. Clicking Yes will end the game." , "Exiting Game!" , MessageBoxButtons.YesNo , MessageBoxIcon.Exclamation);
+            DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
             if (result == DialogResult.Yes)
             {
@@ -48,7 +49,7 @@ namespace CIS153_GitHubFinal
         {
             //Display the player turn status in the label at the bottom of form
 
-           // lbl_PlayerTurn.Text = 
+            // lbl_PlayerTurn.Text = 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -58,4 +59,5 @@ namespace CIS153_GitHubFinal
             pictureBox1.BackgroundImage = Resources.black_poker_chip;
         }
     }
+    
 }

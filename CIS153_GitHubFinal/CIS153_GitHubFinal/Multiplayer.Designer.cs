@@ -32,15 +32,16 @@ namespace CIS153_GitHubFinal
             this.btn_menu = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.lbl_PlayTurn = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
             // btn_menu
             // 
             this.btn_menu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_menu.Location = new System.Drawing.Point(78, 490);
-            this.btn_menu.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.btn_menu.Location = new System.Drawing.Point(59, 860);
+            this.btn_menu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_menu.Name = "btn_menu";
-            this.btn_menu.Size = new System.Drawing.Size(174, 51);
+            this.btn_menu.Size = new System.Drawing.Size(112, 35);
             this.btn_menu.TabIndex = 0;
             this.btn_menu.Text = "Menu";
             this.btn_menu.UseVisualStyleBackColor = true;
@@ -49,10 +50,10 @@ namespace CIS153_GitHubFinal
             // btn_Exit
             // 
             this.btn_Exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_Exit.Location = new System.Drawing.Point(880, 329);
-            this.btn_Exit.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.btn_Exit.Location = new System.Drawing.Point(565, 766);
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(174, 51);
+            this.btn_Exit.Size = new System.Drawing.Size(112, 35);
             this.btn_Exit.TabIndex = 1;
             this.btn_Exit.Text = "Exit Game";
             this.btn_Exit.UseVisualStyleBackColor = true;
@@ -62,23 +63,36 @@ namespace CIS153_GitHubFinal
             // 
             this.lbl_PlayTurn.AutoSize = true;
             this.lbl_PlayTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PlayTurn.Location = new System.Drawing.Point(19, 653);
-            this.lbl_PlayTurn.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbl_PlayTurn.Location = new System.Drawing.Point(12, 966);
             this.lbl_PlayTurn.Name = "lbl_PlayTurn";
-            this.lbl_PlayTurn.Size = new System.Drawing.Size(238, 40);
+            this.lbl_PlayTurn.Size = new System.Drawing.Size(159, 29);
             this.lbl_PlayTurn.TabIndex = 2;
             this.lbl_PlayTurn.Text = "Player\'s Turn!";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(252, 106);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(700, 600);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
             // Multiplayer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1935, 708);
+            this.ClientSize = new System.Drawing.Size(1244, 1004);
             this.ControlBox = false;
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lbl_PlayTurn);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_menu);
-            this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Multiplayer";
             this.Text = "Multiplayer";
             this.ResumeLayout(false);
@@ -91,5 +105,6 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.Button btn_menu;
         private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Label lbl_PlayTurn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

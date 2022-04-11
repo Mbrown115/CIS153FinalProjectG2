@@ -33,7 +33,6 @@ namespace CIS153_GitHubFinal
             this.btn_stats = new System.Windows.Forms.Button();
             this.btn_multiplayer = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -43,7 +42,7 @@ namespace CIS153_GitHubFinal
             // btn_single
             // 
             this.btn_single.BackColor = System.Drawing.Color.Blue;
-            this.btn_single.Font = new System.Drawing.Font("Source Code Pro Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_single.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_single.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_single.Location = new System.Drawing.Point(14, 14);
             this.btn_single.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
@@ -57,7 +56,7 @@ namespace CIS153_GitHubFinal
             // btn_stats
             // 
             this.btn_stats.BackColor = System.Drawing.Color.White;
-            this.btn_stats.Font = new System.Drawing.Font("Source Code Pro Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_stats.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_stats.Location = new System.Drawing.Point(14, 214);
             this.btn_stats.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btn_stats.Name = "btn_stats";
@@ -70,7 +69,7 @@ namespace CIS153_GitHubFinal
             // btn_multiplayer
             // 
             this.btn_multiplayer.BackColor = System.Drawing.Color.Gold;
-            this.btn_multiplayer.Font = new System.Drawing.Font("Source Code Pro Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_multiplayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_multiplayer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_multiplayer.Location = new System.Drawing.Point(14, 114);
             this.btn_multiplayer.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
@@ -84,7 +83,7 @@ namespace CIS153_GitHubFinal
             // btn_exit
             // 
             this.btn_exit.BackColor = System.Drawing.Color.Red;
-            this.btn_exit.Font = new System.Drawing.Font("Source Code Pro Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.Location = new System.Drawing.Point(14, 331);
             this.btn_exit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btn_exit.Name = "btn_exit";
@@ -93,19 +92,6 @@ namespace CIS153_GitHubFinal
             this.btn_exit.Text = "Exit";
             this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(578, 593);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.30556F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.69444F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(338, 288);
-            this.tableLayoutPanel1.TabIndex = 5;
             // 
             // panel1
             // 
@@ -137,7 +123,6 @@ namespace CIS153_GitHubFinal
             this.ClientSize = new System.Drawing.Size(928, 893);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Welcome";
             this.Text = "Connect 4";
@@ -153,7 +138,6 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.Button btn_stats;
         private System.Windows.Forms.Button btn_multiplayer;
         private System.Windows.Forms.Button btn_exit;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
