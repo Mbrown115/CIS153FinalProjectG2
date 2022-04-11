@@ -137,6 +137,7 @@
   <ItemGroup>
     <Content Include="bin\Debug\WinRecord.txt" />
     <Content Include="Resources\Image1.bmp" />
+    <None Include="Resources\Logo2.png" />
     <None Include="Resources\Board_CutOut_png.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
