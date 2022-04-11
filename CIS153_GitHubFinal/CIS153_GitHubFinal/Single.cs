@@ -36,12 +36,12 @@ namespace CIS153_GitHubFinal
             //working to resolve. 4/5/22 - BT
             //*********************************************************************************************
 
-            DialogResult result = MessageBox.Show ("Confirm Exit. Clicking Yes will end the game." , "Exiting Game!" , MessageBoxButtons.YesNo , MessageBoxIcon.Exclamation);
+            //DialogResult result = MessageBox.Show ("Confirm Exit. Clicking Yes will end the game." , "Exiting Game!" , MessageBoxButtons.YesNo , MessageBoxIcon.Exclamation);
 
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            //if (result == DialogResult.Yes)
+            //{
+            //    Application.Exit();
+            //}
         }
 
         private void displayTurn()
@@ -56,6 +56,17 @@ namespace CIS153_GitHubFinal
             Console.WriteLine("Picture Box clicked!");
 
             pictureBox1.BackgroundImage = Resources.black_poker_chip;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }
