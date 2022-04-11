@@ -34,13 +34,6 @@ namespace CIS153_GitHubFinal
             menu = fml;
         }
 
-        // Brings up menu form
-        private void btn_menu_Click(object sender, EventArgs e)
-        {
-            menu.Show();
-            Close(); 
-        }
-
         private void btn_Exit_Click (object sender , EventArgs e)
         {
             DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
@@ -69,14 +62,17 @@ namespace CIS153_GitHubFinal
             //game.points_on_line();
 
 
-            game.grid = new string[6, 7] {
-            { "-", "-", "-", "-", "-", "-", "-"},
-            { "-", "-", "-", "-", "-", "-", "-"},
-            { "-", "-", "-", "-", "-", "-", "-"},
-            { "-", "-", "-", "-", "-", "-", "-"},
-            { "-", "-", "-", "-", "-", "-", "-"},
-            { "-", "-", "-", "-", "-", "-", "-"},
-        };
+            //game.grid = new string[6, 7]             
+            //{
+
+            //{ "-", "-", "-", "-", "-", "-", "-"},
+            //{ "-", "-", "-", "-", "-", "-", "-"},
+            //{ "-", "-", "-", "-", "-", "-", "-"},
+            //{ "-", "-", "-", "-", "-", "-", "-"},
+            //{ "-", "-", "-", "-", "-", "-", "-"},
+            //{ "-", "-", "-", "-", "-", "-", "-"},
+           
+            //};
 
 
             if (game.streak_of(4) == true)
@@ -170,6 +166,21 @@ namespace CIS153_GitHubFinal
             //here you can check which button was clicked by the sender
         }
 
+        private void menStp_Options_Menu_Click(object sender, EventArgs e)
+        {
+            menu.Show();
+            Close();
+        }
+
+        private void menStp_Options_Exit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
     class board
     {
@@ -418,7 +429,6 @@ namespace CIS153_GitHubFinal
             }
             return (status);
         }
-
         public void display()
         {
             for (int y = 0; y < this.grid.GetLength(0); y++)
