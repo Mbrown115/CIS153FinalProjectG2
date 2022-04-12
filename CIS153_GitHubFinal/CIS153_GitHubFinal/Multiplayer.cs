@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace CIS153_GitHubFinal
 {
@@ -174,6 +175,9 @@ namespace CIS153_GitHubFinal
 
         private void menStp_Options_Exit_Click(object sender, EventArgs e)
         {
+            SoundPlayer mainMenuSound = new SoundPlayer(Properties.Resources.alert1);
+            mainMenuSound.Play();
+
             DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
             if (result == DialogResult.Yes)
