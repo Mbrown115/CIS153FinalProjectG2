@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace CIS153_GitHubFinal
 {
@@ -23,6 +24,9 @@ namespace CIS153_GitHubFinal
         public Welcome()
         {
             InitializeComponent();
+
+            SoundPlayer mainMenuSound = new SoundPlayer(Properties.Resources.connect4_Sound);
+            mainMenuSound.Play();
         }
 
         // Exits the program
