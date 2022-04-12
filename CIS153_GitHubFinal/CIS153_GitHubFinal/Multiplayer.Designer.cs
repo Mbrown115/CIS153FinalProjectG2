@@ -29,6 +29,7 @@ namespace CIS153_GitHubFinal
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Multiplayer));
             this.lbl_PlayTurn = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -80,7 +81,7 @@ namespace CIS153_GitHubFinal
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1106, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1106, 33);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -106,14 +107,14 @@ namespace CIS153_GitHubFinal
             // menStp_Options_Menu
             // 
             this.menStp_Options_Menu.Name = "menStp_Options_Menu";
-            this.menStp_Options_Menu.Size = new System.Drawing.Size(274, 34);
+            this.menStp_Options_Menu.Size = new System.Drawing.Size(282, 34);
             this.menStp_Options_Menu.Text = "Main Menu";
             this.menStp_Options_Menu.Click += new System.EventHandler(this.menStp_Options_Menu_Click);
             // 
             // menStp_Options_Exit
             // 
             this.menStp_Options_Exit.Name = "menStp_Options_Exit";
-            this.menStp_Options_Exit.Size = new System.Drawing.Size(274, 34);
+            this.menStp_Options_Exit.Size = new System.Drawing.Size(282, 34);
             this.menStp_Options_Exit.Text = "Exit Connect 4";
             this.menStp_Options_Exit.Click += new System.EventHandler(this.menStp_Options_Exit_Click);
             // 
@@ -123,19 +124,19 @@ namespace CIS153_GitHubFinal
             this.gamePlayInstructionsToolStripMenuItem,
             this.rulesOfTheGameToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(76, 29);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // gamePlayInstructionsToolStripMenuItem
             // 
             this.gamePlayInstructionsToolStripMenuItem.Name = "gamePlayInstructionsToolStripMenuItem";
-            this.gamePlayInstructionsToolStripMenuItem.Size = new System.Drawing.Size(294, 34);
+            this.gamePlayInstructionsToolStripMenuItem.Size = new System.Drawing.Size(378, 34);
             this.gamePlayInstructionsToolStripMenuItem.Text = "Game Play Instructions";
             // 
             // rulesOfTheGameToolStripMenuItem
             // 
             this.rulesOfTheGameToolStripMenuItem.Name = "rulesOfTheGameToolStripMenuItem";
-            this.rulesOfTheGameToolStripMenuItem.Size = new System.Drawing.Size(294, 34);
+            this.rulesOfTheGameToolStripMenuItem.Size = new System.Drawing.Size(378, 34);
             this.rulesOfTheGameToolStripMenuItem.Text = "Rules of The Game";
             // 
             // previousGameToolStripMenuItem
@@ -160,6 +161,7 @@ namespace CIS153_GitHubFinal
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lbl_PlayTurn);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Multiplayer";

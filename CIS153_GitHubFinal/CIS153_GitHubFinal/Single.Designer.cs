@@ -29,6 +29,7 @@ namespace CIS153_GitHubFinal
         /// </summary>
         private void InitializeComponent ()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Single));
             this.btn_Menu = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.lbl_PlayerTurn = new System.Windows.Forms.Label();
@@ -38,9 +39,10 @@ namespace CIS153_GitHubFinal
             // 
             // btn_Menu
             // 
-            this.btn_Menu.Location = new System.Drawing.Point(771, 1007);
+            this.btn_Menu.Location = new System.Drawing.Point(685, 806);
+            this.btn_Menu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.Size = new System.Drawing.Size(120, 47);
+            this.btn_Menu.Size = new System.Drawing.Size(107, 38);
             this.btn_Menu.TabIndex = 0;
             this.btn_Menu.Text = "Main Menu";
             this.btn_Menu.UseVisualStyleBackColor = true;
@@ -48,9 +50,10 @@ namespace CIS153_GitHubFinal
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Location = new System.Drawing.Point(897, 1007);
+            this.btn_Exit.Location = new System.Drawing.Point(797, 806);
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(120, 47);
+            this.btn_Exit.Size = new System.Drawing.Size(107, 38);
             this.btn_Exit.TabIndex = 1;
             this.btn_Exit.Text = "Exit Game";
             this.btn_Exit.UseVisualStyleBackColor = true;
@@ -60,7 +63,7 @@ namespace CIS153_GitHubFinal
             // 
             this.lbl_PlayerTurn.AutoSize = true;
             this.lbl_PlayerTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PlayerTurn.Location = new System.Drawing.Point(12, 1019);
+            this.lbl_PlayerTurn.Location = new System.Drawing.Point(11, 815);
             this.lbl_PlayerTurn.Name = "lbl_PlayerTurn";
             this.lbl_PlayerTurn.Size = new System.Drawing.Size(159, 29);
             this.lbl_PlayerTurn.TabIndex = 2;
@@ -72,26 +75,29 @@ namespace CIS153_GitHubFinal
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(1, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(143, 148);
+            this.pictureBox1.Size = new System.Drawing.Size(127, 118);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Single
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.connect4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1029, 1066);
+            this.ClientSize = new System.Drawing.Size(915, 853);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_PlayerTurn);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Menu);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Single";
             this.Text = "Single";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
