@@ -39,16 +39,19 @@ namespace CIS153_GitHubFinal
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gamePlayInstructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rulesOfTheGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.previousGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playerStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_PlayTurn
             // 
             this.lbl_PlayTurn.AutoSize = true;
-            this.lbl_PlayTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PlayTurn.Location = new System.Drawing.Point(11, 773);
+            this.lbl_PlayTurn.Font = new System.Drawing.Font("Source Code Pro Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PlayTurn.ForeColor = System.Drawing.Color.White;
+            this.lbl_PlayTurn.Location = new System.Drawing.Point(26, 754);
             this.lbl_PlayTurn.Name = "lbl_PlayTurn";
-            this.lbl_PlayTurn.Size = new System.Drawing.Size(159, 29);
+            this.lbl_PlayTurn.Size = new System.Drawing.Size(253, 36);
             this.lbl_PlayTurn.TabIndex = 2;
             this.lbl_PlayTurn.Text = "Player\'s Turn!";
             // 
@@ -68,6 +71,8 @@ namespace CIS153_GitHubFinal
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Gold;
+            this.menuStrip1.Font = new System.Drawing.Font("Source Code Pro Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -75,7 +80,7 @@ namespace CIS153_GitHubFinal
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1106, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1106, 36);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -86,14 +91,17 @@ namespace CIS153_GitHubFinal
             this.menStp_Options_Menu,
             this.menStp_Options_Exit});
             this.gameOptionsToolStripMenuItem.Name = "gameOptionsToolStripMenuItem";
-            this.gameOptionsToolStripMenuItem.Size = new System.Drawing.Size(143, 29);
+            this.gameOptionsToolStripMenuItem.Size = new System.Drawing.Size(172, 29);
             this.gameOptionsToolStripMenuItem.Text = "Game Options";
             // 
             // viewPreviousGameToolStripMenuItem
             // 
+            this.viewPreviousGameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.previousGameToolStripMenuItem,
+            this.playerStatsToolStripMenuItem});
             this.viewPreviousGameToolStripMenuItem.Name = "viewPreviousGameToolStripMenuItem";
-            this.viewPreviousGameToolStripMenuItem.Size = new System.Drawing.Size(274, 34);
-            this.viewPreviousGameToolStripMenuItem.Text = "View Previous Game";
+            this.viewPreviousGameToolStripMenuItem.Size = new System.Drawing.Size(282, 34);
+            this.viewPreviousGameToolStripMenuItem.Text = "View";
             // 
             // menStp_Options_Menu
             // 
@@ -130,10 +138,23 @@ namespace CIS153_GitHubFinal
             this.rulesOfTheGameToolStripMenuItem.Size = new System.Drawing.Size(294, 34);
             this.rulesOfTheGameToolStripMenuItem.Text = "Rules of The Game";
             // 
+            // previousGameToolStripMenuItem
+            // 
+            this.previousGameToolStripMenuItem.Name = "previousGameToolStripMenuItem";
+            this.previousGameToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.previousGameToolStripMenuItem.Text = "Previous Game";
+            // 
+            // playerStatsToolStripMenuItem
+            // 
+            this.playerStatsToolStripMenuItem.Name = "playerStatsToolStripMenuItem";
+            this.playerStatsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.playerStatsToolStripMenuItem.Text = "Player Stats";
+            // 
             // Multiplayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1106, 803);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
@@ -142,7 +163,7 @@ namespace CIS153_GitHubFinal
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Multiplayer";
-            this.Text = "Multiplayer";
+            this.Text = "2 Player";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -161,5 +182,7 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.ToolStripMenuItem viewPreviousGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menStp_Options_Menu;
         private System.Windows.Forms.ToolStripMenuItem menStp_Options_Exit;
+        private System.Windows.Forms.ToolStripMenuItem previousGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playerStatsToolStripMenuItem;
     }
 }
