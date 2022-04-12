@@ -14,9 +14,9 @@ namespace CIS153_GitHubFinal
 {
     public partial class Multiplayer : Form
     {
-        board game; 
+        board game;
         Welcome menu;
-        int[,] b = new int[6,7];
+        int[,] b = new int[6, 7];
         bool PlayerTurn = false;
 
         public Multiplayer()
@@ -27,7 +27,7 @@ namespace CIS153_GitHubFinal
             //theBoard.setcolumns(new Rectangle[7]);
             //theBoard.setBoard(b);
         }
-        
+
         public Multiplayer(Welcome fml)
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace CIS153_GitHubFinal
             menu = fml;
         }
 
-        private void btn_Exit_Click (object sender , EventArgs e)
+        private void btn_Exit_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
@@ -50,7 +50,7 @@ namespace CIS153_GitHubFinal
             //this will display the current players turn status in the label at the bottom
             //of the game screen.
 
-           // lbl_PlayTurn.Text = 
+            // lbl_PlayTurn.Text = 
         }
         public void GameTest()
         {
@@ -58,22 +58,6 @@ namespace CIS153_GitHubFinal
             int rows = 6;
             int streak = 4;
             game = new board(columns, rows, streak);
-            //game.find_lines();
-            //game.find_playable();
-            //game.points_on_line();
-
-
-            //game.grid = new string[6, 7]             
-            //{
-
-            //{ "-", "-", "-", "-", "-", "-", "-"},
-            //{ "-", "-", "-", "-", "-", "-", "-"},
-            //{ "-", "-", "-", "-", "-", "-", "-"},
-            //{ "-", "-", "-", "-", "-", "-", "-"},
-            //{ "-", "-", "-", "-", "-", "-", "-"},
-            //{ "-", "-", "-", "-", "-", "-", "-"},
-           
-            //};
 
 
             if (game.streak_of(4) == true)
@@ -85,10 +69,8 @@ namespace CIS153_GitHubFinal
                 Console.WriteLine("Play On!!!");
             }
 
-            //var rowCount = 10;
-            //var columnCount = 10;
-            var rowCount = game.grid.GetLength(0);
-            var columnCount = game.grid.GetLength(1);
+            var rowCount = game.get_rows();
+            var columnCount = game.get_columns();
 
             this.tableLayoutPanel1.ColumnCount = columnCount;
             this.tableLayoutPanel1.RowCount = rowCount;
@@ -97,39 +79,37 @@ namespace CIS153_GitHubFinal
             this.tableLayoutPanel1.RowStyles.Clear();
 
             for (int i = 0; i < columnCount; i++)
-            //for(int i = 0; i < game.board.GetLength(0); i++)
             {
                 this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100 / columnCount));
             }
             for (int i = 0; i < rowCount; i++)
-            //for (int i = 0; i < game.board.GetLength(1); i++)
             {
                 this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100 / rowCount));
             }
 
             for (int i = 0; i < rowCount; i++)
-            //for (int i = 0; i < game.board.GetLength(0); i++)
             {
                 for (int j = 0; j < columnCount; j++)
-                //for (int j = 0; j < game.board.GetLength(1); j++)
                 {
                     var button = new Button();
-                    if (game.grid[i, j] == "-")
+                    //                    if (game.grid[i, j] == "-")
+                    if (game.get_token(i, j) == "-")
                     {
                         Console.WriteLine("set color to white");
                         button.BackColor = Color.White;
                     }
-                    else if (game.grid[i, j] == "x")
+                    //                    else if (game.grid[i, j] == "x")
+                    else if (game.get_token(i, j) == "x")
                     {
                         Console.WriteLine("set color to red");
                         button.BackColor = Color.Red;
                     }
-                    else if (game.grid[i, j] == "o")
+                    //                    else if (game.grid[i, j] == "o")
+                    else if (game.get_token(i, j) == "o")
                     {
                         Console.WriteLine("set color to black");
                         button.BackColor = Color.Black;
                     }
-                    //button.Text = string.Format("{0}{1}", i, j);
                     button.Name = string.Format("{0}:{1}", i, j);
                     button.Click += MyButtonClick;
                     button.Dock = DockStyle.Fill;
@@ -189,15 +169,15 @@ namespace CIS153_GitHubFinal
     }
     class board
     {
-        int columns;
-        int rows;
-        public string[,] grid;
-        public float height;
-        public float width;
-        public float diag;
-        List<line> lines = new List<line>();
-        List<line> playable = new List<line>();
-        List<cell> streak_points = new List<cell>();
+        private int columns;
+        private int rows;
+        private string[,] grid;
+        private float height;
+        private float width;
+        private float diag;
+        private List<line> lines = new List<line>();
+        private List<line> playable = new List<line>();
+        private List<cell> streak_points = new List<cell>();
 
         public board(int c, int r, int s)
         {
@@ -209,15 +189,29 @@ namespace CIS153_GitHubFinal
                     this.grid[y, x] = "-";
                 }
             }
+            this.rows = this.grid.GetLength(0);
+            this.columns = this.grid.GetLength(1);
+
             get_playable_dimensions(s);
             this.find_lines();
             this.find_playable();
             this.points_on_line();
         }
+
+        public int get_rows()
+        {
+            return (this.rows);
+        }
+
+        public int get_columns()
+        {
+            return (this.columns);
+        }
+
         public string get_token(int row, int col)
         {
             string token = this.grid[row, col];
-            return(token);
+            return (token);
         }
         public void set_token(int row, int col, string token)
         {
@@ -237,11 +231,11 @@ namespace CIS153_GitHubFinal
                 line_streak_points.Clear();
                 streak_token = " ";
                 current_streak = 0;
-                foreach (cell P in L.points_on_line)
+                foreach (cell P in L.get_points_on_line())
                 {
                     try
                     {
-                        current_element = grid[P.row, P.column];
+                        current_element = grid[P.get_row(), P.get_column()];
                     }
 #pragma warning disable 0168
                     catch (Exception e)
@@ -314,7 +308,8 @@ namespace CIS153_GitHubFinal
                     {
                         if (L.point_on_line(test))
                         {
-                            L.points_on_line.Add(test);
+                            //                            L.points_on_line.Add(test);
+                            L.add_point(test);
                         }
                     }
                 }
@@ -341,9 +336,9 @@ namespace CIS153_GitHubFinal
         {
             foreach (line L in this.lines)
             {
-                if ((L.no_slope == true) || (L.slope == 0.0) || (L.slope == 1.0) || (L.slope == -1.0))
+                if ((L.get_no_slope() == true) || (L.get_slope() == 0.0) || (L.get_slope() == 1.0) || (L.get_slope() == -1.0))
                 {
-                    if (((L.no_slope == true) && (L.length == height)) || ((L.slope == 0.0) && (L.length == width)) || (((L.slope == 1.0) || L.slope == -1.0) && (L.length >= diag)))
+                    if (((L.get_no_slope() == true) && (L.get_length() == height)) || ((L.get_slope() == 0.0) && (L.get_length() == width)) || (((L.get_slope() == 1.0) || L.get_slope() == -1.0) && (L.get_length() >= diag)))
                     {
                         this.playable.Add(L);
                     }
@@ -394,7 +389,8 @@ namespace CIS153_GitHubFinal
             bool status = false;
             foreach (line L in this.lines)
             {
-                if ((L.a.same(l.a)) && (L.b.same(l.b)))
+                //                if ((L.a.same(l.a)) && (L.b.same(l.b)))
+                if (L.same(l))
                 {
                     status = true;
                     break;
@@ -406,8 +402,8 @@ namespace CIS153_GitHubFinal
         public bool is_point_on_perimeter(cell a)
         {
             bool status = false;
-            int x = (int)a.x;
-            int y = (int)a.y;
+            int x = (int)a.get_x();
+            int y = (int)a.get_y();
             status = is_point_on_perimeter(y, x);
             return (status);
         }
@@ -445,46 +441,17 @@ namespace CIS153_GitHubFinal
                 Console.WriteLine();
             }
         }
-
-        static void junk(string[] args)
-        {
-            int columns = 6;
-            int rows = 7;
-            board game = new board(6, 7, 4);
-            game.find_lines();
-            game.find_playable();
-            game.points_on_line();
-
-            game.grid = new string[6, 7] {
-                            {"x","-","-","-","-","-","-"},
-                            {"-","x","-","-","-","-","-"},
-                            {"-","-","x","-","-","-","-"},
-                            {"-","-","-","x","-","-","-"},
-                            {"-","-","-","-","-","-","-"},
-                            {"-","-","-","-","-","-","-"},
-                        };
-
-            if (game.streak_of(4) == true)
-            {
-                Console.WriteLine("Winner");
-            }
-            else
-            {
-                Console.WriteLine("Play on!!!");
-            }
-
-        }
     }
 
     public class line
     {
-        public cell a;
-        public cell b;
-        public bool no_slope = false;
-        public float slope;
-        public float length;
-        public float y_intercept;
-        public List<cell> points_on_line = new List<cell>();
+        private cell a;
+        private cell b;
+        private bool no_slope = false;
+        private float slope;
+        private float length;
+        private float y_intercept;
+        private List<cell> points_on_line = new List<cell>();
 
         public line(float y1, float x1, float y2, float x2)
         {
@@ -502,9 +469,45 @@ namespace CIS153_GitHubFinal
 
         public void setup()
         {
-            get_slope();
-            get_length();
+            figure_slope();
+            figure_length();
             get_y_intercept();
+        }
+
+        public bool same(line l)
+        {
+            bool status = false;
+            if ((this.a.same(l.a)) && (this.b.same(l.b)))
+            {
+                status = true;
+            }
+            return (status);
+        }
+
+        public float get_length()
+        {
+            return (this.length);
+        }
+
+        public bool get_no_slope()
+        {
+            return (no_slope);
+        }
+
+        public List<cell> get_points_on_line()
+        {
+            return (this.points_on_line);
+        }
+
+        public float get_slope()
+        {
+            return (this.slope);
+        }
+
+        public void add_point(cell p)
+        {
+            this.points_on_line.Add(p);
+
         }
 
         public bool point_on_line(cell p)
@@ -512,14 +515,14 @@ namespace CIS153_GitHubFinal
             bool on_line = false;
             if (this.is_vertical())
             {
-                if (p.x == a.x)
+                if (p.get_x() == a.get_x())
                 {
                     on_line = true;
                 }
             }
             else
             {
-                if (p.y == this.slope * p.x + this.y_intercept)
+                if (p.get_y() == this.slope * p.get_x() + this.y_intercept)
                 {
                     on_line = true;
                 }
@@ -530,7 +533,7 @@ namespace CIS153_GitHubFinal
         public bool is_vertical()
         {
             bool vertical = false;
-            if (a.x == b.x)
+            if (a.get_x() == b.get_x())
             {
                 vertical = true;
             }
@@ -540,20 +543,19 @@ namespace CIS153_GitHubFinal
         public void get_y_intercept()
         {
             float m = this.slope;
-            this.y_intercept = (float)this.a.y - m * this.a.x;
+            this.y_intercept = (float)this.a.get_y() - m * this.a.get_x();
         }
 
-        public void get_length()
+        public void figure_length()
         {
-            this.length = (float)Math.Sqrt(Math.Pow((b.x - a.x), 2) + Math.Pow((b.y - a.y), 2));
+            this.length = (float)Math.Sqrt(Math.Pow((b.get_x() - a.get_x()), 2) + Math.Pow((b.get_y() - a.get_y()), 2));
         }
 
-        public void get_slope()
+        public void figure_slope()
         {
-            float slope;
             try
             {
-                this.slope = (this.b.y - this.a.y) / (this.b.x - this.a.x);
+                this.slope = (this.b.get_y() - this.a.get_y()) / (this.b.get_x() - this.a.get_x());
                 this.no_slope = false;
             }
 #pragma warning disable 0168
@@ -575,17 +577,17 @@ namespace CIS153_GitHubFinal
             {
                 slope = "no_slope";
             }
-            Console.WriteLine("ax: {0}, ay: {1}, bx: {2}, by: {3}, slope: {4}, length: {5}", this.a.x, this.a.y, this.b.x, this.b.y, slope.PadLeft(8, ' '), this.length);
+            Console.WriteLine("ax: {0}, ay: {1}, bx: {2}, by: {3}, slope: {4}, length: {5}", this.a.get_x(), this.a.get_y(), this.b.get_x(), this.b.get_y(), slope.PadLeft(8, ' '), this.length);
         }
 
     }
 
     public class cell
     {
-        public float x;
-        public float y;
-        public int row;
-        public int column;
+        private float x;
+        private float y;
+        private int row;
+        private int column;
 
         public cell(int r, int c)
         {
@@ -610,6 +612,26 @@ namespace CIS153_GitHubFinal
             }
             this.row = r;
             this.column = c;
+        }
+
+        public int get_column()
+        {
+            return (this.column);
+        }
+
+        public int get_row()
+        {
+            return (this.row);
+        }
+
+        public float get_x()
+        {
+            return (this.x);
+        }
+
+        public float get_y()
+        {
+            return (this.y);
         }
 
         public bool same(cell a)
