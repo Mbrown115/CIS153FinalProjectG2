@@ -22,9 +22,9 @@ namespace CIS153_GitHubFinal
         {
             InitializeComponent();
 
-            Board theBoard = new Board();
-            theBoard.setcolumns(new Rectangle[7]);
-            theBoard.setBoard(b);
+            //Board theBoard = new Board();
+            //theBoard.setcolumns(new Rectangle[7]);
+            //theBoard.setBoard(b);
         }
         
         public Multiplayer(Welcome fml)
@@ -165,7 +165,7 @@ namespace CIS153_GitHubFinal
             }
             //here you can check which button was clicked by the sender
         }
-
+        //=======================MENU STRIP BUTTONS===================================
         private void menStp_Options_Menu_Click(object sender, EventArgs e)
         {
             menu.Show();
@@ -181,6 +181,7 @@ namespace CIS153_GitHubFinal
                 Application.Exit();
             }
         }
+        //=======================END MENU STRIP BUTTONS===================================
     }
     class board
     {

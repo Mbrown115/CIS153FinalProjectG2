@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Board.cs" />
     <Compile Include="Cell.cs" />
     <Compile Include="NewPlayer.cs">
       <SubType>Form</SubType>
