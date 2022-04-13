@@ -127,7 +127,7 @@ namespace CIS153_GitHubFinal
             string token = game.get_token(row, column);
             Console.WriteLine("token: {0}", token);
 
-            if (game.is_full(column) == false)
+            if ((game.get_winner() == false) && (game.is_full(column) == false))
             {
                 dropped = game.drop_token(column);
             }
@@ -135,6 +135,7 @@ namespace CIS153_GitHubFinal
             {
                 if (game.streak_of(4) == true)
                 {
+                    game.set_winner(true);
                     Console.WriteLine("Winner is " + game.get_player());
                 }
                 else
@@ -178,6 +179,7 @@ namespace CIS153_GitHubFinal
     }
     class board
     {
+        private bool winner;
         private int columns;
         private int rows;
         private string[,] grid;
@@ -209,6 +211,15 @@ namespace CIS153_GitHubFinal
             this.find_playable();
             this.points_on_line();
             this.current_player = "x";
+            this.winner = false;
+        }
+        public bool get_winner()
+        {
+            return (this.winner);
+        }
+        public void set_winner(bool win)
+        {
+            this.winner = win;
         }
         public string get_player()
         {
