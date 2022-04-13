@@ -170,6 +170,14 @@ namespace CIS153_GitHubFinal
             }
             if(dropped == true)
             {
+                if (game.streak_of(4) == true)
+                {
+                    Console.WriteLine("Winner");
+                }
+                else
+                {
+                    Console.WriteLine("Play On!!!");
+                }
                 DrawBoard();
                 if (game.get_player() == "x")
                 {
