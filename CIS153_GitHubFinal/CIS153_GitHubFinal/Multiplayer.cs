@@ -17,7 +17,7 @@ namespace CIS153_GitHubFinal
         board game;
         Welcome menu;
         int[,] b = new int[6, 7];
-        bool PlayerTurn = false;
+
 
         public Multiplayer()
         {
@@ -93,55 +93,92 @@ namespace CIS153_GitHubFinal
                 {
                     var button = new Button();
                     //                    if (game.grid[i, j] == "-")
-                    if (game.get_token(i, j) == "-")
-                    {
-                        Console.WriteLine("set color to white");
-                        button.BackColor = Color.White;
-                    }
-                    //                    else if (game.grid[i, j] == "x")
-                    else if (game.get_token(i, j) == "x")
-                    {
-                        Console.WriteLine("set color to red");
-                        button.BackColor = Color.Red;
-                    }
-                    //                    else if (game.grid[i, j] == "o")
-                    else if (game.get_token(i, j) == "o")
-                    {
-                        Console.WriteLine("set color to black");
-                        button.BackColor = Color.Black;
-                    }
+                    //if (game.get_token(i, j) == "-")
+                    //{
+                    //    Console.WriteLine("set color to white");
+                    //    button.BackColor = Color.White;
+                    //}
+                    ////                    else if (game.grid[i, j] == "x")
+                    //else if (game.get_token(i, j) == "x")
+                    //{
+                    //    Console.WriteLine("set color to red");
+                    //    button.BackColor = Color.Red;
+                    //}
+                    ////                    else if (game.grid[i, j] == "o")
+                    //else if (game.get_token(i, j) == "o")
+                    //{
+                    //    Console.WriteLine("set color to black");
+                    //    button.BackColor = Color.Black;
+                    //}
                     button.Name = string.Format("{0}:{1}", i, j);
                     button.Click += MyButtonClick;
                     button.Dock = DockStyle.Fill;
                     this.tableLayoutPanel1.Controls.Add(button, j, i);
+                    game.set_button(i, j, button);
+                }
+            }
+            DrawBoard();
+        }
+        void DrawBoard()
+        {
+            Button button;
+            string token;
+            for (int r = 0; r < game.get_rows(); r++)
+            {
+                for (int c = 0; c < game.get_columns(); c++)
+                {
+                    button = game.get_button(r, c);
+                    token = game.get_token(r, c);
+                    if (token == "-")
+                    {
+                        //Console.WriteLine("set color to white");
+                        button.BackColor = Color.White;
+                    }
+                    //                    else if (game.grid[i, j] == "x")
+                    else if (token == "x")
+                    {
+                        //Console.WriteLine("set color to red");
+                        button.BackColor = Color.Red;
+                    }
+                    //                    else if (game.grid[i, j] == "o")
+                    else if (token == "o")
+                    {
+                        //Console.WriteLine("set color to black");
+                        button.BackColor = Color.Black;
+                    }
                 }
             }
         }
-
         void MyButtonClick(object sender, EventArgs e)
         {
             Button button = sender as Button;
+            bool dropped = false;
             //Console.WriteLine(button.Name);
             String[] indexes = button.Name.Split(':');
             int row = Int16.Parse(indexes[0]);
             int column = Int16.Parse(indexes[1]);
             Console.WriteLine("{0}  {1}", row, column);
+            //Console.WriteLine("before");
             string token = game.get_token(row, column);
+            //Console.WriteLine("after");
             Console.WriteLine("token: {0}", token);
             //Console.WriteLine("{0}  {1}", indexes[0], indexes[1]);
-            if (token == "-")
+
+            if (game.is_full(column) == false)
             {
-                if (PlayerTurn == false)
+                dropped = game.drop_token(column);
+                
+            }
+            if(dropped == true)
+            {
+                DrawBoard();
+                if (game.get_player() == "x")
                 {
-                    button.BackColor = Color.Red;
-                    game.set_token(row, column, "x");
-                    PlayerTurn = true;
+                    game.set_player("o");
                 }
-                else if (PlayerTurn == true)
+                else
                 {
-                    button.BackColor = Color.Black;
-                    game.set_token(row, column, "o");
-                    PlayerTurn = false;
+                    game.set_player("x");
                 }
             }
             //here you can check which button was clicked by the sender
@@ -172,9 +209,11 @@ namespace CIS153_GitHubFinal
         private int columns;
         private int rows;
         private string[,] grid;
+        private Button[,] buttons;
         private float height;
         private float width;
         private float diag;
+        private string current_player;
         private List<line> lines = new List<line>();
         private List<line> playable = new List<line>();
         private List<cell> streak_points = new List<cell>();
@@ -182,6 +221,7 @@ namespace CIS153_GitHubFinal
         public board(int c, int r, int s)
         {
             this.grid = new string[r, c];
+            this.buttons = new Button[r, c];
             for (int y = 0; y < this.grid.GetLength(0); y += 1)
             {
                 for (int x = 0; x < this.grid.GetLength(1); x += 1)
@@ -196,8 +236,16 @@ namespace CIS153_GitHubFinal
             this.find_lines();
             this.find_playable();
             this.points_on_line();
+            this.current_player = "x";
         }
-
+        public string get_player()
+        {
+            return (this.current_player);
+        }
+        public void set_player(string player)
+        {
+            this.current_player = player;
+        }
         public int get_rows()
         {
             return (this.rows);
@@ -207,9 +255,18 @@ namespace CIS153_GitHubFinal
         {
             return (this.columns);
         }
-
+        public Button get_button(int row, int col)
+        {
+            Button button = this.buttons[row, col];
+            return (button);
+        }
+        public void set_button(int row, int col, Button button)
+        {
+            this.buttons[row, col] = button;
+        }
         public string get_token(int row, int col)
         {
+            //Console.WriteLine("row" + row + " column" + col);
             string token = this.grid[row, col];
             return (token);
         }
@@ -217,7 +274,34 @@ namespace CIS153_GitHubFinal
         {
             this.grid[row, col] = token;
         }
-
+        public bool is_full(int col)
+        {
+            bool full = false;
+            if(this.get_token(0, col) != "-")
+            {
+                full = true;
+            }
+            return (full);
+        }
+        public bool drop_token(int col)
+        {
+            bool status = false;
+            string token;
+            for(int row = this.get_rows() -1; row >= 0;row--)
+            {
+                //Console.WriteLine("inside drop before Row:" + row + " col:" + col);
+                token = get_token(row, col);
+                //Console.WriteLine("AFTER");
+                if (token == "-")
+                {
+                    this.set_token(row, col, this.current_player);
+                    status = true;
+                    break;
+                }
+            }
+            return (status);
+        }
+        
         public bool streak_of(int streak_size)
         {
             bool streak = false;
