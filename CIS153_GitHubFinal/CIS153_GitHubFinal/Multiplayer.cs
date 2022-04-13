@@ -58,17 +58,6 @@ namespace CIS153_GitHubFinal
             int rows = 6;
             int streak = 4;
             game = new board(columns, rows, streak);
-
-
-            if (game.streak_of(4) == true)
-            {
-                Console.WriteLine("Winner");
-            }
-            else
-            {
-                Console.WriteLine("Play On!!!");
-            }
-
             var rowCount = game.get_rows();
             var columnCount = game.get_columns();
 
@@ -92,24 +81,6 @@ namespace CIS153_GitHubFinal
                 for (int j = 0; j < columnCount; j++)
                 {
                     var button = new Button();
-                    //                    if (game.grid[i, j] == "-")
-                    //if (game.get_token(i, j) == "-")
-                    //{
-                    //    Console.WriteLine("set color to white");
-                    //    button.BackColor = Color.White;
-                    //}
-                    ////                    else if (game.grid[i, j] == "x")
-                    //else if (game.get_token(i, j) == "x")
-                    //{
-                    //    Console.WriteLine("set color to red");
-                    //    button.BackColor = Color.Red;
-                    //}
-                    ////                    else if (game.grid[i, j] == "o")
-                    //else if (game.get_token(i, j) == "o")
-                    //{
-                    //    Console.WriteLine("set color to black");
-                    //    button.BackColor = Color.Black;
-                    //}
                     button.Name = string.Format("{0}:{1}", i, j);
                     button.Click += MyButtonClick;
                     button.Dock = DockStyle.Fill;
@@ -131,19 +102,15 @@ namespace CIS153_GitHubFinal
                     token = game.get_token(r, c);
                     if (token == "-")
                     {
-                        //Console.WriteLine("set color to white");
+
                         button.BackColor = Color.White;
                     }
-                    //                    else if (game.grid[i, j] == "x")
                     else if (token == "x")
                     {
-                        //Console.WriteLine("set color to red");
                         button.BackColor = Color.Red;
                     }
-                    //                    else if (game.grid[i, j] == "o")
                     else if (token == "o")
                     {
-                        //Console.WriteLine("set color to black");
                         button.BackColor = Color.Black;
                     }
                 }
@@ -153,16 +120,12 @@ namespace CIS153_GitHubFinal
         {
             Button button = sender as Button;
             bool dropped = false;
-            //Console.WriteLine(button.Name);
             String[] indexes = button.Name.Split(':');
             int row = Int16.Parse(indexes[0]);
             int column = Int16.Parse(indexes[1]);
             Console.WriteLine("{0}  {1}", row, column);
-            //Console.WriteLine("before");
             string token = game.get_token(row, column);
-            //Console.WriteLine("after");
             Console.WriteLine("token: {0}", token);
-            //Console.WriteLine("{0}  {1}", indexes[0], indexes[1]);
 
             if (game.is_full(column) == false)
             {
@@ -172,7 +135,7 @@ namespace CIS153_GitHubFinal
             {
                 if (game.streak_of(4) == true)
                 {
-                    Console.WriteLine("Winner");
+                    Console.WriteLine("Winner is " + game.get_player());
                 }
                 else
                 {
@@ -275,7 +238,6 @@ namespace CIS153_GitHubFinal
         }
         public string get_token(int row, int col)
         {
-            //Console.WriteLine("row" + row + " column" + col);
             string token = this.grid[row, col];
             return (token);
         }
@@ -298,9 +260,7 @@ namespace CIS153_GitHubFinal
             string token;
             for(int row = this.get_rows() -1; row >= 0;row--)
             {
-                //Console.WriteLine("inside drop before Row:" + row + " col:" + col);
                 token = get_token(row, col);
-                //Console.WriteLine("AFTER");
                 if (token == "-")
                 {
                     this.set_token(row, col, this.current_player);
@@ -341,7 +301,6 @@ namespace CIS153_GitHubFinal
                         Console.WriteLine("");
                         Thread.Sleep(20);
                     }
-                    //                current_element = board[P.row, P.column];
                     if (current_element == empty)
                     {
                         streak_token = empty;
@@ -401,7 +360,6 @@ namespace CIS153_GitHubFinal
                     {
                         if (L.point_on_line(test))
                         {
-                            //                            L.points_on_line.Add(test);
                             L.add_point(test);
                         }
                     }
@@ -482,7 +440,6 @@ namespace CIS153_GitHubFinal
             bool status = false;
             foreach (line L in this.lines)
             {
-                //                if ((L.a.same(l.a)) && (L.b.same(l.b)))
                 if (L.same(l))
                 {
                     status = true;
@@ -508,15 +465,6 @@ namespace CIS153_GitHubFinal
             int width = this.grid.GetLength(1) - 1;
             int[] h_range = { 0, height };
             int[] w_range = { 0, width };
-            /*
-            if ((y == -5) && (x == 5))
-            {
-                Console.WriteLine("!!!!!!!!!!!!!!checking point!!!!!!!!!!!!!!!!!!!!!!");
-                Console.WriteLine("h: {0} w: {1}", height, width);
-                Thread.Sleep(100);
-            }
-            */
-            //        if (h_range.Contains(y)||w_range.Contains(x))
             if (h_range.Contains(Math.Abs(y)) || w_range.Contains(Math.Abs(x)))
             {
                 status = true;
