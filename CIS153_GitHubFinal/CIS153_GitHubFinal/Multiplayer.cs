@@ -167,7 +167,6 @@ namespace CIS153_GitHubFinal
             if (game.is_full(column) == false)
             {
                 dropped = game.drop_token(column);
-                
             }
             if(dropped == true)
             {
@@ -175,10 +174,12 @@ namespace CIS153_GitHubFinal
                 if (game.get_player() == "x")
                 {
                     game.set_player("o");
+                    lbl_PlayTurn.Text = "Player 2's turn!";
                 }
                 else
                 {
                     game.set_player("x");
+                    lbl_PlayTurn.Text = "Player 1's turn!";
                 }
             }
             //here you can check which button was clicked by the sender
