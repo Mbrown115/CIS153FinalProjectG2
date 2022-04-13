@@ -83,6 +83,8 @@ namespace CIS153_GitHubFinal
                     var button = new Button();
                     button.Name = string.Format("{0}:{1}", i, j);
                     button.Click += MyButtonClick;
+                    button.MouseEnter += MyButtonHover;
+                    button.MouseLeave += MyButtonHoverExit;
                     button.Dock = DockStyle.Fill;
                     this.tableLayoutPanel1.Controls.Add(button, j, i);
                     game.set_button(i, j, button);
@@ -116,6 +118,27 @@ namespace CIS153_GitHubFinal
                 }
             }
         }
+        void MyButtonHover(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            String[] indexes = button.Name.Split(':');
+            int row = Int16.Parse(indexes[0]);
+            int column = Int16.Parse(indexes[1]);
+
+            if (game.is_full(column) == false)
+            {
+                game.hover_token(column);
+            }
+        }
+        void MyButtonHoverExit(object sender, EventArgs e)
+        {
+            cell lasttoken = game.get_last_token();
+            if (game.get_token(lasttoken.get_row(), lasttoken.get_column()) == "-")
+            {
+                Button button = game.get_button(lasttoken.get_row(), lasttoken.get_column());
+                button.BackColor = Color.White;
+            }
+        }
         void MyButtonClick(object sender, EventArgs e)
         {
             Button button = sender as Button;
@@ -123,9 +146,7 @@ namespace CIS153_GitHubFinal
             String[] indexes = button.Name.Split(':');
             int row = Int16.Parse(indexes[0]);
             int column = Int16.Parse(indexes[1]);
-            Console.WriteLine("{0}  {1}", row, column);
             string token = game.get_token(row, column);
-            Console.WriteLine("token: {0}", token);
 
             if ((game.get_winner() == false) && (game.is_full(column) == false))
             {
@@ -187,6 +208,7 @@ namespace CIS153_GitHubFinal
         private float height;
         private float width;
         private float diag;
+        private cell last_token;
         private string current_player;
         private List<line> lines = new List<line>();
         private List<line> playable = new List<line>();
@@ -212,6 +234,14 @@ namespace CIS153_GitHubFinal
             this.points_on_line();
             this.current_player = "x";
             this.winner = false;
+        }
+        public cell get_last_token()
+        {
+            return (this.last_token);
+        }
+        public void set_last_token(int row, int col)
+        {
+            this.last_token = new cell(row, col);
         }
         public bool get_winner()
         {
@@ -264,6 +294,32 @@ namespace CIS153_GitHubFinal
                 full = true;
             }
             return (full);
+        }
+        public bool hover_token(int col)
+        {
+            Button button;
+            bool status = false;
+            string token;
+            for (int row = this.get_rows() - 1; row >= 0; row--)
+            {
+                token = get_token(row, col);
+                if (token == "-")
+                {
+                    button = this.get_button(row, col);
+                    if (this.get_player() == "x")
+                    {
+                        button.BackColor = Color.Red;
+                    }
+                    else if (this.get_player() == "o")
+                    {
+                        button.BackColor = Color.Black;
+                    }
+                    this.set_last_token(row, col);
+                    status = true;
+                    break;
+                }
+            }
+            return (status);
         }
         public bool drop_token(int col)
         {
