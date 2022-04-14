@@ -148,6 +148,8 @@ namespace CIS153_GitHubFinal
             int column = Int16.Parse(indexes[1]);
             string token = game.get_token(row, column);
 
+            game.bot_play();
+
             if ((game.get_winner() == false) && (game.is_full(column) == false))
             {
                 dropped = game.drop_token(column);
@@ -213,6 +215,11 @@ namespace CIS153_GitHubFinal
         private List<line> lines = new List<line>();
         private List<line> playable = new List<line>();
         private List<cell> streak_points = new List<cell>();
+        private List<cell> book_ends = new List<cell>(); //AI
+        private line streak_line; //AI
+        private List<cell> possible_plays = new List<cell>(); //AI
+
+
 
         public board(int c, int r, int s)
         {
@@ -234,6 +241,57 @@ namespace CIS153_GitHubFinal
             this.points_on_line();
             this.current_player = "x";
             this.winner = false;
+        }
+        public void bot_AI()
+        {
+            bool dropped = false;
+            if (this.streak_of(3) == true)
+            {
+                foreach (cell C in this.book_ends)
+                {
+                    if (this.is_possible_move(C) == true)
+                    {
+                        //dropped = drop_token(C.get_column());
+                        Console.WriteLine("I would drop the token in this column " + C.get_column());
+                        if (dropped == true)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            if (dropped == false)
+            {
+                //drop_token(this.get_random_available_column());
+            }
+        }
+        public int get_random_availabe_column() //AI
+        {
+            int stack = -1;
+            Random rand = new Random();
+            List<int> available_stacks = new List<int>();
+            for (int c = 0; c < this.get_columns(); c++)
+            {
+                if (this.get_token(0, c) == "-")
+                {
+                    available_stacks.Add(c);
+                }
+            }
+            stack = available_stacks[rand.Next(0, available_stacks.Count)];
+            return (stack);
+        }
+        public bool is_possible_move(cell C) //AI
+        {
+            bool status = false;
+            foreach (cell P in this.possible_plays)
+            {
+                if (C.same(P) == true)
+                {
+                    status = true;
+                    break;
+                }
+            }
+            return (status);
         }
         public cell get_last_token()
         {
@@ -321,6 +379,69 @@ namespace CIS153_GitHubFinal
             }
             return (status);
         }
+        public void figure_possible_plays() //AI
+        {
+            this.possible_plays.Clear();
+            string token;
+            cell invalid_cell = new cell(-1, -1);
+            for (int col = 0; col < this.get_columns(); col++)
+            {
+                if (this.get_token(0, col) == "-")
+                {
+                    for (int row = this.get_rows() - 1; row >= 0; row--)
+                    {
+                        token = get_token(row, col);
+                        if (token == "-")
+                        {
+                            cell C = new cell(row, col);
+                            this.possible_plays.Add(C);
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    this.possible_plays.Add(invalid_cell);
+                }
+            }
+        }
+        public void bot_play()
+        {
+            this.figure_possible_plays();
+            this.display_possible_moves();
+            if(this.streak_of(3) == true)
+            {
+                this.find_next_cells_of_streak();
+                this.display_book_ends();
+                this.bot_AI();
+                //this.display_streak_points();
+            }
+
+        }
+        public void display_possible_moves()
+        {
+            Console.WriteLine("possible moves");
+            foreach (cell c in this.possible_plays)
+            {
+                c.display();
+            }
+        }
+        public void display_book_ends()
+        {
+            Console.WriteLine("book ends");
+            foreach (cell c in this.book_ends)
+            {
+                c.display();
+            }
+        }
+        public void display_streak_points()
+        {
+            Console.WriteLine("streak points");
+            foreach (cell c in this.streak_points)
+            {
+                c.display();
+            }
+        }
         public bool drop_token(int col)
         {
             bool status = false;
@@ -337,7 +458,39 @@ namespace CIS153_GitHubFinal
             }
             return (status);
         }
-        
+        public void find_next_cells_of_streak() //AI
+        {
+            //this.display_streak_points();
+            //this.streak_line.display();
+            this.book_ends.Clear();
+            line S = this.streak_line;
+            bool after_streak = false;
+            cell fsc = this.streak_points[0];
+            cell lsc = this.streak_points[this.streak_points.Count - 1];
+            cell prev_cell = new cell(-1, -1);
+            foreach (cell C in S.get_points_on_line())
+            {
+                C.display();
+                if ((C.same(fsc)) || (C.same(lsc)))
+                {
+                    if (this.book_ends.Count == 0)
+                    {
+                        book_ends.Add(prev_cell);
+                    }
+                    else
+                    {
+                        after_streak = true;
+                    }
+                }
+                else if (after_streak == true)
+                {
+                    this.book_ends.Add(C);
+                    break;
+                }
+                prev_cell = C;
+            }
+        }
+
         public bool streak_of(int streak_size)
         {
             bool streak = false;
@@ -402,15 +555,18 @@ namespace CIS153_GitHubFinal
                     if (current_streak == streak_size)
                     {
                         streak = true;
+                        this.streak_line = L; //AI
                     }
                 }
                 if (streak == true)
                 {
                     this.streak_points = line_streak_points;
+                    //this.display_streak_points();
+                    break; //this may break the program
                 }
                 else
                 {
-                    this.streak_points.Clear();
+                    //his.streak_points.Clear();
                 }
             }
             return (streak);
