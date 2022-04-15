@@ -1,5 +1,5 @@
 ﻿//-=----------------------=-
-//Authors: Michael Brown, Blake Taylor
+//Authors: Michael Brown, Blake Taylor, Quintin Low
 //Date:    3/28/2022
 //Desc:    Connect 4
 //-=----------------------=-

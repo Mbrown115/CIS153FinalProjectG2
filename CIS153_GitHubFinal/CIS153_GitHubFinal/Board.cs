@@ -86,6 +86,7 @@ namespace CIS153_GitHubFinal
                 {
                     if (this.is_possible_move(C) == true)
                     {
+                        Console.WriteLine("\nbot is playing in column: {0}\n", C.get_column());
                         dropped = drop_token(C.get_column());
                         if (dropped == true)
                         {
@@ -193,6 +194,7 @@ namespace CIS153_GitHubFinal
 
         public string get_token(int row, int col)
         {
+//            Console.WriteLine("rc " + row + " " + col);
             string token = this.grid[row, col];
             return (token);
         }
@@ -287,20 +289,24 @@ namespace CIS153_GitHubFinal
 
         public void display_possible_moves()
         {
-            Console.WriteLine("possible moves");
+            Console.WriteLine("possible moves - start");
             foreach (cell c in this.possible_plays)
             {
                 c.display();
             }
+            Console.WriteLine("possible moves - end");
+
         }
 
         public void display_book_ends()
         {
-            Console.WriteLine("book ends");
+            Console.WriteLine("book ends - start");
             foreach (cell c in this.book_ends)
             {
                 c.display();
             }
+            Console.WriteLine("book ends - end");
+
         }
 
         public void display_streak_points()
@@ -331,22 +337,36 @@ namespace CIS153_GitHubFinal
 
         public void find_next_cells_of_streak() //AI
         {
-            //this.display_streak_points();
+            this.display();
+            this.display_streak_points();
             //this.streak_line.display();
             this.book_ends.Clear();
             line S = this.streak_line;
             bool after_streak = false;
             cell fsc = this.streak_points[0];
             cell lsc = this.streak_points[this.streak_points.Count - 1];
+            Console.WriteLine("streak");
+            Console.WriteLine("fsc");
+            fsc.display();
+            Console.WriteLine("lsc");
+            lsc.display();
+            Console.WriteLine("streak");
             cell prev_cell = new cell(-1, -1);
             foreach (cell C in S.get_points_on_line())
             {
                 C.display();
+                Console.WriteLine("token: {0}", this.get_token(C.get_row(), C.get_column()));
                 if ((C.same(fsc)) || (C.same(lsc)))
                 {
                     if (this.book_ends.Count == 0)
                     {
-                        book_ends.Add(prev_cell);
+                        if(this.get_token(prev_cell.get_row(), prev_cell.get_column()) == "-")
+                        {
+                            Console.WriteLine("\nadd first be");
+                            prev_cell.display();
+                            Console.WriteLine("prev_cell token: {0}\n", this.get_token(prev_cell.get_row(), prev_cell.get_column()));
+                            book_ends.Add(prev_cell);
+                        }
                     }
                     else
                     {
@@ -355,8 +375,17 @@ namespace CIS153_GitHubFinal
                 }
                 else if (after_streak == true)
                 {
-                    this.book_ends.Add(C);
-                    break;
+                    // only add this point if it is blank
+                    if (this.get_token(C.get_row(), C.get_column()) == "-")
+                    {
+                        this.book_ends.Add(C);
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                    
                 }
                 prev_cell = C;
             }
@@ -415,6 +444,7 @@ namespace CIS153_GitHubFinal
                         }
                         else
                         {
+                            line_streak_points.Clear(); // testing if this stops the straggling point
                             line_streak_points.Add(P);
                         }
                     }
