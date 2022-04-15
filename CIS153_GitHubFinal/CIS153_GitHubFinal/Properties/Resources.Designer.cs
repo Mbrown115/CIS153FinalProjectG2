@@ -72,6 +72,26 @@ namespace CIS153_GitHubFinal.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ArcadeScreen_Crop {
+            get {
+                object obj = ResourceManager.GetObject("ArcadeScreen_Crop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ArcadeScreen_Crop_Purple {
+            get {
+                object obj = ResourceManager.GetObject("ArcadeScreen_Crop_Purple", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap black_poker_chip {
             get {
                 object obj = ResourceManager.GetObject("black poker chip", resourceCulture);
