@@ -46,7 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cell.cs" />
+    <Compile Include="Board.cs" />
+    <Compile Include="cell.cs" />
+    <Compile Include="Cell_other.cs" />
+    <Compile Include="line.cs" />
     <Compile Include="NewPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,26 +125,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\connect4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\red poker chip.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\red poker chip small.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\black poker chip.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Records.txt" />
     <None Include="Resources\connect4_Sound.wav" />
     <None Include="Resources\alert1.wav" />
     <None Include="Resources\ArcadeScreen_Crop.png" />
     <None Include="Resources\ArcadeScreen_Crop_Purple.png" />
     <Content Include="Resources\Image1.bmp" />
-    <None Include="Resources\Logo2.png" />
-    <None Include="Resources\Board_CutOut_png.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />

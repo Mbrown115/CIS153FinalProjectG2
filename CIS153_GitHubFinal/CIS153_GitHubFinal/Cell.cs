@@ -1,53 +1,79 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
+using System;
 
 namespace CIS153_GitHubFinal
 {
-    public class Cell
+    public class cell
     {
-        // Setting variables
-        private int neutral;
-        private int player1;
-        private int player2;
+        private float x;
+        private float y;
+        private int row;
+        private int column;
 
-        // Constructor
-        public Cell()
+        public cell(int r, int c)
         {
-
+            setup((float)r, (float)c, r, c);
         }
 
-        //-=--------setters----------=-
-        public void setNeutral(int n)
+        public cell(float Y, float X)
         {
-            neutral = n;
+            setup(Y, X, (int)Y, (int)X);
         }
-        public void setPlayer1(int p1)
-        {
-            player1 = p1;
-        }
-        public void setPlayer2(int p2)
-        {
-            player2 = p2;
-        }
-        //-=--------end setters----------=-
 
-        //-=--------getters----------=-
-        public int getNeutral()
+        public void setup(float Y, float X, int r, int c)
         {
-            return neutral;
+            this.x = X;
+            if (Y > 0)
+            {
+                this.y = Y * -1;
+            }
+            else
+            {
+                this.y = Y;
+            }
+            this.row = r;
+            this.column = c;
         }
-        public int getPlayer1()
+
+        public int get_column()
         {
-            return player1;
+            return (this.column);
         }
-        public int getPlayer2()
+
+        public int get_row()
         {
-            return player2;
+            return (this.row);
         }
-        //-=--------end getters----------=-
+
+        public float get_x()
+        {
+            return (this.x);
+        }
+
+        public float get_y()
+        {
+            return (this.y);
+        }
+
+        public bool same(cell a)
+        {
+            bool status = false;
+            if ((this.x == a.x) && (this.y == a.y))
+            {
+                status = true;
+            }
+            return (status);
+        }
+
+        public void set_y(float y)
+        {
+            this.y = y;
+        }
+
+        public void display()
+        {
+            Console.WriteLine("x: {0} y: {1} column: {2} row: {3}", this.x, this.y, this.column, this.row);
+        }
     }
+    
 }
