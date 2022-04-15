@@ -14,6 +14,7 @@ namespace CIS153_GitHubFinal
     public partial class Stats : Form
     {
         Welcome menu;
+        Players players;
 
         public Stats (Welcome w)
         {
@@ -39,16 +40,66 @@ namespace CIS153_GitHubFinal
             }
         }
 
-        private void DisplayStats ()
+        public void DisplayStats()
         {
-            //Placed the textfile in the "Debug" folder, from reading the default behavior is to look here
-            //this way the filepath below should work, more concise that using the entire fielpath
-            string filePath = "WinRecord.txt";
-            string line = "";
+            string filePath = "";
+            int count = 0;
+            string playerWins = "";
+            string aiWins = "";
+            string ties = "";
+            string timesPlayed = "";
 
-            FileStream stats = new FileStream (filePath , FileMode.Open , FileAccess.Read);
+            try
+            {
+                filePath = CIS153_GitHubFinal.Properties.Resources.Records;
+                Console.WriteLine("Opened");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("file cannot open" + e.Message);
+            }
+            String[] words = filePath.Split(',');
 
-            //while((line = stats.sp)
+            foreach (String word in words)
+            {
+                if (count == 0)
+                {
+                    playerWins = word;
+                    count++;
+                }
+                else if (count == 1)
+                {
+                    aiWins = word;
+                    count++;
+                }
+                else if (count == 2)
+                {
+                    ties = word;
+                    count++;
+                }
+                else if (count == 3)
+                {
+                    timesPlayed = word;
+                    count = 0;
+                }
+            }
+
+            //just testing the display
+            listBx_Stats.Items.Add("Number of Player Wins: " + playerWins);
+            listBx_Stats.Items.Add("Number of AI Wins: " + aiWins);
+            listBx_Stats.Items.Add("Number of Ties: " + ties);
+            listBx_Stats.Items.Add("Number of times game has been played: " + timesPlayed);
+        }
+
+        public void updateFile()
+        {
+            string filePath = CIS153_GitHubFinal.Properties.Resources.Records;
+            StreamWriter write = File.AppendText(filePath);
+
+            //write.WriteLine("test" + " " + "test");
+            //write.WriteLine("testing");
+            //write.Flush();
+            write.Close();
         }
     }
 }

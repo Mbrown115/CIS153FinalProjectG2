@@ -15,6 +15,11 @@ namespace CIS153_GitHubFinal
         private int wins;
         private int loss;
 
+        private int playerWin;
+        private int aiWin;
+        private int tie;
+        private int timesPlayed;
+
         //Constructor
         public Players()
         {
@@ -28,7 +33,7 @@ namespace CIS153_GitHubFinal
             name = n;
         }
 
-        public void setPlayerWins(int w)
+        public void setWins(int w)
         {
             wins = w;
         }
@@ -37,6 +42,27 @@ namespace CIS153_GitHubFinal
         {
             loss = l;
         }
+
+        public void setPlayerWins(int w)
+        {
+            playerWin = w;
+        }
+
+        public void setAIWins(int w)
+        {
+            aiWin = w;
+        }
+
+        public void setTies(int t)
+        {
+            tie = t;
+        }
+
+        public void setTimesPlayed(int tp)
+        {
+            timesPlayed = tp;
+        }
+
         //-----------------------------------------------------
 
 
@@ -47,7 +73,7 @@ namespace CIS153_GitHubFinal
             return name;
         }
 
-        public int getPlayerWins()
+        public int getWins()
         {
             return wins;
         }
@@ -55,6 +81,26 @@ namespace CIS153_GitHubFinal
         public int getPlayerLoss()
         {
             return loss;
+        }
+
+        public int getPlayerWins()
+        {
+            return playerWin++;
+        }
+
+        public int getAIWins()
+        {
+            return aiWin;
+        }
+
+        public int getTies()
+        {
+            return tie;
+        }
+
+        public int getTimesPlayed()
+        {
+            return timesPlayed;
         }
         //-----------------------------------------------------
 

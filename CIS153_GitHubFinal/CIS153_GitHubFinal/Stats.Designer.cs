@@ -59,20 +59,20 @@ namespace CIS153_GitHubFinal
             // 
             // listBx_Stats
             // 
+            this.listBx_Stats.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBx_Stats.FormattingEnabled = true;
-            this.listBx_Stats.ItemHeight = 29;
-            this.listBx_Stats.Location = new System.Drawing.Point(235, 133);
+            this.listBx_Stats.ItemHeight = 48;
+            this.listBx_Stats.Location = new System.Drawing.Point(134, 139);
             this.listBx_Stats.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.listBx_Stats.Name = "listBx_Stats";
-            this.listBx_Stats.ScrollAlwaysVisible = true;
-            this.listBx_Stats.Size = new System.Drawing.Size(580, 671);
+            this.listBx_Stats.Size = new System.Drawing.Size(880, 724);
             this.listBx_Stats.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(314, 51);
+            this.label1.Location = new System.Drawing.Point(418, 57);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(317, 55);
@@ -83,7 +83,7 @@ namespace CIS153_GitHubFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 977);
+            this.ClientSize = new System.Drawing.Size(1165, 977);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBx_Stats);
