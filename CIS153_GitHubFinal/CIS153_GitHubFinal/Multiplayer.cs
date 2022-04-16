@@ -153,9 +153,9 @@ namespace CIS153_GitHubFinal
                 {
                     game.set_winner(true);
                     Console.WriteLine("Winner is " + game.get_player());
-                    tableLayoutPanel1.Hide();
-                    picBx_WinLose.Visible = true;
-                    picBx_WinLose.Image = 
+                    //tableLayoutPanel1.Hide();
+                    //picBx_WinLose.Visible = true;
+                    //picBx_WinLose.Image = 
                 }
                 else
                 {
