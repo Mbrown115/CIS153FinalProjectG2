@@ -19295,6 +19295,12 @@
   <data name="ArcadeScreen_Crop_Purple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ArcadeScreen_Crop_Purple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PlayerTwo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayerTwo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player1_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PlayerOne" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PlayerOne.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

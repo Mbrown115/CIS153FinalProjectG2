@@ -30,7 +30,6 @@ namespace CIS153_GitHubFinal
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Multiplayer));
-            this.lbl_PlayTurn = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,23 +42,11 @@ namespace CIS153_GitHubFinal
             this.gamePlayInstructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rulesOfTheGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.picBx_WinLose = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBx_PTurn = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBx_WinLose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBx_PTurn)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbl_PlayTurn
-            // 
-            this.lbl_PlayTurn.AutoSize = true;
-            this.lbl_PlayTurn.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_PlayTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PlayTurn.ForeColor = System.Drawing.Color.SlateBlue;
-            this.lbl_PlayTurn.Location = new System.Drawing.Point(58, 680);
-            this.lbl_PlayTurn.Name = "lbl_PlayTurn";
-            this.lbl_PlayTurn.Size = new System.Drawing.Size(227, 32);
-            this.lbl_PlayTurn.TabIndex = 2;
-            this.lbl_PlayTurn.Text = "Player 1\'s Turn!";
             // 
             // tableLayoutPanel1
             // 
@@ -175,17 +162,18 @@ namespace CIS153_GitHubFinal
             this.picBx_WinLose.TabStop = false;
             this.picBx_WinLose.Visible = false;
             // 
-            // pictureBox1
+            // picBx_PTurn
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(389, 653);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 30);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.picBx_PTurn.BackColor = System.Drawing.Color.Transparent;
+            this.picBx_PTurn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBx_PTurn.BackgroundImage")));
+            this.picBx_PTurn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBx_PTurn.InitialImage = null;
+            this.picBx_PTurn.Location = new System.Drawing.Point(389, 653);
+            this.picBx_PTurn.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.picBx_PTurn.Name = "picBx_PTurn";
+            this.picBx_PTurn.Size = new System.Drawing.Size(240, 41);
+            this.picBx_PTurn.TabIndex = 6;
+            this.picBx_PTurn.TabStop = false;
             // 
             // Multiplayer
             // 
@@ -196,9 +184,8 @@ namespace CIS153_GitHubFinal
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1290, 1263);
             this.ControlBox = false;
+            this.Controls.Add(this.picBx_PTurn);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lbl_PlayTurn);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.picBx_WinLose);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -209,14 +196,13 @@ namespace CIS153_GitHubFinal
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBx_WinLose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBx_PTurn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lbl_PlayTurn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem gameOptionsToolStripMenuItem;
@@ -229,6 +215,6 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.ToolStripMenuItem previousGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playerStatsToolStripMenuItem;
         private System.Windows.Forms.PictureBox picBx_WinLose;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBx_PTurn;
     }
 }

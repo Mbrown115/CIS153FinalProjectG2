@@ -134,7 +134,13 @@
     <Folder Include="bin\Debug\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\PlayerTwo.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\PlayerOne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player1_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

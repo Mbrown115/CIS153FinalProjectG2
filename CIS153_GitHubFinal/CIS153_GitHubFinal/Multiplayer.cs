@@ -159,18 +159,20 @@ namespace CIS153_GitHubFinal
                 }
                 else
                 {
-                    Console.WriteLine("Play On!!!");
+                    //Console.WriteLine("Play On!!!");
                 }
                 DrawBoard();
                 if (game.get_player() == "x")
                 {
                     game.set_player("o");
-                    lbl_PlayTurn.Text = "Player 2's turn!";
+                    //lbl_PlayTurn.Text = "Player 2's turn!";                    
+                    picBx_PTurn.BackgroundImage = Properties.Resources.PlayerTwo;
                 }
                 else
                 {
                     game.set_player("x");
-                    lbl_PlayTurn.Text = "Player 1's turn!";
+                    //lbl_PlayTurn.Text = "Player 1's turn!";                    
+                    picBx_PTurn.BackgroundImage = Properties.Resources.player1_1;                    
                 }
             }
             //here you can check which button was clicked by the sender
