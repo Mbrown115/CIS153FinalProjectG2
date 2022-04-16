@@ -51,7 +51,7 @@ namespace CIS153_GitHubFinal
 
             try
             {
-                filePath = CIS153_GitHubFinal.Properties.Resources.Records;
+                filePath = "CIS153_GitHubFinal/Properties/Resources.Records";
                 Console.WriteLine("Opened");
             }
             catch (Exception e)
@@ -93,7 +93,7 @@ namespace CIS153_GitHubFinal
 
         public void updateFile()
         {
-            string filePath = CIS153_GitHubFinal.Properties.Resources.Records;
+            string filePath = "CIS153_GitHubFinal/Properties/Resources/Records";
             StreamWriter write = File.AppendText(filePath);
 
             //write.WriteLine("test" + " " + "test");

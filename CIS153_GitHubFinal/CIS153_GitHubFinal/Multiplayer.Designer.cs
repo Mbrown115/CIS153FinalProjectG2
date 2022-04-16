@@ -67,7 +67,7 @@ namespace CIS153_GitHubFinal
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(392, 178);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(389, 185);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -166,9 +166,10 @@ namespace CIS153_GitHubFinal
             // picBx_WinLose
             // 
             this.picBx_WinLose.BackColor = System.Drawing.Color.Transparent;
-            this.picBx_WinLose.Location = new System.Drawing.Point(392, 189);
+            this.picBx_WinLose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBx_WinLose.Location = new System.Drawing.Point(377, 375);
             this.picBx_WinLose.Name = "picBx_WinLose";
-            this.picBx_WinLose.Size = new System.Drawing.Size(530, 502);
+            this.picBx_WinLose.Size = new System.Drawing.Size(550, 83);
             this.picBx_WinLose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBx_WinLose.TabIndex = 5;
             this.picBx_WinLose.TabStop = false;
@@ -179,10 +180,10 @@ namespace CIS153_GitHubFinal
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(400, 653);
+            this.pictureBox1.Location = new System.Drawing.Point(389, 653);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 33);
+            this.pictureBox1.Size = new System.Drawing.Size(200, 30);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -195,8 +196,8 @@ namespace CIS153_GitHubFinal
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1290, 1263);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_PlayTurn);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.picBx_WinLose);
