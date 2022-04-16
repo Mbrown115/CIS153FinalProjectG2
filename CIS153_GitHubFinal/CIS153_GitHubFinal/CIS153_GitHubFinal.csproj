@@ -122,6 +122,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\.editorconfig" />
     <None Include="Resources\Records.txt" />
     <None Include="Resources\connect4_Sound.wav" />
     <None Include="Resources\alert1.wav" />
@@ -131,6 +132,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayerOne.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

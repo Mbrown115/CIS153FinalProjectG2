@@ -139,11 +139,12 @@ namespace CIS153_GitHubFinal.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static string Records {
+        internal static System.Drawing.Bitmap PlayerOne {
             get {
-                return ResourceManager.GetString("Records", resourceCulture);
+                object obj = ResourceManager.GetObject("PlayerOne", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

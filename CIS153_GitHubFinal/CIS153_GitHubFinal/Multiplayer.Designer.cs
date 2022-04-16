@@ -177,10 +177,12 @@ namespace CIS153_GitHubFinal
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(392, 646);
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(400, 653);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 45);
+            this.pictureBox1.Size = new System.Drawing.Size(208, 33);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
