@@ -22,23 +22,6 @@ namespace CIS153_GitHubFinal
             menu = sp;
         }
 
-        private void btn_Menu_Click(object sender, EventArgs e)
-        {
-            menu.Show();
-            Close();
-        }
-
-        private void btn_Exit_Click(object sender, EventArgs e)
-        {
-
-            DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
         private void displayTurn()
         {
             //Display the player turn status in the label at the bottom of form
@@ -48,9 +31,7 @@ namespace CIS153_GitHubFinal
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Picture Box clicked!");
 
-            pictureBox1.BackgroundImage = Resources.black_poker_chip;
         }
     }
     

@@ -45,13 +45,6 @@ namespace CIS153_GitHubFinal
             }
         }
 
-        private void displayTurn()
-        {
-            //this will display the current players turn status in the label at the bottom
-            //of the game screen.
-
-            // lbl_PlayTurn.Text = 
-        }
         public void GameTest()
         {
             int columns = 7;
@@ -160,6 +153,9 @@ namespace CIS153_GitHubFinal
                 {
                     game.set_winner(true);
                     Console.WriteLine("Winner is " + game.get_player());
+                    tableLayoutPanel1.Hide();
+                    picBx_WinLose.Visible = true;
+                    picBx_WinLose.Image = 
                 }
                 else
                 {

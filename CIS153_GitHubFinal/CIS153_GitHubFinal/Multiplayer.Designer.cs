@@ -42,7 +42,11 @@ namespace CIS153_GitHubFinal
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gamePlayInstructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rulesOfTheGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.picBx_WinLose = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBx_WinLose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_PlayTurn
@@ -51,7 +55,7 @@ namespace CIS153_GitHubFinal
             this.lbl_PlayTurn.BackColor = System.Drawing.Color.Transparent;
             this.lbl_PlayTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_PlayTurn.ForeColor = System.Drawing.Color.SlateBlue;
-            this.lbl_PlayTurn.Location = new System.Drawing.Point(402, 659);
+            this.lbl_PlayTurn.Location = new System.Drawing.Point(58, 680);
             this.lbl_PlayTurn.Name = "lbl_PlayTurn";
             this.lbl_PlayTurn.Size = new System.Drawing.Size(227, 32);
             this.lbl_PlayTurn.TabIndex = 2;
@@ -63,13 +67,13 @@ namespace CIS153_GitHubFinal
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(395, 188);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(392, 178);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(514, 469);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(530, 468);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // menuStrip1
@@ -159,6 +163,27 @@ namespace CIS153_GitHubFinal
             this.rulesOfTheGameToolStripMenuItem.Size = new System.Drawing.Size(378, 34);
             this.rulesOfTheGameToolStripMenuItem.Text = "Rules of The Game";
             // 
+            // picBx_WinLose
+            // 
+            this.picBx_WinLose.BackColor = System.Drawing.Color.Transparent;
+            this.picBx_WinLose.Location = new System.Drawing.Point(392, 189);
+            this.picBx_WinLose.Name = "picBx_WinLose";
+            this.picBx_WinLose.Size = new System.Drawing.Size(530, 502);
+            this.picBx_WinLose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBx_WinLose.TabIndex = 5;
+            this.picBx_WinLose.TabStop = false;
+            this.picBx_WinLose.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(392, 646);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(300, 45);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // Multiplayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -168,9 +193,11 @@ namespace CIS153_GitHubFinal
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1290, 1263);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lbl_PlayTurn);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.picBx_WinLose);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -178,6 +205,8 @@ namespace CIS153_GitHubFinal
             this.Text = "2 Player";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBx_WinLose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +225,7 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.ToolStripMenuItem menStp_Options_Exit;
         private System.Windows.Forms.ToolStripMenuItem previousGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playerStatsToolStripMenuItem;
+        private System.Windows.Forms.PictureBox picBx_WinLose;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
