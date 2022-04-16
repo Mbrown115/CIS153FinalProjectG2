@@ -39,10 +39,10 @@ namespace CIS153_GitHubFinal
             // 
             // btn_Menu
             // 
-            this.btn_Menu.Location = new System.Drawing.Point(685, 806);
+            this.btn_Menu.Location = new System.Drawing.Point(771, 1008);
             this.btn_Menu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.Size = new System.Drawing.Size(107, 38);
+            this.btn_Menu.Size = new System.Drawing.Size(120, 48);
             this.btn_Menu.TabIndex = 0;
             this.btn_Menu.Text = "Main Menu";
             this.btn_Menu.UseVisualStyleBackColor = true;
@@ -50,10 +50,10 @@ namespace CIS153_GitHubFinal
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Location = new System.Drawing.Point(797, 806);
+            this.btn_Exit.Location = new System.Drawing.Point(897, 1008);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(107, 38);
+            this.btn_Exit.Size = new System.Drawing.Size(120, 48);
             this.btn_Exit.TabIndex = 1;
             this.btn_Exit.Text = "Exit Game";
             this.btn_Exit.UseVisualStyleBackColor = true;
@@ -63,7 +63,7 @@ namespace CIS153_GitHubFinal
             // 
             this.lbl_PlayerTurn.AutoSize = true;
             this.lbl_PlayerTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PlayerTurn.Location = new System.Drawing.Point(11, 815);
+            this.lbl_PlayerTurn.Location = new System.Drawing.Point(12, 1019);
             this.lbl_PlayerTurn.Name = "lbl_PlayerTurn";
             this.lbl_PlayerTurn.Size = new System.Drawing.Size(159, 29);
             this.lbl_PlayerTurn.TabIndex = 2;
@@ -77,19 +77,18 @@ namespace CIS153_GitHubFinal
             this.pictureBox1.Location = new System.Drawing.Point(1, 2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(127, 118);
+            this.pictureBox1.Size = new System.Drawing.Size(143, 148);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Single
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.connect4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(915, 853);
+            this.ClientSize = new System.Drawing.Size(1029, 1066);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_PlayerTurn);
