@@ -22,6 +22,8 @@ namespace CIS153_GitHubFinal
     public partial class Welcome : Form
     {
         public static string bot_select = "-";
+        public static int rows_select = 6;
+        public static int columns_select = 7;
         public Welcome()
         {
             InitializeComponent();
@@ -40,6 +42,8 @@ namespace CIS153_GitHubFinal
         private void btn_multiplayer_Click(object sender, EventArgs e)
         {
             bot_select = comboBox1.Text;
+            rows_select = Int32.Parse(comboBox2.Text);
+            columns_select = Int32.Parse(comboBox3.Text);
             //Console.WriteLine("In Welcome " + bot_select);
             Multiplayer Dual = new Multiplayer(this);
             Dual.Show();
@@ -65,6 +69,11 @@ namespace CIS153_GitHubFinal
         }
 
         private void Welcome_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

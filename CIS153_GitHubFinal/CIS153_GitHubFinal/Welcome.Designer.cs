@@ -36,6 +36,10 @@ namespace CIS153_GitHubFinal
             this.btn_exit = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbl_bot = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_single
@@ -76,7 +80,7 @@ namespace CIS153_GitHubFinal
             this.btn_multiplayer.Name = "btn_multiplayer";
             this.btn_multiplayer.Size = new System.Drawing.Size(200, 90);
             this.btn_multiplayer.TabIndex = 3;
-            this.btn_multiplayer.Text = "Two\r\nPlayer";
+            this.btn_multiplayer.Text = "Start Game";
             this.btn_multiplayer.UseVisualStyleBackColor = false;
             this.btn_multiplayer.Click += new System.EventHandler(this.btn_multiplayer_Click);
             // 
@@ -101,9 +105,9 @@ namespace CIS153_GitHubFinal
             "-",
             "x",
             "o"});
-            this.comboBox1.Location = new System.Drawing.Point(611, 354);
+            this.comboBox1.Location = new System.Drawing.Point(666, 354);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.Size = new System.Drawing.Size(66, 28);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.Text = "-";
             // 
@@ -116,6 +120,53 @@ namespace CIS153_GitHubFinal
             this.lbl_bot.TabIndex = 6;
             this.lbl_bot.Text = "BOT";
             // 
+            // comboBox2
+            // 
+            this.comboBox2.AccessibleName = "rows";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "5",
+            "6",
+            "7"});
+            this.comboBox2.Location = new System.Drawing.Point(310, 354);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(65, 28);
+            this.comboBox2.TabIndex = 7;
+            this.comboBox2.Text = "6";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.AccessibleName = "columns";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "6",
+            "7",
+            "8"});
+            this.comboBox3.Location = new System.Drawing.Point(395, 354);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(59, 28);
+            this.comboBox3.TabIndex = 8;
+            this.comboBox3.Text = "7";
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(310, 328);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Rows";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(391, 328);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Columns";
+            // 
             // Welcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -124,6 +175,10 @@ namespace CIS153_GitHubFinal
             this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_Crop_Purple;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1040, 1044);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.lbl_bot);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_exit);
@@ -147,6 +202,10 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lbl_bot;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

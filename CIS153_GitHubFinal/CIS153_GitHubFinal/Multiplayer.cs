@@ -49,6 +49,8 @@ namespace CIS153_GitHubFinal
             int rows = 6;
             int streak = 4;
             string bot = Welcome.bot_select;
+            rows = Welcome.rows_select;
+            columns = Welcome.columns_select;
             game = new board(columns, rows, streak, bot);
             //Console.WriteLine("in multiplayer " + bot);
             var rowCount = game.get_rows();
