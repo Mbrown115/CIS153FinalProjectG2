@@ -40,6 +40,8 @@ namespace CIS153_GitHubFinal
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_single
@@ -167,6 +169,30 @@ namespace CIS153_GitHubFinal
             this.label2.TabIndex = 10;
             this.label2.Text = "Columns";
             // 
+            // comboBox4
+            // 
+            this.comboBox4.AccessibleName = "streak";
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "3",
+            "4",
+            "5"});
+            this.comboBox4.Location = new System.Drawing.Point(513, 354);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(67, 28);
+            this.comboBox4.TabIndex = 11;
+            this.comboBox4.Text = "4";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(513, 328);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Streak";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // Welcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -175,6 +201,8 @@ namespace CIS153_GitHubFinal
             this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_Crop_Purple;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1040, 1044);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox3);
@@ -206,6 +234,8 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label3;
     }
 }
 

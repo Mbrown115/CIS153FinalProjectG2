@@ -51,8 +51,14 @@ namespace CIS153_GitHubFinal
             string bot = Welcome.bot_select;
             rows = Welcome.rows_select;
             columns = Welcome.columns_select;
+            streak = Welcome.streak_select;
+            /*
+            columns = 7;
+            rows = 6;
+            streak = 3;
+            */
+            Console.WriteLine("in multiplayer col: {0} row: {1} streak: {2} bot: {3} ", columns, rows, streak, bot);
             game = new board(columns, rows, streak, bot);
-            //Console.WriteLine("in multiplayer " + bot);
             var rowCount = game.get_rows();
             var columnCount = game.get_columns();
 
@@ -200,7 +206,8 @@ namespace CIS153_GitHubFinal
         bool check_game_over()
         {
             bool status = false;
-            if (game.streak_of(4) == true)
+            Console.WriteLine("streak_size: {0}", game.get_streak());
+            if (game.streak_of(game.get_streak()) == true)
             {
                 // set the winner to the previous player as we have already changed to next player
                 if (game.get_player() == "x")

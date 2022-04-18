@@ -15,6 +15,7 @@ namespace CIS153_GitHubFinal
         private string bot;
         private int columns;
         private int rows;
+        private int streak_target;
         private string[,] grid;
         private Button[,] buttons;
         private float height;
@@ -46,6 +47,7 @@ namespace CIS153_GitHubFinal
             {
                 this.bot = "-";
             }
+            this.streak_target = s;
             this.grid = new string[r, c];
             this.buttons = new Button[r, c];
             // build initial blank grid
@@ -78,7 +80,8 @@ namespace CIS153_GitHubFinal
             bool dropped = false;
             this.figure_possible_plays();
             this.display_possible_moves();
-            if (this.streak_of(3) == true)
+            //if (this.streak_of(3) == true)
+            if (this.streak_of(this.streak_target-1) == true)
             {
                 this.find_next_cells_of_streak();
                 this.display_book_ends();
@@ -100,7 +103,10 @@ namespace CIS153_GitHubFinal
                 dropped = drop_token(this.get_random_available_column());
             }
         }
-
+        public int get_streak()
+        {
+            return (this.streak_target);
+        }
         public void set_game_over(bool status)
         {
             this.game_over = status;
@@ -495,7 +501,9 @@ namespace CIS153_GitHubFinal
         {
             this.height = this.grid.GetLength(0) - 1;
             this.width = this.grid.GetLength(1) - 1;
-            this.diag = (float)Math.Sqrt(Math.Pow((streak_size - 1), 2) + Math.Pow((streak_size - 1), 2));
+            Console.WriteLine("height: {0} width: {1}", height, width);
+            this.diag = (float)Math.Sqrt(Math.Pow((height - 1), 2) + Math.Pow((width - 1), 2));
+            //this.diag = (float)Math.Sqrt(Math.Pow((streak_size - 1), 2) + Math.Pow((streak_size - 1), 2));
             Console.WriteLine("height: {0}, width: {1}, diag: {2}", this.height, this.width, this.diag);
             if ((this.height < streak_size) || (this.width < streak_size) || (this.diag < streak_size))
             {
