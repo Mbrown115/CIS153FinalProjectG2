@@ -48,7 +48,9 @@ namespace CIS153_GitHubFinal
             int columns = 7;
             int rows = 6;
             int streak = 4;
-            game = new board(columns, rows, streak, "o");
+            string bot = Welcome.bot_select;
+            game = new board(columns, rows, streak, bot);
+            //Console.WriteLine("in multiplayer " + bot);
             var rowCount = game.get_rows();
             var columnCount = game.get_columns();
 
@@ -100,7 +102,8 @@ namespace CIS153_GitHubFinal
                     token = game.get_token(r, c);
                     if (token == "-")
                     {
-                        button.BackColor = Color.FromArgb(50, 62, 190, 191);
+                        //button.BackColor = Color.FromArgb(50, 62, 190, 191);
+                        button.BackColor = Color.White;
                     }
                     else if (token == "x")
                     {
@@ -151,6 +154,7 @@ namespace CIS153_GitHubFinal
             {
                 play_bot_round();
             }
+            check_game_over();
             //game.bot_play();
             /*
             if ((check_game_over() == false) && (game.is_full(column) == false))

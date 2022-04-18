@@ -21,6 +21,7 @@ namespace CIS153_GitHubFinal
 
     public partial class Welcome : Form
     {
+        public static string bot_select = "-";
         public Welcome()
         {
             InitializeComponent();
@@ -38,8 +39,9 @@ namespace CIS153_GitHubFinal
         // Brings up the multiplayer form
         private void btn_multiplayer_Click(object sender, EventArgs e)
         {
+            bot_select = comboBox1.Text;
+            //Console.WriteLine("In Welcome " + bot_select);
             Multiplayer Dual = new Multiplayer(this);
-
             Dual.Show();
             Hide();
 

@@ -34,6 +34,8 @@ namespace CIS153_GitHubFinal
             this.btn_stats = new System.Windows.Forms.Button();
             this.btn_multiplayer = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbl_bot = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_single
@@ -91,6 +93,29 @@ namespace CIS153_GitHubFinal
             this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.AccessibleName = "bot";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "-",
+            "x",
+            "o"});
+            this.comboBox1.Location = new System.Drawing.Point(611, 354);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.Text = "-";
+            // 
+            // lbl_bot
+            // 
+            this.lbl_bot.AutoSize = true;
+            this.lbl_bot.Location = new System.Drawing.Point(691, 331);
+            this.lbl_bot.Name = "lbl_bot";
+            this.lbl_bot.Size = new System.Drawing.Size(41, 20);
+            this.lbl_bot.TabIndex = 6;
+            this.lbl_bot.Text = "BOT";
+            // 
             // Welcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -99,6 +124,8 @@ namespace CIS153_GitHubFinal
             this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_Crop_Purple;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1040, 1044);
+            this.Controls.Add(this.lbl_bot);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_stats);
             this.Controls.Add(this.btn_single);
@@ -109,6 +136,7 @@ namespace CIS153_GitHubFinal
             this.Text = "Connect 4";
             this.Load += new System.EventHandler(this.Welcome_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -117,6 +145,8 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.Button btn_stats;
         private System.Windows.Forms.Button btn_multiplayer;
         private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lbl_bot;
     }
 }
 
