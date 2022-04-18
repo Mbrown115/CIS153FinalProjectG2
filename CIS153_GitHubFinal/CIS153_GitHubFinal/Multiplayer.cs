@@ -93,9 +93,8 @@ namespace CIS153_GitHubFinal
                     button = game.get_button(r, c);
                     token = game.get_token(r, c);
                     if (token == "-")
-                    {
-
-                        button.BackColor = Color.White;
+                    {                        
+                        button.BackColor = Color.FromArgb(50,62,190,191);
                     }
                     else if (token == "x")
                     {

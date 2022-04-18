@@ -34,29 +34,28 @@ namespace CIS153_GitHubFinal
             this.btn_stats = new System.Windows.Forms.Button();
             this.btn_multiplayer = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_single
             // 
-            this.btn_single.BackColor = System.Drawing.Color.Blue;
+            this.btn_single.BackColor = System.Drawing.Color.Transparent;
+            this.btn_single.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_single.BackgroundImage")));
+            this.btn_single.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_single.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_single.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_single.Location = new System.Drawing.Point(14, 14);
+            this.btn_single.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_single.Location = new System.Drawing.Point(336, 221);
             this.btn_single.Margin = new System.Windows.Forms.Padding(4, 5, 4, 10);
             this.btn_single.Name = "btn_single";
-            this.btn_single.Size = new System.Drawing.Size(200, 90);
+            this.btn_single.Size = new System.Drawing.Size(170, 78);
             this.btn_single.TabIndex = 1;
-            this.btn_single.Text = "Single Player";
             this.btn_single.UseVisualStyleBackColor = false;
             this.btn_single.Click += new System.EventHandler(this.btn_single_Click);
             // 
             // btn_stats
             // 
-            this.btn_stats.BackColor = System.Drawing.Color.White;
+            this.btn_stats.BackColor = System.Drawing.Color.Transparent;
             this.btn_stats.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_stats.Location = new System.Drawing.Point(14, 214);
+            this.btn_stats.Location = new System.Drawing.Point(432, 408);
             this.btn_stats.Margin = new System.Windows.Forms.Padding(4, 5, 4, 10);
             this.btn_stats.Name = "btn_stats";
             this.btn_stats.Size = new System.Drawing.Size(200, 60);
@@ -67,10 +66,10 @@ namespace CIS153_GitHubFinal
             // 
             // btn_multiplayer
             // 
-            this.btn_multiplayer.BackColor = System.Drawing.Color.Gold;
+            this.btn_multiplayer.BackColor = System.Drawing.Color.Transparent;
             this.btn_multiplayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_multiplayer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_multiplayer.Location = new System.Drawing.Point(14, 109);
+            this.btn_multiplayer.Location = new System.Drawing.Point(532, 221);
             this.btn_multiplayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 10);
             this.btn_multiplayer.Name = "btn_multiplayer";
             this.btn_multiplayer.Size = new System.Drawing.Size(200, 90);
@@ -81,9 +80,9 @@ namespace CIS153_GitHubFinal
             // 
             // btn_exit
             // 
-            this.btn_exit.BackColor = System.Drawing.Color.Red;
+            this.btn_exit.BackColor = System.Drawing.Color.Transparent;
             this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_exit.Location = new System.Drawing.Point(14, 331);
+            this.btn_exit.Location = new System.Drawing.Point(432, 509);
             this.btn_exit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 10);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(200, 60);
@@ -91,19 +90,6 @@ namespace CIS153_GitHubFinal
             this.btn_exit.Text = "Exit";
             this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btn_single);
-            this.panel1.Controls.Add(this.btn_stats);
-            this.panel1.Controls.Add(this.btn_exit);
-            this.panel1.Controls.Add(this.btn_multiplayer);
-            this.panel1.Location = new System.Drawing.Point(400, 297);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 405);
-            this.panel1.TabIndex = 0;
             // 
             // Welcome
             // 
@@ -113,13 +99,15 @@ namespace CIS153_GitHubFinal
             this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_Crop_Purple;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1040, 1044);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btn_exit);
+            this.Controls.Add(this.btn_stats);
+            this.Controls.Add(this.btn_single);
+            this.Controls.Add(this.btn_multiplayer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Welcome";
             this.Text = "Connect 4";
             this.Load += new System.EventHandler(this.Welcome_Load);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -129,7 +117,6 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.Button btn_stats;
         private System.Windows.Forms.Button btn_multiplayer;
         private System.Windows.Forms.Button btn_exit;
-        private System.Windows.Forms.Panel panel1;
     }
 }
 

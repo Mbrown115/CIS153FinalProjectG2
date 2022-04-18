@@ -55,6 +55,7 @@ namespace CIS153_GitHubFinal
 
         private void btn_single_Click(object sender, EventArgs e)
         {
+                       
             Single solo = new Single(this);
 
             solo.Show();

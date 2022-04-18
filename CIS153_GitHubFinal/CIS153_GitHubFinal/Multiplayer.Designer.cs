@@ -75,7 +75,7 @@ namespace CIS153_GitHubFinal
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1290, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1290, 36);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -87,7 +87,7 @@ namespace CIS153_GitHubFinal
             this.menStp_Options_Exit});
             this.gameOptionsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gameOptionsToolStripMenuItem.Name = "gameOptionsToolStripMenuItem";
-            this.gameOptionsToolStripMenuItem.Size = new System.Drawing.Size(172, 29);
+            this.gameOptionsToolStripMenuItem.Size = new System.Drawing.Size(172, 32);
             this.gameOptionsToolStripMenuItem.Text = "Game Options";
             // 
             // viewPreviousGameToolStripMenuItem
@@ -135,7 +135,7 @@ namespace CIS153_GitHubFinal
             this.rulesOfTheGameToolStripMenuItem});
             this.helpToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(76, 29);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(76, 32);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // gamePlayInstructionsToolStripMenuItem
@@ -171,7 +171,7 @@ namespace CIS153_GitHubFinal
             this.picBx_PTurn.Location = new System.Drawing.Point(389, 653);
             this.picBx_PTurn.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.picBx_PTurn.Name = "picBx_PTurn";
-            this.picBx_PTurn.Size = new System.Drawing.Size(240, 41);
+            this.picBx_PTurn.Size = new System.Drawing.Size(150, 25);
             this.picBx_PTurn.TabIndex = 6;
             this.picBx_PTurn.TabStop = false;
             // 
