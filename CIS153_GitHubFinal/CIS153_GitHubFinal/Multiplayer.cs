@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Threading;
 
 namespace CIS153_GitHubFinal
 {
@@ -47,7 +48,7 @@ namespace CIS153_GitHubFinal
             int columns = 7;
             int rows = 6;
             int streak = 4;
-            game = new board(columns, rows, streak);
+            game = new board(columns, rows, streak, "o");
             var rowCount = game.get_rows();
             var columnCount = game.get_columns();
 
@@ -81,6 +82,11 @@ namespace CIS153_GitHubFinal
                 }
             }
             DrawBoard();
+            // this makes the bot play first if it is player x
+            if (game.get_bot() == "x")
+            {
+                play_bot_round();
+            }
         }
         void DrawBoard()
         {
@@ -93,8 +99,8 @@ namespace CIS153_GitHubFinal
                     button = game.get_button(r, c);
                     token = game.get_token(r, c);
                     if (token == "-")
-                    {                        
-                        button.BackColor = Color.FromArgb(50,62,190,191);
+                    {
+                        button.BackColor = Color.FromArgb(50, 62, 190, 191);
                     }
                     else if (token == "x")
                     {
@@ -131,15 +137,23 @@ namespace CIS153_GitHubFinal
         void MyButtonClick(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            bool dropped = false;
+            //bool dropped = false;
             String[] indexes = button.Name.Split(':');
             int row = Int16.Parse(indexes[0]);
             int column = Int16.Parse(indexes[1]);
             string token = game.get_token(row, column);
 
-            game.bot_play();
-
-            if ((game.get_winner() == false) && (game.is_full(column) == false))
+            if (check_game_over() == false) // stops the game from continuing
+            {
+                play_player_round(column);
+            }
+            if ((game.get_bot() != "-") && (check_game_over() == false))
+            {
+                play_bot_round();
+            }
+            //game.bot_play();
+            /*
+            if ((check_game_over() == false) && (game.is_full(column) == false))
             {
                 dropped = game.drop_token(column);
             }
@@ -147,7 +161,7 @@ namespace CIS153_GitHubFinal
             {
                 if (game.streak_of(4) == true)
                 {
-                    game.set_winner(true);
+                    game.set_game_over(true);
                     Console.WriteLine("Winner is " + game.get_player());
                     tableLayoutPanel1.Hide();
                     picBx_WinLose.Visible = true;
@@ -157,23 +171,58 @@ namespace CIS153_GitHubFinal
                 {
                     //Console.WriteLine("Play On!!!");
                 }
-                DrawBoard();
+                */
+            //DrawBoard();
+            //change_player();
+            /*
+            if (game.get_player() == "x")
+            {
+                game.set_player("o");
+                //lbl_PlayTurn.Text = "Player 2's turn!";                    
+                picBx_PTurn.BackgroundImage = Properties.Resources.PlayerTwo;
+            }
+            else
+            {
+                game.set_player("x");
+                //lbl_PlayTurn.Text = "Player 1's turn!";                    
+                picBx_PTurn.BackgroundImage = Properties.Resources.player1_1;                    
+            }
+            */
+        }
+        //here you can check which button was clicked by the sender
+        //=======================MENU STRIP BUTTONS===================================
+        bool check_game_over()
+        {
+            bool status = false;
+            if (game.streak_of(4) == true)
+            {
+                // set the winner to the previous player as we have already changed to next player
                 if (game.get_player() == "x")
                 {
-                    game.set_player("o");
-                    //lbl_PlayTurn.Text = "Player 2's turn!";                    
-                    picBx_PTurn.BackgroundImage = Properties.Resources.PlayerTwo;
+                    game.set_winner("o");
                 }
-                else
+                else if (game.get_player() == "o")
                 {
-                    game.set_player("x");
-                    //lbl_PlayTurn.Text = "Player 1's turn!";                    
-                    picBx_PTurn.BackgroundImage = Properties.Resources.player1_1;                    
+                    game.set_winner("x");
                 }
+                Console.WriteLine("Winner is " + game.get_winner());
+                tableLayoutPanel1.Hide();
+                picBx_WinLose.Visible = true;
+                picBx_WinLose.Image = Properties.Resources.PlayerOne;
+                game.set_game_over(true);
+                status = true;
             }
-            //here you can check which button was clicked by the sender
+            else if (game.is_board_full() == true)
+            {
+                Console.WriteLine("Draw");
+                status = true;
+            }
+            else
+            {
+                Console.WriteLine("Play On!!!");
+            }
+            return (status);
         }
-        //=======================MENU STRIP BUTTONS===================================
         private void menStp_Options_Menu_Click(object sender, EventArgs e)
         {
             menu.Show();
@@ -193,6 +242,43 @@ namespace CIS153_GitHubFinal
             }
         }
         //=======================END MENU STRIP BUTTONS===================================
+        void play_player_round(int column)
+        {
+            bool dropped = false;
+            if (game.is_full(column) == false)
+            {
+                dropped = game.drop_token(column);
+            }
+            if (dropped == true)
+            {
+                DrawBoard();
+                change_player();
+            }
+        }
+        void play_bot_round()
+        {
+            Thread.Sleep(100);
+            game.bot_AI();
+            Thread.Sleep(100);
+            DrawBoard();
+            Thread.Sleep(100);
+            change_player();
+        }
+        void change_player()
+        {
+            if (game.get_player() == "x")
+            {
+                game.set_player("o");
+                //lbl_PlayTurn.Text = "Player 2's turn!";
+                picBx_PTurn.BackgroundImage = Properties.Resources.PlayerTwo;
+            }
+            else
+            {
+                game.set_player("x");
+                //lbl_PlayTurn.Text = "Player 1's turn!";
+                picBx_PTurn.BackgroundImage = Properties.Resources.player1_1;
+            }
+        }
     }
-
 }
+

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -9,7 +10,9 @@ namespace CIS153_GitHubFinal
 {
     class board
     {
-        private bool winner;
+        private string winner;
+        private bool game_over;
+        private string bot;
         private int columns;
         private int rows;
         private string[,] grid;
@@ -28,10 +31,24 @@ namespace CIS153_GitHubFinal
 
 
 
-        public board(int c, int r, int s)
+        public board(int c, int r, int s, string b)
         {
+            // enable bot
+            if (b == "x")
+            {
+                this.bot = "x";
+            }
+            else if (b == "o")
+            {
+                this.bot = "o";
+            }
+            else
+            {
+                this.bot = "-";
+            }
             this.grid = new string[r, c];
             this.buttons = new Button[r, c];
+            // build initial blank grid
             for (int y = 0; y < this.grid.GetLength(0); y += 1)
             {
                 for (int x = 0; x < this.grid.GetLength(1); x += 1)
@@ -41,25 +58,36 @@ namespace CIS153_GitHubFinal
             }
             this.rows = this.grid.GetLength(0);
             this.columns = this.grid.GetLength(1);
-
+            // figure playing geometry ( lines and points (cells) )
             get_playable_dimensions(s);
             this.find_lines();
             this.find_playable();
             this.points_on_line();
             this.current_player = "x";
-            this.winner = false;
+            this.winner = "-";
+            this.game_over = false;
         }
+
+        public string get_bot()
+        {
+            return (this.bot);
+        }
+
         public void bot_AI()
         {
             bool dropped = false;
+            this.figure_possible_plays();
+            this.display_possible_moves();
             if (this.streak_of(3) == true)
             {
+                this.find_next_cells_of_streak();
+                this.display_book_ends();
                 foreach (cell C in this.book_ends)
                 {
                     if (this.is_possible_move(C) == true)
                     {
-                        //dropped = drop_token(C.get_column());
-                        Console.WriteLine("I would drop the token in this column " + C.get_column());
+                        Console.WriteLine("\nbot is playing in column: {0}\n", C.get_column());
+                        dropped = drop_token(C.get_column());
                         if (dropped == true)
                         {
                             break;
@@ -69,10 +97,21 @@ namespace CIS153_GitHubFinal
             }
             if (dropped == false)
             {
-                //drop_token(this.get_random_available_column());
+                dropped = drop_token(this.get_random_available_column());
             }
         }
-        public int get_random_availabe_column() //AI
+
+        public void set_game_over(bool status)
+        {
+            this.game_over = status;
+        }
+
+        public bool get_game_over()
+        {
+            return (this.game_over);
+        }
+
+        public int get_random_available_column() //AI
         {
             int stack = -1;
             Random rand = new Random();
@@ -87,6 +126,7 @@ namespace CIS153_GitHubFinal
             stack = available_stacks[rand.Next(0, available_stacks.Count)];
             return (stack);
         }
+
         public bool is_possible_move(cell C) //AI
         {
             bool status = false;
@@ -100,30 +140,37 @@ namespace CIS153_GitHubFinal
             }
             return (status);
         }
+
         public cell get_last_token()
         {
             return (this.last_token);
         }
+
         public void set_last_token(int row, int col)
         {
             this.last_token = new cell(row, col);
         }
-        public bool get_winner()
+
+        public string get_winner()
         {
             return (this.winner);
         }
-        public void set_winner(bool win)
+
+        public void set_winner(string win)
         {
             this.winner = win;
         }
+
         public string get_player()
         {
             return (this.current_player);
         }
+
         public void set_player(string player)
         {
             this.current_player = player;
         }
+
         public int get_rows()
         {
             return (this.rows);
@@ -133,33 +180,58 @@ namespace CIS153_GitHubFinal
         {
             return (this.columns);
         }
+
         public Button get_button(int row, int col)
         {
             Button button = this.buttons[row, col];
             return (button);
         }
+
         public void set_button(int row, int col, Button button)
         {
             this.buttons[row, col] = button;
         }
+
         public string get_token(int row, int col)
         {
+            //            Console.WriteLine("rc " + row + " " + col);
             string token = this.grid[row, col];
             return (token);
         }
+
         public void set_token(int row, int col, string token)
         {
             this.grid[row, col] = token;
         }
+
+        public bool is_board_full()
+        {
+            bool full = true;
+            for (int c = 0; c < this.get_columns(); c++)
+            {
+                if (this.get_token(0, c) == "-")
+                {
+                    full = false;
+                    break;
+                }
+            }
+            if (full == true)
+            {
+                this.game_over = true;
+            }
+            return (full);
+        }
+
         public bool is_full(int col)
         {
             bool full = false;
-            if(this.get_token(0, col) != "-")
+            if (this.get_token(0, col) != "-")
             {
                 full = true;
             }
             return (full);
         }
+
         public bool hover_token(int col)
         {
             Button button;
@@ -186,6 +258,7 @@ namespace CIS153_GitHubFinal
             }
             return (status);
         }
+
         public void figure_possible_plays() //AI
         {
             this.possible_plays.Clear();
@@ -212,35 +285,30 @@ namespace CIS153_GitHubFinal
                 }
             }
         }
-        public void bot_play()
-        {
-            this.figure_possible_plays();
-            this.display_possible_moves();
-            if(this.streak_of(3) == true)
-            {
-                this.find_next_cells_of_streak();
-                this.display_book_ends();
-                this.bot_AI();
-                //this.display_streak_points();
-            }
 
-        }
+
         public void display_possible_moves()
         {
-            Console.WriteLine("possible moves");
+            Console.WriteLine("possible moves - start");
             foreach (cell c in this.possible_plays)
             {
                 c.display();
             }
+            Console.WriteLine("possible moves - end");
+
         }
+
         public void display_book_ends()
         {
-            Console.WriteLine("book ends");
+            Console.WriteLine("book ends - start");
             foreach (cell c in this.book_ends)
             {
                 c.display();
             }
+            Console.WriteLine("book ends - end");
+
         }
+
         public void display_streak_points()
         {
             Console.WriteLine("streak points");
@@ -249,11 +317,12 @@ namespace CIS153_GitHubFinal
                 c.display();
             }
         }
+
         public bool drop_token(int col)
         {
             bool status = false;
             string token;
-            for(int row = this.get_rows() -1; row >= 0;row--)
+            for (int row = this.get_rows() - 1; row >= 0; row--)
             {
                 token = get_token(row, col);
                 if (token == "-")
@@ -265,24 +334,39 @@ namespace CIS153_GitHubFinal
             }
             return (status);
         }
+
         public void find_next_cells_of_streak() //AI
         {
-            //this.display_streak_points();
+            this.display();
+            this.display_streak_points();
             //this.streak_line.display();
             this.book_ends.Clear();
             line S = this.streak_line;
             bool after_streak = false;
             cell fsc = this.streak_points[0];
             cell lsc = this.streak_points[this.streak_points.Count - 1];
+            Console.WriteLine("streak");
+            Console.WriteLine("fsc");
+            fsc.display();
+            Console.WriteLine("lsc");
+            lsc.display();
+            Console.WriteLine("streak");
             cell prev_cell = new cell(-1, -1);
             foreach (cell C in S.get_points_on_line())
             {
                 C.display();
+                Console.WriteLine("token: {0}", this.get_token(C.get_row(), C.get_column()));
                 if ((C.same(fsc)) || (C.same(lsc)))
                 {
                     if (this.book_ends.Count == 0)
                     {
-                        book_ends.Add(prev_cell);
+                        if (this.get_token(prev_cell.get_row(), prev_cell.get_column()) == "-")
+                        {
+                            Console.WriteLine("\nadd first be");
+                            prev_cell.display();
+                            Console.WriteLine("prev_cell token: {0}\n", this.get_token(prev_cell.get_row(), prev_cell.get_column()));
+                            book_ends.Add(prev_cell);
+                        }
                     }
                     else
                     {
@@ -291,8 +375,17 @@ namespace CIS153_GitHubFinal
                 }
                 else if (after_streak == true)
                 {
-                    this.book_ends.Add(C);
-                    break;
+                    // only add this point if it is blank
+                    if (this.get_token(C.get_row(), C.get_column()) == "-")
+                    {
+                        this.book_ends.Add(C);
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+
                 }
                 prev_cell = C;
             }
@@ -351,6 +444,7 @@ namespace CIS153_GitHubFinal
                         }
                         else
                         {
+                            line_streak_points.Clear(); // testing if this stops the straggling point
                             line_streak_points.Add(P);
                         }
                     }
@@ -479,6 +573,7 @@ namespace CIS153_GitHubFinal
             return (status);
         }
 
+        // when building playable lines we only want lines between cells on the perimeter
         public bool is_point_on_perimeter(cell a)
         {
             bool status = false;
@@ -513,4 +608,5 @@ namespace CIS153_GitHubFinal
             }
         }
     }
+
 }
