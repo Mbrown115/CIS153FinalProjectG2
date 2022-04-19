@@ -92,6 +92,16 @@ namespace CIS153_GitHubFinal.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ArcadeScreen_screenimage_ref {
+            get {
+                object obj = ResourceManager.GetObject("ArcadeScreen_screenimage_ref", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Connect4_2 {
             get {
                 object obj = ResourceManager.GetObject("Connect4_2", resourceCulture);
