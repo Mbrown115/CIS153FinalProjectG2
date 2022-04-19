@@ -1,7 +1,7 @@
 ﻿
 namespace CIS153_GitHubFinal
 {
-    partial class Multiplayer
+    partial class GameBoard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace CIS153_GitHubFinal
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Multiplayer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameBoard));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,13 +54,13 @@ namespace CIS153_GitHubFinal
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(389, 185);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(346, 148);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(530, 468);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(471, 374);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // menuStrip1
@@ -69,13 +69,10 @@ namespace CIS153_GitHubFinal
             this.menuStrip1.Font = new System.Drawing.Font("Source Code Pro Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gameOptionsToolStripMenuItem,
-            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1290, 36);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1147, 36);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -154,9 +151,10 @@ namespace CIS153_GitHubFinal
             // 
             this.picBx_WinLose.BackColor = System.Drawing.Color.Transparent;
             this.picBx_WinLose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBx_WinLose.Location = new System.Drawing.Point(377, 375);
+            this.picBx_WinLose.Location = new System.Drawing.Point(335, 300);
+            this.picBx_WinLose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBx_WinLose.Name = "picBx_WinLose";
-            this.picBx_WinLose.Size = new System.Drawing.Size(550, 83);
+            this.picBx_WinLose.Size = new System.Drawing.Size(489, 66);
             this.picBx_WinLose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBx_WinLose.TabIndex = 5;
             this.picBx_WinLose.TabStop = false;
@@ -168,21 +166,21 @@ namespace CIS153_GitHubFinal
             this.picBx_PTurn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBx_PTurn.BackgroundImage")));
             this.picBx_PTurn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBx_PTurn.InitialImage = null;
-            this.picBx_PTurn.Location = new System.Drawing.Point(389, 653);
-            this.picBx_PTurn.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.picBx_PTurn.Location = new System.Drawing.Point(346, 522);
+            this.picBx_PTurn.Margin = new System.Windows.Forms.Padding(3, 0, 3, 2);
             this.picBx_PTurn.Name = "picBx_PTurn";
-            this.picBx_PTurn.Size = new System.Drawing.Size(150, 25);
+            this.picBx_PTurn.Size = new System.Drawing.Size(133, 20);
             this.picBx_PTurn.TabIndex = 6;
             this.picBx_PTurn.TabStop = false;
             // 
-            // Multiplayer
+            // GameBoard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_Crop;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1290, 1263);
+            this.ClientSize = new System.Drawing.Size(1147, 1010);
             this.ControlBox = false;
             this.Controls.Add(this.picBx_PTurn);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -190,9 +188,10 @@ namespace CIS153_GitHubFinal
             this.Controls.Add(this.picBx_WinLose);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Multiplayer";
-            this.Text = "2 Player";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "GameBoard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Connect Four";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBx_WinLose)).EndInit();

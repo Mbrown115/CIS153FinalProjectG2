@@ -47,8 +47,8 @@ namespace CIS153_GitHubFinal
             columns_select = Int32.Parse(comboBox3.Text);
             streak_select = Int32.Parse(comboBox4.Text);
             //Console.WriteLine("In Welcome " + bot_select);
-            Multiplayer Dual = new Multiplayer(this);
-            Dual.Show();
+            GameBoard play = new GameBoard(this);
+            play.Show();
             Hide();
 
         }

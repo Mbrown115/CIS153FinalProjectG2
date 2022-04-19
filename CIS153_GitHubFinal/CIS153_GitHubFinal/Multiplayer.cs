@@ -10,14 +10,14 @@ using System.Threading;
 
 namespace CIS153_GitHubFinal
 {
-    public partial class Multiplayer : Form
+    public partial class GameBoard : Form
     {
         board game;
         Welcome menu;
         int[,] b = new int[6, 7];
 
 
-        public Multiplayer()
+        public GameBoard()
         {
             InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace CIS153_GitHubFinal
             //theBoard.setBoard(b);
         }
 
-        public Multiplayer(Welcome fml)
+        public GameBoard(Welcome fml)
         {
             InitializeComponent();
             GameTest();
