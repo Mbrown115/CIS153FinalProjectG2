@@ -61,15 +61,6 @@ namespace CIS153_GitHubFinal
             Hide();
         }
 
-        private void btn_single_Click(object sender, EventArgs e)
-        {
-                       
-            Single solo = new Single(this);
-
-            solo.Show();
-            Hide();
-        }
-
         private void Welcome_Load(object sender, EventArgs e)
         {
 

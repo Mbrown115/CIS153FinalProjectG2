@@ -90,51 +90,11 @@ namespace CIS153_GitHubFinal.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap black_poker_chip {
-            get {
-                object obj = ResourceManager.GetObject("black poker chip", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Board_CutOut_png {
-            get {
-                object obj = ResourceManager.GetObject("Board_CutOut_png", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap connect4 {
-            get {
-                object obj = ResourceManager.GetObject("connect4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream connect4_Sound {
             get {
                 return ResourceManager.GetStream("connect4_Sound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Logo2 {
-            get {
-                object obj = ResourceManager.GetObject("Logo2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -164,26 +124,6 @@ namespace CIS153_GitHubFinal.Properties {
         internal static System.Drawing.Bitmap PlayerTwo {
             get {
                 object obj = ResourceManager.GetObject("PlayerTwo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap red_poker_chip {
-            get {
-                object obj = ResourceManager.GetObject("red poker chip", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap red_poker_chip_small {
-            get {
-                object obj = ResourceManager.GetObject("red poker chip small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
