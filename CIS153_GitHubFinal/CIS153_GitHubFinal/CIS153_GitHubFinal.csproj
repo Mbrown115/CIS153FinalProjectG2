@@ -126,5 +126,11 @@
   <ItemGroup>
     <None Include="Resources\player1_1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CONNECT4.tif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Connect4_2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
