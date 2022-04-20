@@ -36,7 +36,16 @@ namespace CIS153_GitHubFinal
         // Exits the program
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+
+            SoundPlayer mainMenuSound = new SoundPlayer(Properties.Resources.alert1);
+            mainMenuSound.Play();
+
+            DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         // Brings up the multiplayer form
@@ -74,6 +83,19 @@ namespace CIS153_GitHubFinal
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void exitConnect4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SoundPlayer mainMenuSound = new SoundPlayer(Properties.Resources.alert1);
+            mainMenuSound.Play();
+
+            DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 

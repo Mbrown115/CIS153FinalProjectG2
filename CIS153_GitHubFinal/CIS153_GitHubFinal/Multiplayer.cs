@@ -237,26 +237,6 @@ namespace CIS153_GitHubFinal
             return (status);
         }
 
-        //=======================MENU STRIP BUTTONS===================================
-        private void menStp_Options_Menu_Click(object sender, EventArgs e)
-        {
-            menu.Show();
-            Close();
-        }
-
-        private void menStp_Options_Exit_Click(object sender, EventArgs e)
-        {
-            SoundPlayer mainMenuSound = new SoundPlayer(Properties.Resources.alert1);
-            mainMenuSound.Play();
-
-            DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-        //=======================END MENU STRIP BUTTONS===================================
         void play_player_round(int column)
         {
             bool dropped = false;
@@ -292,6 +272,19 @@ namespace CIS153_GitHubFinal
                 game.set_player("x");
                 //lbl_PlayTurn.Text = "Player 1's turn!";
                 picBx_PTurn.BackgroundImage = Properties.Resources.player1_1;
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SoundPlayer mainMenuSound = new SoundPlayer(Properties.Resources.alert1);
+            mainMenuSound.Play();
+
+            DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
             }
         }
     }
