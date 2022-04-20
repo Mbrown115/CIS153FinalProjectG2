@@ -192,6 +192,7 @@ namespace CIS153_GitHubFinal
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menStp);
             this.Controls.Add(this.picBx_WinLose);
+            this.Cursor = System.Windows.Forms.Cursors.Cross;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menStp;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

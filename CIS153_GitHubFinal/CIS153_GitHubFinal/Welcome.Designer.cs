@@ -55,9 +55,9 @@ namespace CIS153_GitHubFinal
             // 
             // btn_stats
             // 
-            this.btn_stats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_stats.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn_stats.Font = new System.Drawing.Font("Source Code Pro Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_stats.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_stats.ForeColor = System.Drawing.Color.White;
             this.btn_stats.Location = new System.Drawing.Point(279, 385);
             this.btn_stats.Margin = new System.Windows.Forms.Padding(4, 5, 4, 10);
             this.btn_stats.Name = "btn_stats";
@@ -69,9 +69,9 @@ namespace CIS153_GitHubFinal
             // 
             // btn_multiplayer
             // 
-            this.btn_multiplayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_multiplayer.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn_multiplayer.Font = new System.Drawing.Font("Source Code Pro Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_multiplayer.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_multiplayer.ForeColor = System.Drawing.Color.White;
             this.btn_multiplayer.Location = new System.Drawing.Point(94, 385);
             this.btn_multiplayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 10);
             this.btn_multiplayer.Name = "btn_multiplayer";
@@ -83,9 +83,9 @@ namespace CIS153_GitHubFinal
             // 
             // btn_exit
             // 
-            this.btn_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_exit.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn_exit.Font = new System.Drawing.Font("Source Code Pro Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_exit.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_exit.ForeColor = System.Drawing.Color.White;
             this.btn_exit.Location = new System.Drawing.Point(185, 441);
             this.btn_exit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 10);
             this.btn_exit.Name = "btn_exit";
@@ -98,15 +98,15 @@ namespace CIS153_GitHubFinal
             // comboBox1
             // 
             this.comboBox1.AccessibleName = "bot";
-            this.comboBox1.BackColor = System.Drawing.Color.Orchid;
+            this.comboBox1.BackColor = System.Drawing.Color.MediumOrchid;
             this.comboBox1.Font = new System.Drawing.Font("Source Code Pro", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "2 Player",
-            "x (Computer)",
-            "o (Computer)"});
-            this.comboBox1.Location = new System.Drawing.Point(382, 91);
+            "x",
+            "o"});
+            this.comboBox1.Location = new System.Drawing.Point(366, 92);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 33);
@@ -118,8 +118,8 @@ namespace CIS153_GitHubFinal
             this.lbl_bot.AutoSize = true;
             this.lbl_bot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lbl_bot.Font = new System.Drawing.Font("Source Code Pro Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_bot.ForeColor = System.Drawing.Color.Indigo;
-            this.lbl_bot.Location = new System.Drawing.Point(382, 25);
+            this.lbl_bot.ForeColor = System.Drawing.Color.Black;
+            this.lbl_bot.Location = new System.Drawing.Point(366, 26);
             this.lbl_bot.Name = "lbl_bot";
             this.lbl_bot.Size = new System.Drawing.Size(116, 56);
             this.lbl_bot.TabIndex = 6;
@@ -128,7 +128,7 @@ namespace CIS153_GitHubFinal
             // comboBox2
             // 
             this.comboBox2.AccessibleName = "rows";
-            this.comboBox2.BackColor = System.Drawing.Color.Orchid;
+            this.comboBox2.BackColor = System.Drawing.Color.MediumOrchid;
             this.comboBox2.Font = new System.Drawing.Font("Source Code Pro Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.comboBox2.FormattingEnabled = true;
@@ -136,7 +136,7 @@ namespace CIS153_GitHubFinal
             "5",
             "6",
             "7"});
-            this.comboBox2.Location = new System.Drawing.Point(38, 91);
+            this.comboBox2.Location = new System.Drawing.Point(22, 92);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(75, 36);
@@ -146,7 +146,7 @@ namespace CIS153_GitHubFinal
             // comboBox3
             // 
             this.comboBox3.AccessibleName = "columns";
-            this.comboBox3.BackColor = System.Drawing.Color.Orchid;
+            this.comboBox3.BackColor = System.Drawing.Color.MediumOrchid;
             this.comboBox3.Font = new System.Drawing.Font("Source Code Pro", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.comboBox3.FormattingEnabled = true;
@@ -154,7 +154,7 @@ namespace CIS153_GitHubFinal
             "6",
             "7",
             "8"});
-            this.comboBox3.Location = new System.Drawing.Point(136, 91);
+            this.comboBox3.Location = new System.Drawing.Point(120, 92);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(75, 36);
@@ -166,8 +166,8 @@ namespace CIS153_GitHubFinal
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label1.Font = new System.Drawing.Font("Source Code Pro Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Indigo;
-            this.label1.Location = new System.Drawing.Point(38, 25);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(22, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 56);
             this.label1.TabIndex = 9;
@@ -179,8 +179,8 @@ namespace CIS153_GitHubFinal
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label2.Font = new System.Drawing.Font("Source Code Pro Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Indigo;
-            this.label2.Location = new System.Drawing.Point(136, 25);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(120, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 56);
             this.label2.TabIndex = 10;
@@ -190,7 +190,7 @@ namespace CIS153_GitHubFinal
             // comboBox4
             // 
             this.comboBox4.AccessibleName = "streak";
-            this.comboBox4.BackColor = System.Drawing.Color.Orchid;
+            this.comboBox4.BackColor = System.Drawing.Color.MediumOrchid;
             this.comboBox4.Font = new System.Drawing.Font("Source Code Pro", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.comboBox4.FormattingEnabled = true;
@@ -198,7 +198,7 @@ namespace CIS153_GitHubFinal
             "3",
             "4",
             "5"});
-            this.comboBox4.Location = new System.Drawing.Point(258, 91);
+            this.comboBox4.Location = new System.Drawing.Point(242, 92);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(75, 36);
@@ -210,8 +210,8 @@ namespace CIS153_GitHubFinal
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label3.Font = new System.Drawing.Font("Source Code Pro Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Indigo;
-            this.label3.Location = new System.Drawing.Point(258, 25);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(242, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 56);
             this.label3.TabIndex = 12;
@@ -262,9 +262,9 @@ namespace CIS153_GitHubFinal
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btn_multiplayer);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btn_stats);
-            this.panel1.Controls.Add(this.btn_multiplayer);
             this.panel1.Controls.Add(this.btn_exit);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(409, 197);
