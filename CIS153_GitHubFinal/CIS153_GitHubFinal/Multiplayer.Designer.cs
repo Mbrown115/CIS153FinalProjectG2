@@ -34,7 +34,14 @@ namespace CIS153_GitHubFinal
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menStp = new System.Windows.Forms.MenuStrip();
             this.gameOptionsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.boardSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.leaderBoardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gameRulesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewPreviousGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.previousGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,13 +53,6 @@ namespace CIS153_GitHubFinal
             this.rulesOfTheGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.picBx_WinLose = new System.Windows.Forms.PictureBox();
             this.lbl_TurnIndicator = new System.Windows.Forms.Label();
-            this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.leaderBoardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.gameRulesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.boardSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.menStp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBx_WinLose)).BeginInit();
@@ -72,11 +72,12 @@ namespace CIS153_GitHubFinal
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(530, 468);
             this.tableLayoutPanel1.TabIndex = 3;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // menStp
             // 
             this.menStp.BackColor = System.Drawing.Color.Transparent;
-            this.menStp.Font = new System.Drawing.Font("Source Code Pro Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menStp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menStp.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menStp.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menStp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -98,15 +99,66 @@ namespace CIS153_GitHubFinal
             this.exitToolStripMenuItem});
             this.gameOptionsToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.gameOptionsToolStripMenuItem1.Name = "gameOptionsToolStripMenuItem1";
-            this.gameOptionsToolStripMenuItem1.Size = new System.Drawing.Size(172, 29);
+            this.gameOptionsToolStripMenuItem1.Size = new System.Drawing.Size(166, 29);
             this.gameOptionsToolStripMenuItem1.Text = "Game Options";
+            // 
+            // mainMenuToolStripMenuItem
+            // 
+            this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
+            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
+            this.mainMenuToolStripMenuItem.Text = "Main Menu";
+            this.mainMenuToolStripMenuItem.Click += new System.EventHandler(this.mainMenuToolStripMenuItem_Click);
+            // 
+            // boardSetupToolStripMenuItem
+            // 
+            this.boardSetupToolStripMenuItem.Name = "boardSetupToolStripMenuItem";
+            this.boardSetupToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
+            this.boardSetupToolStripMenuItem.Text = "Board Setup";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // statisticsToolStripMenuItem
+            // 
+            this.statisticsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.leaderBoardToolStripMenuItem1});
+            this.statisticsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(116, 29);
+            this.statisticsToolStripMenuItem.Text = "Statistics";
+            // 
+            // leaderBoardToolStripMenuItem1
+            // 
+            this.leaderBoardToolStripMenuItem1.Name = "leaderBoardToolStripMenuItem1";
+            this.leaderBoardToolStripMenuItem1.Size = new System.Drawing.Size(244, 34);
+            this.leaderBoardToolStripMenuItem1.Text = "Leader Board";
+            this.leaderBoardToolStripMenuItem1.Click += new System.EventHandler(this.leaderBoardToolStripMenuItem1_Click);
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gameRulesToolStripMenuItem,
+            this.instructionsToolStripMenuItem});
+            this.helpToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(72, 29);
+            this.helpToolStripMenuItem1.Text = "Help";
+            // 
+            // gameRulesToolStripMenuItem
+            // 
+            this.gameRulesToolStripMenuItem.Name = "gameRulesToolStripMenuItem";
+            this.gameRulesToolStripMenuItem.Size = new System.Drawing.Size(231, 34);
+            this.gameRulesToolStripMenuItem.Text = "Game Rules";
+            // 
+            // instructionsToolStripMenuItem
+            // 
+            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(231, 34);
+            this.instructionsToolStripMenuItem.Text = "Instructions";
             // 
             // gameOptionsToolStripMenuItem
             // 
@@ -182,7 +234,7 @@ namespace CIS153_GitHubFinal
             // lbl_TurnIndicator
             // 
             this.lbl_TurnIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbl_TurnIndicator.Font = new System.Drawing.Font("Source Code Pro Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TurnIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TurnIndicator.ForeColor = System.Drawing.Color.White;
             this.lbl_TurnIndicator.Location = new System.Drawing.Point(407, 653);
             this.lbl_TurnIndicator.Name = "lbl_TurnIndicator";
@@ -190,57 +242,6 @@ namespace CIS153_GitHubFinal
             this.lbl_TurnIndicator.TabIndex = 0;
             this.lbl_TurnIndicator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_TurnIndicator.Visible = false;
-            // 
-            // statisticsToolStripMenuItem
-            // 
-            this.statisticsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.leaderBoardToolStripMenuItem1});
-            this.statisticsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(148, 29);
-            this.statisticsToolStripMenuItem.Text = "Statistics";
-            // 
-            // helpToolStripMenuItem1
-            // 
-            this.helpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gameRulesToolStripMenuItem,
-            this.instructionsToolStripMenuItem});
-            this.helpToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(76, 29);
-            this.helpToolStripMenuItem1.Text = "Help";
-            // 
-            // leaderBoardToolStripMenuItem1
-            // 
-            this.leaderBoardToolStripMenuItem1.Name = "leaderBoardToolStripMenuItem1";
-            this.leaderBoardToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
-            this.leaderBoardToolStripMenuItem1.Text = "Leader Board";
-            this.leaderBoardToolStripMenuItem1.Click += new System.EventHandler(this.leaderBoardToolStripMenuItem1_Click);
-            // 
-            // gameRulesToolStripMenuItem
-            // 
-            this.gameRulesToolStripMenuItem.Name = "gameRulesToolStripMenuItem";
-            this.gameRulesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.gameRulesToolStripMenuItem.Text = "Game Rules";
-            // 
-            // instructionsToolStripMenuItem
-            // 
-            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.instructionsToolStripMenuItem.Text = "Instructions";
-            // 
-            // mainMenuToolStripMenuItem
-            // 
-            this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
-            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.mainMenuToolStripMenuItem.Text = "Main Menu";
-            this.mainMenuToolStripMenuItem.Click += new System.EventHandler(this.mainMenuToolStripMenuItem_Click);
-            // 
-            // boardSetupToolStripMenuItem
-            // 
-            this.boardSetupToolStripMenuItem.Name = "boardSetupToolStripMenuItem";
-            this.boardSetupToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.boardSetupToolStripMenuItem.Text = "Board Setup";
             // 
             // notifyIcon1
             // 

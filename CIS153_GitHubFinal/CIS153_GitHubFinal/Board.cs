@@ -80,7 +80,6 @@ namespace CIS153_GitHubFinal
             bool dropped = false;
             this.figure_possible_plays();
             this.display_possible_moves();
-            //if (this.streak_of(3) == true)
             if (this.streak_of(this.streak_target-1) == true)
             {
                 this.find_next_cells_of_streak();
@@ -200,7 +199,6 @@ namespace CIS153_GitHubFinal
 
         public string get_token(int row, int col)
         {
-            //            Console.WriteLine("rc " + row + " " + col);
             string token = this.grid[row, col];
             return (token);
         }
@@ -468,12 +466,10 @@ namespace CIS153_GitHubFinal
                 if (streak == true)
                 {
                     this.streak_points = line_streak_points;
-                    //this.display_streak_points();
                     break; //this may break the program
                 }
                 else
                 {
-                    //his.streak_points.Clear();
                 }
             }
             return (streak);
@@ -503,7 +499,6 @@ namespace CIS153_GitHubFinal
             this.width = this.grid.GetLength(1) - 1;
             Console.WriteLine("height: {0} width: {1}", height, width);
             this.diag = (float)Math.Sqrt(Math.Pow((height - 1), 2) + Math.Pow((width - 1), 2));
-            //this.diag = (float)Math.Sqrt(Math.Pow((streak_size - 1), 2) + Math.Pow((streak_size - 1), 2));
             Console.WriteLine("height: {0}, width: {1}, diag: {2}", this.height, this.width, this.diag);
             if ((this.height < streak_size) || (this.width < streak_size) || (this.diag < streak_size))
             {

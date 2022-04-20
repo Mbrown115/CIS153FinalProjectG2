@@ -20,10 +20,6 @@ namespace CIS153_GitHubFinal
         public GameBoard()
         {
             InitializeComponent();
-
-            //Board theBoard = new Board();
-            //theBoard.setcolumns(new Rectangle[7]);
-            //theBoard.setBoard(b);
         }
 
         public GameBoard(Welcome fml)
@@ -42,11 +38,6 @@ namespace CIS153_GitHubFinal
             rows = Welcome.rows_select;
             columns = Welcome.columns_select;
             streak = Welcome.streak_select;
-            /*
-            columns = 7;
-            rows = 6;
-            streak = 3;
-            */
             Console.WriteLine("in multiplayer col: {0} row: {1} streak: {2} bot: {3} ", columns, rows, streak, bot);
             game = new board(columns, rows, streak, bot);
             var rowCount = game.get_rows();
@@ -154,43 +145,6 @@ namespace CIS153_GitHubFinal
                 play_bot_round();
             }
             check_game_over();
-            //game.bot_play();
-            /*
-            if ((check_game_over() == false) && (game.is_full(column) == false))
-            {
-                dropped = game.drop_token(column);
-            }
-            if(dropped == true)
-            {
-                if (game.streak_of(4) == true)
-                {
-                    game.set_game_over(true);
-                    Console.WriteLine("Winner is " + game.get_player());
-                    tableLayoutPanel1.Hide();
-                    picBx_WinLose.Visible = true;
-                    picBx_WinLose.Image = Properties.Resources.PlayerOne;
-                }
-                else
-                {
-                    //Console.WriteLine("Play On!!!");
-                }
-                */
-            //DrawBoard();
-            //change_player();
-            /*
-            if (game.get_player() == "x")
-            {
-                game.set_player("o");
-                //lbl_PlayTurn.Text = "Player 2's turn!";                    
-                picBx_PTurn.BackgroundImage = Properties.Resources.PlayerTwo;
-            }
-            else
-            {
-                game.set_player("x");
-                //lbl_PlayTurn.Text = "Player 1's turn!";                    
-                picBx_PTurn.BackgroundImage = Properties.Resources.player1_1;                    
-            }
-            */
         }
         //here you can check which button was clicked by the sender
 
@@ -300,6 +254,11 @@ namespace CIS153_GitHubFinal
             Stats viewStats = new Stats();
             viewStats.Show();
             Hide();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
