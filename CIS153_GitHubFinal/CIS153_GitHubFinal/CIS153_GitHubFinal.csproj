@@ -141,5 +141,8 @@
   <ItemGroup>
     <None Include="Resources\ArcadeScreen_screenimage_ref_2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Connect4_21.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
