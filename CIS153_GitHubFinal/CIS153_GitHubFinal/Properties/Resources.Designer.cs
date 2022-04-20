@@ -102,6 +102,16 @@ namespace CIS153_GitHubFinal.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ArcadeScreen_screenimage_ref_2 {
+            get {
+                object obj = ResourceManager.GetObject("ArcadeScreen_screenimage_ref_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Connect4_2 {
             get {
                 object obj = ResourceManager.GetObject("Connect4_2", resourceCulture);
@@ -115,6 +125,16 @@ namespace CIS153_GitHubFinal.Properties {
         internal static System.Drawing.Bitmap CONNECT4_5 {
             get {
                 object obj = ResourceManager.GetObject("CONNECT4_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap connect4_6 {
+            get {
+                object obj = ResourceManager.GetObject("connect4_6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
