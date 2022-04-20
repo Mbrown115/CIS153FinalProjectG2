@@ -44,10 +44,9 @@ namespace CIS153_GitHubFinal
             this.gamePlayInstructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rulesOfTheGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.picBx_WinLose = new System.Windows.Forms.PictureBox();
-            this.picBx_PTurn = new System.Windows.Forms.PictureBox();
+            this.lbl_TurnIndicator = new System.Windows.Forms.Label();
             this.menStp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBx_WinLose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBx_PTurn)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -76,7 +75,7 @@ namespace CIS153_GitHubFinal
             this.menStp.Location = new System.Drawing.Point(0, 0);
             this.menStp.Name = "menStp";
             this.menStp.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menStp.Size = new System.Drawing.Size(1290, 33);
+            this.menStp.Size = new System.Drawing.Size(1290, 36);
             this.menStp.TabIndex = 4;
             this.menStp.Text = "menuStrip1";
             // 
@@ -85,13 +84,13 @@ namespace CIS153_GitHubFinal
             this.gameOptionsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.gameOptionsToolStripMenuItem1.Name = "gameOptionsToolStripMenuItem1";
-            this.gameOptionsToolStripMenuItem1.Size = new System.Drawing.Size(172, 29);
+            this.gameOptionsToolStripMenuItem1.Size = new System.Drawing.Size(172, 32);
             this.gameOptionsToolStripMenuItem1.Text = "Game Options";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(162, 34);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -166,31 +165,30 @@ namespace CIS153_GitHubFinal
             this.picBx_WinLose.TabStop = false;
             this.picBx_WinLose.Visible = false;
             // 
-            // picBx_PTurn
+            // lbl_TurnIndicator
             // 
-            this.picBx_PTurn.BackColor = System.Drawing.Color.Transparent;
-            this.picBx_PTurn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBx_PTurn.BackgroundImage")));
-            this.picBx_PTurn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBx_PTurn.InitialImage = null;
-            this.picBx_PTurn.Location = new System.Drawing.Point(389, 652);
-            this.picBx_PTurn.Margin = new System.Windows.Forms.Padding(3, 0, 3, 2);
-            this.picBx_PTurn.Name = "picBx_PTurn";
-            this.picBx_PTurn.Size = new System.Drawing.Size(150, 25);
-            this.picBx_PTurn.TabIndex = 6;
-            this.picBx_PTurn.TabStop = false;
+            this.lbl_TurnIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbl_TurnIndicator.Font = new System.Drawing.Font("Source Code Pro Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TurnIndicator.ForeColor = System.Drawing.Color.White;
+            this.lbl_TurnIndicator.Location = new System.Drawing.Point(407, 653);
+            this.lbl_TurnIndicator.Name = "lbl_TurnIndicator";
+            this.lbl_TurnIndicator.Size = new System.Drawing.Size(495, 36);
+            this.lbl_TurnIndicator.TabIndex = 0;
+            this.lbl_TurnIndicator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_TurnIndicator.Visible = false;
             // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_Crop;
+            this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_screenimage_ref;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1290, 1262);
             this.ControlBox = false;
-            this.Controls.Add(this.picBx_PTurn);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menStp);
+            this.Controls.Add(this.lbl_TurnIndicator);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.picBx_WinLose);
             this.Cursor = System.Windows.Forms.Cursors.Cross;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -202,7 +200,6 @@ namespace CIS153_GitHubFinal
             this.menStp.ResumeLayout(false);
             this.menStp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBx_WinLose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBx_PTurn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,8 +218,8 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.ToolStripMenuItem previousGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playerStatsToolStripMenuItem;
         private System.Windows.Forms.PictureBox picBx_WinLose;
-        private System.Windows.Forms.PictureBox picBx_PTurn;
         private System.Windows.Forms.ToolStripMenuItem gameOptionsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Label lbl_TurnIndicator;
     }
 }

@@ -251,11 +251,11 @@ namespace CIS153_GitHubFinal
                     button = this.get_button(row, col);
                     if (this.get_player() == "x")
                     {
-                        button.BackColor = Color.Red;
+                        button.BackColor = Color.FromArgb(230, 21, 205);
                     }
                     else if (this.get_player() == "o")
                     {
-                        button.BackColor = Color.Black;
+                        button.BackColor = Color.FromArgb(127,4,194);
                     }
                     this.set_last_token(row, col);
                     status = true;

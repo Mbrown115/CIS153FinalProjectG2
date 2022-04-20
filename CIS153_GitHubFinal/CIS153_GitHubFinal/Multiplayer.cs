@@ -102,24 +102,25 @@ namespace CIS153_GitHubFinal
         {
             Button button;
             string token;
+                        
             for (int r = 0; r < game.get_rows(); r++)
             {
                 for (int c = 0; c < game.get_columns(); c++)
                 {
                     button = game.get_button(r, c);
                     token = game.get_token(r, c);
+
                     if (token == "-")
-                    {
-                        //button.BackColor = Color.FromArgb(50, 62, 190, 191);
-                        button.BackColor = Color.White;
+                    {                        
+                        button.BackColor = Color.FromArgb(25, 192, 0, 192);
                     }
                     else if (token == "x")
                     {
-                        button.BackColor = Color.Red;
+                        button.BackColor = Color.FromArgb(230,21,205);
                     }
                     else if (token == "o")
                     {
-                        button.BackColor = Color.Black;
+                        button.BackColor = Color.FromArgb(127, 4, 194);
                     }
                 }
             }
@@ -142,7 +143,7 @@ namespace CIS153_GitHubFinal
             if (game.get_token(lasttoken.get_row(), lasttoken.get_column()) == "-")
             {
                 Button button = game.get_button(lasttoken.get_row(), lasttoken.get_column());
-                button.BackColor = Color.White;
+                button.BackColor = Color.FromArgb(25, 192, 0, 192);
             }
         }
         void MyButtonClick(object sender, EventArgs e)
@@ -264,14 +265,15 @@ namespace CIS153_GitHubFinal
             if (game.get_player() == "x")
             {
                 game.set_player("o");
-                //lbl_PlayTurn.Text = "Player 2's turn!";
-                picBx_PTurn.BackgroundImage = Properties.Resources.PlayerTwo;
+                lbl_TurnIndicator.Visible = true;
+                lbl_TurnIndicator.Text = "Player 2, make a move!";
+                
             }
             else
             {
                 game.set_player("x");
-                //lbl_PlayTurn.Text = "Player 1's turn!";
-                picBx_PTurn.BackgroundImage = Properties.Resources.player1_1;
+                lbl_TurnIndicator.Visible = true;
+                lbl_TurnIndicator.Text = "Player 1, make a move!";
             }
         }
 
