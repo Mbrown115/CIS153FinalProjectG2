@@ -13,7 +13,7 @@ namespace CIS153_GitHubFinal
     public partial class GameBoard : Form
     {
         board game;
-        Welcome menu;
+        Welcome menu;        
         int[,] b = new int[6, 7];
 
 
@@ -31,16 +31,6 @@ namespace CIS153_GitHubFinal
             InitializeComponent();
             GameTest();
             menu = fml;
-        }
-
-        private void btn_Exit_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
         }
 
         public void GameTest()
@@ -282,12 +272,34 @@ namespace CIS153_GitHubFinal
             SoundPlayer mainMenuSound = new SoundPlayer(Properties.Resources.alert1);
             mainMenuSound.Play();
 
-            DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            DialogResult result = MessageBox.Show("Would you like to end the game? \n\n    'Yes' to close the program \n\n    'No' to return to the game.", "Quit game?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
             if (result == DialogResult.Yes)
             {
                 Application.Exit();
             }
+        }
+
+        private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SoundPlayer mainMenuSound = new SoundPlayer(Properties.Resources.alert1);
+            mainMenuSound.Play();
+
+            DialogResult result = MessageBox.Show("Quit current game? Clicking yes wil exit the game.", "Quit game?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.Yes)
+            {
+                Close();
+                menu.Show();
+            }
+                        
+        }
+
+        private void leaderBoardToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Stats viewStats = new Stats();
+            viewStats.Show();
+            Hide();
         }
     }
 }

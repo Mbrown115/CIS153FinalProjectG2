@@ -13,8 +13,12 @@ namespace CIS153_GitHubFinal
 {
     public partial class Stats : Form
     {
-        Welcome menu;
-        Players players;
+        Welcome menu;        
+
+        public Stats()
+        {
+
+        }
 
         public Stats (Welcome w)
         {

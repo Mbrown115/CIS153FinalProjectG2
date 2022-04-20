@@ -37,10 +37,10 @@ namespace CIS153_GitHubFinal
             // 
             // btn_Menu
             // 
-            this.btn_Menu.Location = new System.Drawing.Point(134, 487);
+            this.btn_Menu.Location = new System.Drawing.Point(151, 609);
             this.btn_Menu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.Size = new System.Drawing.Size(99, 33);
+            this.btn_Menu.Size = new System.Drawing.Size(111, 41);
             this.btn_Menu.TabIndex = 0;
             this.btn_Menu.Text = "Main Menu";
             this.btn_Menu.UseVisualStyleBackColor = true;
@@ -48,10 +48,10 @@ namespace CIS153_GitHubFinal
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Location = new System.Drawing.Point(328, 487);
+            this.btn_Exit.Location = new System.Drawing.Point(122, 526);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(99, 33);
+            this.btn_Exit.Size = new System.Drawing.Size(111, 41);
             this.btn_Exit.TabIndex = 1;
             this.btn_Exit.Text = "Exit Game";
             this.btn_Exit.UseVisualStyleBackColor = true;
@@ -59,20 +59,21 @@ namespace CIS153_GitHubFinal
             // 
             // listBx_Stats
             // 
+            this.listBx_Stats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.listBx_Stats.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBx_Stats.FormattingEnabled = true;
             this.listBx_Stats.ItemHeight = 32;
-            this.listBx_Stats.Location = new System.Drawing.Point(77, 77);
+            this.listBx_Stats.Location = new System.Drawing.Point(405, 268);
             this.listBx_Stats.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBx_Stats.Name = "listBx_Stats";
-            this.listBx_Stats.Size = new System.Drawing.Size(505, 388);
+            this.listBx_Stats.Size = new System.Drawing.Size(537, 420);
             this.listBx_Stats.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(239, 31);
+            this.label1.Location = new System.Drawing.Point(584, 212);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(211, 37);
             this.label1.TabIndex = 3;
@@ -80,9 +81,11 @@ namespace CIS153_GitHubFinal
             // 
             // Stats
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 539);
+            this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_Crop;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1328, 1262);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBx_Stats);
