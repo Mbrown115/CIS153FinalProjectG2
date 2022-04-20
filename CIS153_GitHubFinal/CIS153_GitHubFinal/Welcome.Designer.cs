@@ -88,7 +88,7 @@ namespace CIS153_GitHubFinal
             // comboBox1
             // 
             this.comboBox1.AccessibleName = "bot";
-            this.comboBox1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.comboBox1.BackColor = System.Drawing.Color.Violet;
             this.comboBox1.Font = new System.Drawing.Font("Source Code Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.Color.Navy;
             this.comboBox1.FormattingEnabled = true;
@@ -117,7 +117,7 @@ namespace CIS153_GitHubFinal
             // comboBox2
             // 
             this.comboBox2.AccessibleName = "rows";
-            this.comboBox2.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.comboBox2.BackColor = System.Drawing.Color.Violet;
             this.comboBox2.Font = new System.Drawing.Font("Source Code Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.ForeColor = System.Drawing.Color.Navy;
             this.comboBox2.FormattingEnabled = true;
@@ -135,7 +135,7 @@ namespace CIS153_GitHubFinal
             // comboBox3
             // 
             this.comboBox3.AccessibleName = "columns";
-            this.comboBox3.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.comboBox3.BackColor = System.Drawing.Color.Violet;
             this.comboBox3.Font = new System.Drawing.Font("Source Code Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.ForeColor = System.Drawing.Color.Navy;
             this.comboBox3.FormattingEnabled = true;
@@ -176,7 +176,7 @@ namespace CIS153_GitHubFinal
             // comboBox4
             // 
             this.comboBox4.AccessibleName = "streak";
-            this.comboBox4.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.comboBox4.BackColor = System.Drawing.Color.Violet;
             this.comboBox4.Font = new System.Drawing.Font("Source Code Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox4.ForeColor = System.Drawing.Color.Navy;
             this.comboBox4.FormattingEnabled = true;
@@ -201,7 +201,6 @@ namespace CIS153_GitHubFinal
             this.label3.Size = new System.Drawing.Size(90, 28);
             this.label3.TabIndex = 12;
             this.label3.Text = "Streak";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox1
             // 

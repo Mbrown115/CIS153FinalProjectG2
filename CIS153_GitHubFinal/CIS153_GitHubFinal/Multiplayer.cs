@@ -202,7 +202,7 @@ namespace CIS153_GitHubFinal
             */
         }
         //here you can check which button was clicked by the sender
-        //=======================MENU STRIP BUTTONS===================================
+
         bool check_game_over()
         {
             bool status = false;
@@ -236,6 +236,8 @@ namespace CIS153_GitHubFinal
             }
             return (status);
         }
+
+        //=======================MENU STRIP BUTTONS===================================
         private void menStp_Options_Menu_Click(object sender, EventArgs e)
         {
             menu.Show();
