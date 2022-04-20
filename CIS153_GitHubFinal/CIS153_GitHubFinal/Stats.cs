@@ -17,15 +17,15 @@ namespace CIS153_GitHubFinal
 
         public Stats()
         {
-
+            InitializeComponent();
         }
 
         public Stats (Welcome w)
         {
-            InitializeComponent ();
+            InitializeComponent();
             menu = w;
 
-            DisplayStats ();
+            DisplayStats();
         }
 
         private void btn_Menu_Click (object sender , EventArgs e)
