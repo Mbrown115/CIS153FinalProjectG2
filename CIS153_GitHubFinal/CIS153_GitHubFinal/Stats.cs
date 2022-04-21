@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Media;
 
 namespace CIS153_GitHubFinal
 {
@@ -104,6 +105,25 @@ namespace CIS153_GitHubFinal
             //write.WriteLine("testing");
             //write.Flush();
             write.Close();
+        }
+
+        private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            menu.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SoundPlayer mainMenuSound = new SoundPlayer(Properties.Resources.alert1);
+            mainMenuSound.Play();
+
+            DialogResult result = MessageBox.Show("Would you like to end the game? \n\n    'Yes' to close the program \n\n    'No' to return to the game.", "Quit game?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

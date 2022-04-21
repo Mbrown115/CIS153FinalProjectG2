@@ -159,6 +159,26 @@ namespace CIS153_GitHubFinal.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connect 4 Program Instructions:,
+        ///
+        ///Starting a Game:,
+        ///	1. Select the size of your game board by selecting the number of cells in each column and row from the dropdown, 
+        ///	   menu on the title screen.,
+        ///	2. Select your opponent:,
+        ///		- 2 Player - Play against another human., 
+        ///		- x/o - Computer oponent playing as the selcted player (Player X goes first).,
+        ///	3. Click &apos;Start Game&apos;.,
+        ///
+        ///Other Options:,
+        ///	- At any time, you can select &apos;Leader Board&apos; to view the Win/Lose records of human players Vs. the computer [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Instructions {
+            get {
+                return ResourceManager.GetString("Instructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap player1_1 {
@@ -185,6 +205,24 @@ namespace CIS153_GitHubFinal.Properties {
             get {
                 object obj = ResourceManager.GetObject("PlayerTwo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connect 4 Rules,
+        ///
+        ///Objective:,
+        ///	Be the first player to connect 4 of the same color tokens in a row to win the game!,
+        ///
+        ///How to Play:,
+        ///	- Player &apos;X&apos; goes first, if you select &apos;X&apos; as your computer opponent, the computer will make the first move., 
+        ///	- Players (or player and computer) alternate turns, and only one cell can be selected during each turn.,
+        ///	- Cells are filled by &apos;dropping&apos; your token into the selected column. When you select a column your token will, 
+        ///	  fall to the lowest open cell. You can [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Rules {
+            get {
+                return ResourceManager.GetString("Rules", resourceCulture);
             }
         }
     }

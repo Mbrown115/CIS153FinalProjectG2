@@ -1,0 +1,12 @@
+Connect 4 Rules,
+
+Objective:,
+	Be the first player to connect 4 of the same color tokens in a row to win the game!,
+
+How to Play:,
+	- Player 'X' goes first, if you select 'X' as your computer opponent, the computer will make the first move., 
+	- Players (or player and computer) alternate turns, and only one cell can be selected during each turn.,
+	- Cells are filled by 'dropping' your token into the selected column. When you select a column your token will, 
+	  fall to the lowest open cell. You cannot fill a cell without first filling the open cells below it.,
+	- The game ends when one player has connected 4 concecutive cells with their own color tokens., 
+		- Winning sequences may be made horizontally, vertically, or diagonally but must be consecutive.,

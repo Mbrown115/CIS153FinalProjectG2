@@ -1,0 +1,15 @@
+Connect 4 Program Instructions:,
+
+Starting a Game:,
+	1. Select the size of your game board by selecting the number of cells in each column and row from the dropdown, 
+	   menu on the title screen.,
+	2. Select your opponent:,
+		- 2 Player - Play against another human., 
+		- x/o - Computer oponent playing as the selcted player (Player X goes first).,
+	3. Click 'Start Game'.,
+
+Other Options:,
+	- At any time, you can select 'Leader Board' to view the Win/Lose records of human players Vs. the computer., 
+	- To view a screen shot of the results of your previous game, select 'Review Previous Game' under 'Game Options', 
+	  located in the menu at the top of the screen.,
+	- You can always click 'Help' in the menu bar to return to these instructions or view Game Rules.,

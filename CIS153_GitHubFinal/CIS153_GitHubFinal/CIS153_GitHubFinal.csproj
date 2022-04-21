@@ -144,5 +144,11 @@
   <ItemGroup>
     <None Include="Resources\Connect4_21.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rules.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Instructions.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
