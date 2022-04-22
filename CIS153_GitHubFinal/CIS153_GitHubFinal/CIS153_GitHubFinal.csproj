@@ -153,5 +153,20 @@
   <ItemGroup>
     <None Include="Resources\finalGreen.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayerO_ping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayerX_ping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayerO_ping2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FinalPlayer_Opng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FinalPlayer_Xpng.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

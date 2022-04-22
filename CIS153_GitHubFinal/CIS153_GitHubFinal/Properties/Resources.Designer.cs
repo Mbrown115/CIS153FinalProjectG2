@@ -139,6 +139,26 @@ namespace CIS153_GitHubFinal.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FinalPlayer_Opng {
+            get {
+                object obj = ResourceManager.GetObject("FinalPlayer_Opng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FinalPlayer_Xpng {
+            get {
+                object obj = ResourceManager.GetObject("FinalPlayer_Xpng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Connect 4 Program Instructions:,
         ///
         ///Starting a Game:,
@@ -155,16 +175,6 @@ namespace CIS153_GitHubFinal.Properties {
         internal static string Instructions {
             get {
                 return ResourceManager.GetString("Instructions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PlayerOne {
-            get {
-                object obj = ResourceManager.GetObject("PlayerOne", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

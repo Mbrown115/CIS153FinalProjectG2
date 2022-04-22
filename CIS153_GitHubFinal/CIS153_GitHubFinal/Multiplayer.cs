@@ -158,15 +158,16 @@ namespace CIS153_GitHubFinal
                 if (game.get_player() == "x")
                 {
                     game.set_winner("o");
+                    picBx_WinLose.Image = Properties.Resources.FinalPlayer_Opng;
                 }
                 else if (game.get_player() == "o")
                 {
                     game.set_winner("x");
+                    picBx_WinLose.Image = Properties.Resources.FinalPlayer_Xpng;
                 }
                 Console.WriteLine("Winner is " + game.get_winner());
                 tableLayoutPanel1.Hide();
-                picBx_WinLose.Visible = true;
-                picBx_WinLose.Image = Properties.Resources.PlayerOne;
+                picBx_WinLose.Visible = true;                
                 game.set_game_over(true);
                 status = true;
             }
