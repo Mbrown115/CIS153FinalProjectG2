@@ -129,6 +129,16 @@ namespace CIS153_GitHubFinal.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap finalGreen {
+            get {
+                object obj = ResourceManager.GetObject("finalGreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Connect 4 Program Instructions:,
         ///
         ///Starting a Game:,
