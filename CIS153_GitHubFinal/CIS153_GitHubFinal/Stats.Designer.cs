@@ -104,7 +104,7 @@ namespace CIS153_GitHubFinal
             this.menStp.Location = new System.Drawing.Point(0, 0);
             this.menStp.Name = "menStp";
             this.menStp.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menStp.Size = new System.Drawing.Size(1328, 33);
+            this.menStp.Size = new System.Drawing.Size(1328, 36);
             this.menStp.TabIndex = 5;
             this.menStp.Text = "menuStrip1";
             // 
@@ -116,13 +116,13 @@ namespace CIS153_GitHubFinal
             this.exitToolStripMenuItem});
             this.gameOptionsToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.gameOptionsToolStripMenuItem1.Name = "gameOptionsToolStripMenuItem1";
-            this.gameOptionsToolStripMenuItem1.Size = new System.Drawing.Size(172, 29);
+            this.gameOptionsToolStripMenuItem1.Size = new System.Drawing.Size(172, 32);
             this.gameOptionsToolStripMenuItem1.Text = "Game Options";
             // 
             // mainMenuToolStripMenuItem
             // 
             this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
-            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(246, 34);
             this.mainMenuToolStripMenuItem.Text = "Main Menu";
             this.mainMenuToolStripMenuItem.Click += new System.EventHandler(this.mainMenuToolStripMenuItem_Click);
             // 
@@ -135,7 +135,7 @@ namespace CIS153_GitHubFinal
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(246, 34);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -145,7 +145,7 @@ namespace CIS153_GitHubFinal
             this.leaderBoardToolStripMenuItem1});
             this.statisticsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(148, 29);
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(148, 32);
             this.statisticsToolStripMenuItem.Text = "Statistics";
             // 
             // leaderBoardToolStripMenuItem1
@@ -161,7 +161,7 @@ namespace CIS153_GitHubFinal
             this.instructionsToolStripMenuItem});
             this.helpToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(76, 29);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(76, 32);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // gameRulesToolStripMenuItem
@@ -178,8 +178,8 @@ namespace CIS153_GitHubFinal
             // 
             // Stats
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_Crop;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1328, 1262);

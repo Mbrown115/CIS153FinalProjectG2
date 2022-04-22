@@ -87,7 +87,7 @@ namespace CIS153_GitHubFinal
             this.menStp.Location = new System.Drawing.Point(0, 0);
             this.menStp.Name = "menStp";
             this.menStp.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menStp.Size = new System.Drawing.Size(1290, 33);
+            this.menStp.Size = new System.Drawing.Size(1290, 36);
             this.menStp.TabIndex = 4;
             this.menStp.Text = "menuStrip1";
             // 
@@ -251,8 +251,8 @@ namespace CIS153_GitHubFinal
             // 
             // GameBoard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_screenimage_ref;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -263,9 +263,11 @@ namespace CIS153_GitHubFinal
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.picBx_WinLose);
             this.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menStp;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "GameBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connect Four";

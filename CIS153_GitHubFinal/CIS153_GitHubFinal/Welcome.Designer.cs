@@ -239,7 +239,7 @@ namespace CIS153_GitHubFinal
             this.gameOptionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1328, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1343, 36);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -249,7 +249,7 @@ namespace CIS153_GitHubFinal
             this.exitConnect4ToolStripMenuItem});
             this.gameOptionsToolStripMenuItem.Font = new System.Drawing.Font("Source Code Pro", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gameOptionsToolStripMenuItem.Name = "gameOptionsToolStripMenuItem";
-            this.gameOptionsToolStripMenuItem.Size = new System.Drawing.Size(172, 29);
+            this.gameOptionsToolStripMenuItem.Size = new System.Drawing.Size(172, 32);
             this.gameOptionsToolStripMenuItem.Text = "Game Options";
             // 
             // exitConnect4ToolStripMenuItem
@@ -291,18 +291,20 @@ namespace CIS153_GitHubFinal
             // 
             // Welcome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_screenimage_ref_2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1328, 1262);
+            this.ClientSize = new System.Drawing.Size(1343, 1332);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "Welcome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connect 4";
