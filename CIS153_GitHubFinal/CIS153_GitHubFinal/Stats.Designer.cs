@@ -29,6 +29,7 @@ namespace CIS153_GitHubFinal
         /// </summary>
         private void InitializeComponent ()
             {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stats));
             this.btn_Menu = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.listBx_Stats = new System.Windows.Forms.ListBox();
@@ -189,6 +190,7 @@ namespace CIS153_GitHubFinal
             this.Controls.Add(this.listBx_Stats);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Menu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "Stats";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
