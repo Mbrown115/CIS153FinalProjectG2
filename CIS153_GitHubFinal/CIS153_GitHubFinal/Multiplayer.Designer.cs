@@ -64,13 +64,13 @@ namespace CIS153_GitHubFinal
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(259, 123);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(299, 147);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(353, 312);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(396, 350);
             this.tableLayoutPanel1.TabIndex = 3;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -86,7 +86,7 @@ namespace CIS153_GitHubFinal
             this.menStp.Location = new System.Drawing.Point(0, 0);
             this.menStp.Name = "menStp";
             this.menStp.Padding = new System.Windows.Forms.Padding(5, 1, 0, 1);
-            this.menStp.Size = new System.Drawing.Size(860, 24);
+            this.menStp.Size = new System.Drawing.Size(980, 24);
             this.menStp.TabIndex = 4;
             this.menStp.Text = "menuStrip1";
             // 
@@ -235,7 +235,7 @@ namespace CIS153_GitHubFinal
             this.lbl_TurnIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbl_TurnIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TurnIndicator.ForeColor = System.Drawing.Color.White;
-            this.lbl_TurnIndicator.Location = new System.Drawing.Point(271, 435);
+            this.lbl_TurnIndicator.Location = new System.Drawing.Point(341, 505);
             this.lbl_TurnIndicator.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_TurnIndicator.Name = "lbl_TurnIndicator";
             this.lbl_TurnIndicator.Size = new System.Drawing.Size(330, 24);
@@ -256,7 +256,7 @@ namespace CIS153_GitHubFinal
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_screenimage_ref;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(860, 836);
+            this.ClientSize = new System.Drawing.Size(980, 956);
             this.ControlBox = false;
             this.Controls.Add(this.menStp);
             this.Controls.Add(this.lbl_TurnIndicator);
