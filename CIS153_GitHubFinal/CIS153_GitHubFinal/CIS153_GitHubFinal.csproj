@@ -107,7 +107,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Records.txt" />
     <None Include="Resources\connect4_Sound.wav" />
     <None Include="Resources\alert1.wav" />
     <None Include="Resources\ArcadeScreen_Crop.png" />

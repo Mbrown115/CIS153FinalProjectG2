@@ -14,8 +14,7 @@ namespace CIS153_GitHubFinal
 {
     public partial class Stats : Form
     {
-        Welcome menu;        
-
+        Welcome menu;
         public Stats()
         {
             InitializeComponent();
@@ -27,6 +26,7 @@ namespace CIS153_GitHubFinal
             menu = w;
 
             DisplayStats();
+            updateFile();
         }
 
         private void btn_Menu_Click (object sender , EventArgs e)
@@ -47,64 +47,40 @@ namespace CIS153_GitHubFinal
 
         public void DisplayStats()
         {
-            string filePath = "";
-            int count = 0;
-            string playerWins = "";
-            string aiWins = "";
-            string ties = "";
-            string timesPlayed = "";
+            string filePath = "Records.txt";
 
-            try
-            {
-                filePath = "CIS153_GitHubFinal/Properties/Resources.Records";
-                Console.WriteLine("Opened");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("file cannot open" + e.Message);
-            }
-            String[] words = filePath.Split(',');
+            StreamReader statsRead = new StreamReader(filePath);
+            string line = statsRead.ReadLine();
 
-            foreach (String word in words)
+            while (line != null)
             {
-                if (count == 0)
-                {
-                    playerWins = word;
-                    count++;
-                }
-                else if (count == 1)
-                {
-                    aiWins = word;
-                    count++;
-                }
-                else if (count == 2)
-                {
-                    ties = word;
-                    count++;
-                }
-                else if (count == 3)
-                {
-                    timesPlayed = word;
-                    count = 0;
-                }
+                String[] words = line.Split(',');
+                Players newScores = new Players();
+
+                newScores.setPlayerWins(Int32.Parse(words[0]));
+                newScores.setAIWins(Int32.Parse(words[1]));
+                newScores.setTies(Int32.Parse(words[2]));
+                newScores.setTimesPlayed(Int32.Parse(words[3]));
+
+                line = statsRead.ReadLine();
+                //Console.WriteLine(newScores.getPlayerWins());
             }
 
-            //just testing the display
-            listBx_Stats.Items.Add("Number of Player Wins: " + playerWins);
-            listBx_Stats.Items.Add("Number of AI Wins: " + aiWins);
-            listBx_Stats.Items.Add("Number of Ties: " + ties);
-            listBx_Stats.Items.Add("Number of times game has been played: " + timesPlayed);
+            statsRead.Close();
         }
 
         public void updateFile()
         {
-            string filePath = "CIS153_GitHubFinal/Properties/Resources/Records";
-            StreamWriter write = File.AppendText(filePath);
+            string filePath = "Records.txt";
 
-            //write.WriteLine("test" + " " + "test");
-            //write.WriteLine("testing");
-            //write.Flush();
-            write.Close();
+            StreamWriter statsWrite = new StreamWriter(filePath);
+            Players newScores = new Players();
+            statsWrite.WriteLine(newScores.getPlayerWins() + "," + newScores.getAIWins() + "," + newScores.getTies() + "," + newScores.getTimesPlayed());
+
+            //Console.WriteLine(newScores.getPlayerWins());
+
+            statsWrite.Flush();
+            statsWrite.Close();
         }
 
         private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e)
