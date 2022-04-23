@@ -20,6 +20,8 @@ namespace CIS153_GitHubFinal
         public GameBoard()
         {
             InitializeComponent();
+            btn_NewGame.Visible = false;
+            btn_Quit.Visible = false;
         }
 
         public GameBoard(Welcome fml)
@@ -27,6 +29,9 @@ namespace CIS153_GitHubFinal
             InitializeComponent();
             GameTest();
             menu = fml;
+
+            btn_NewGame.Visible = false;
+            btn_Quit.Visible = false;
         }
 
         public void GameTest()
@@ -161,7 +166,7 @@ namespace CIS153_GitHubFinal
                     picBx_WinLose.Image = Properties.Resources.FinalPlayer_Opng;
                     lbl_NewGame.Visible = true;
                     btn_NewGame.Visible = true;
-                    btn_Quit.Visible = true;
+                    btn_Quit.Visible = true;                    
                 }
                 else if (game.get_player() == "o")
                 {
@@ -169,8 +174,7 @@ namespace CIS153_GitHubFinal
                     picBx_WinLose.Image = Properties.Resources.FinalPlayer_Xpng;
                     lbl_NewGame.Visible = true;
                     btn_NewGame.Visible = true;
-                    btn_Quit.Visible = true;
-                    
+                    btn_Quit.Visible = true;             
                 }
                 Console.WriteLine("Winner is " + game.get_winner());
                 tableLayoutPanel1.Hide();
@@ -218,14 +222,14 @@ namespace CIS153_GitHubFinal
             {
                 game.set_player("o");
                 lbl_TurnIndicator.Visible = true;
-                lbl_TurnIndicator.Text = "Player 2, make a move!";
+                lbl_TurnIndicator.Text = "Player O, make a move!";
 
             }
             else
             {
                 game.set_player("x");
                 lbl_TurnIndicator.Visible = true;
-                lbl_TurnIndicator.Text = "Player 1, make a move!";
+                lbl_TurnIndicator.Text = "Player X, make a move!";
             }
         }
 
