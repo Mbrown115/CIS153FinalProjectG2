@@ -13,7 +13,7 @@ namespace CIS153_GitHubFinal
     public partial class GameBoard : Form
     {
         board game;
-        Welcome menu;        
+        Welcome menu;
         int[,] b = new int[6, 7];
 
 
@@ -83,7 +83,7 @@ namespace CIS153_GitHubFinal
         {
             Button button;
             string token;
-                        
+
             for (int r = 0; r < game.get_rows(); r++)
             {
                 for (int c = 0; c < game.get_columns(); c++)
@@ -92,12 +92,12 @@ namespace CIS153_GitHubFinal
                     token = game.get_token(r, c);
 
                     if (token == "-")
-                    {                        
+                    {
                         button.BackColor = Color.FromArgb(25, 192, 0, 192);
                     }
                     else if (token == "x")
                     {
-                        button.BackColor = Color.FromArgb(230,21,205);
+                        button.BackColor = Color.FromArgb(230, 21, 205);
                     }
                     else if (token == "o")
                     {
@@ -159,15 +159,22 @@ namespace CIS153_GitHubFinal
                 {
                     game.set_winner("o");
                     picBx_WinLose.Image = Properties.Resources.FinalPlayer_Opng;
+                    lbl_NewGame.Visible = true;
+                    btn_NewGame.Visible = true;
+                    btn_Quit.Visible = true;
                 }
                 else if (game.get_player() == "o")
                 {
                     game.set_winner("x");
                     picBx_WinLose.Image = Properties.Resources.FinalPlayer_Xpng;
+                    lbl_NewGame.Visible = true;
+                    btn_NewGame.Visible = true;
+                    btn_Quit.Visible = true;
+                    btn
                 }
                 Console.WriteLine("Winner is " + game.get_winner());
                 tableLayoutPanel1.Hide();
-                picBx_WinLose.Visible = true;                
+                picBx_WinLose.Visible = true;
                 game.set_game_over(true);
                 status = true;
             }
@@ -212,7 +219,7 @@ namespace CIS153_GitHubFinal
                 game.set_player("o");
                 lbl_TurnIndicator.Visible = true;
                 lbl_TurnIndicator.Text = "Player 2, make a move!";
-                
+
             }
             else
             {
@@ -247,7 +254,7 @@ namespace CIS153_GitHubFinal
                 Close();
                 menu.Show();
             }
-                        
+
         }
 
         private void leaderBoardToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -258,6 +265,16 @@ namespace CIS153_GitHubFinal
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_NewGame_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Quit_Click(object sender, EventArgs e)
         {
 
         }

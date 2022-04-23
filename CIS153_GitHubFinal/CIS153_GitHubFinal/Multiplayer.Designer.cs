@@ -54,6 +54,9 @@ namespace CIS153_GitHubFinal
             this.picBx_WinLose = new System.Windows.Forms.PictureBox();
             this.lbl_TurnIndicator = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.btn_NewGame = new System.Windows.Forms.Button();
+            this.lbl_NewGame = new System.Windows.Forms.Label();
+            this.btn_Quit = new System.Windows.Forms.Button();
             this.menStp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBx_WinLose)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +67,7 @@ namespace CIS153_GitHubFinal
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(296, 142);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(338, 563);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -235,7 +238,7 @@ namespace CIS153_GitHubFinal
             this.lbl_TurnIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbl_TurnIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TurnIndicator.ForeColor = System.Drawing.Color.White;
-            this.lbl_TurnIndicator.Location = new System.Drawing.Point(338, 500);
+            this.lbl_TurnIndicator.Location = new System.Drawing.Point(380, 921);
             this.lbl_TurnIndicator.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_TurnIndicator.Name = "lbl_TurnIndicator";
             this.lbl_TurnIndicator.Size = new System.Drawing.Size(330, 24);
@@ -249,6 +252,43 @@ namespace CIS153_GitHubFinal
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Visible = true;
             // 
+            // btn_NewGame
+            // 
+            this.btn_NewGame.Font = new System.Drawing.Font("Source Code Pro", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NewGame.Location = new System.Drawing.Point(373, 430);
+            this.btn_NewGame.Name = "btn_NewGame";
+            this.btn_NewGame.Size = new System.Drawing.Size(100, 65);
+            this.btn_NewGame.TabIndex = 6;
+            this.btn_NewGame.Text = "New Game";
+            this.btn_NewGame.UseVisualStyleBackColor = true;
+            this.btn_NewGame.Visible = false;
+            this.btn_NewGame.Click += new System.EventHandler(this.btn_NewGame_Click);
+            // 
+            // lbl_NewGame
+            // 
+            this.lbl_NewGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(157)))), ((int)(((byte)(52)))), ((int)(((byte)(204)))));
+            this.lbl_NewGame.Font = new System.Drawing.Font("Source Code Pro Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NewGame.ForeColor = System.Drawing.Color.White;
+            this.lbl_NewGame.Location = new System.Drawing.Point(285, 328);
+            this.lbl_NewGame.Name = "lbl_NewGame";
+            this.lbl_NewGame.Size = new System.Drawing.Size(425, 197);
+            this.lbl_NewGame.TabIndex = 7;
+            this.lbl_NewGame.Text = "Play Again?";
+            this.lbl_NewGame.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl_NewGame.Visible = false;
+            // 
+            // btn_Quit
+            // 
+            this.btn_Quit.Font = new System.Drawing.Font("Source Code Pro", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Quit.Location = new System.Drawing.Point(508, 430);
+            this.btn_Quit.Name = "btn_Quit";
+            this.btn_Quit.Size = new System.Drawing.Size(100, 65);
+            this.btn_Quit.TabIndex = 8;
+            this.btn_Quit.Text = "Main Menu";
+            this.btn_Quit.UseVisualStyleBackColor = true;
+            this.btn_Quit.Visible = false;
+            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -258,6 +298,9 @@ namespace CIS153_GitHubFinal
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(980, 956);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_Quit);
+            this.Controls.Add(this.btn_NewGame);
+            this.Controls.Add(this.lbl_NewGame);
             this.Controls.Add(this.menStp);
             this.Controls.Add(this.lbl_TurnIndicator);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -302,5 +345,8 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.ToolStripMenuItem mainMenuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem boardSetupToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Button btn_NewGame;
+        private System.Windows.Forms.Label lbl_NewGame;
+        private System.Windows.Forms.Button btn_Quit;
     }
 }
