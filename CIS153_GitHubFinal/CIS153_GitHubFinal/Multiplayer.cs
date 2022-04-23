@@ -15,6 +15,7 @@ namespace CIS153_GitHubFinal
         board game;
         Welcome menu;
         int[,] b = new int[6, 7];
+        bool isBot = false;
 
 
         public GameBoard()
@@ -24,6 +25,9 @@ namespace CIS153_GitHubFinal
 
         public GameBoard(Welcome fml)
         {
+            SoundPlayer Sound = new SoundPlayer(Properties.Resources.shotgun_x);
+            Sound.Play();
+
             InitializeComponent();
             GameTest();
             menu = fml;
@@ -136,6 +140,9 @@ namespace CIS153_GitHubFinal
             int column = Int16.Parse(indexes[1]);
             string token = game.get_token(row, column);
 
+            SoundPlayer Sound = new SoundPlayer(Properties.Resources.click_x);
+            Sound.Play();
+
             if (check_game_over() == false) // stops the game from continuing
             {
                 play_player_round(column);
@@ -158,6 +165,18 @@ namespace CIS153_GitHubFinal
                 if (game.get_player() == "x")
                 {
                     game.set_winner("o");
+
+                    if (isBot)
+                    {
+                        SoundPlayer winSound = new SoundPlayer(Properties.Resources.quick_fart_x);
+                        winSound.Play();
+                    }
+                    else 
+                    { 
+                        SoundPlayer Sound = new SoundPlayer(Properties.Resources.fanfare_x);
+                        Sound.Play();
+                    }
+                    
                     picBx_WinLose.Image = Properties.Resources.FinalPlayer_Opng;
                     lbl_NewGame.Visible = true;
                     btn_NewGame.Visible = true;
@@ -166,6 +185,20 @@ namespace CIS153_GitHubFinal
                 else if (game.get_player() == "o")
                 {
                     game.set_winner("x");
+
+                    if (isBot)
+                    {
+                        SoundPlayer winSound = new SoundPlayer(Properties.Resources.quick_fart_x);
+                        winSound.Play();
+                        isBot = false;
+                    }
+                    else
+                    {
+                        SoundPlayer Sound = new SoundPlayer(Properties.Resources.fanfare_x);
+                        Sound.Play();
+                        isBot = false;
+                    }
+
                     picBx_WinLose.Image = Properties.Resources.FinalPlayer_Xpng;
                     lbl_NewGame.Visible = true;
                     btn_NewGame.Visible = true;
@@ -209,6 +242,9 @@ namespace CIS153_GitHubFinal
             game.bot_AI();
             Thread.Sleep(100);
             DrawBoard();
+
+            isBot = true;
+
             Thread.Sleep(100);
             change_player();
         }

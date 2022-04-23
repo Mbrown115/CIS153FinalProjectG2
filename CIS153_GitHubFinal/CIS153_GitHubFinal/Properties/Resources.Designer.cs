@@ -110,6 +110,24 @@ namespace CIS153_GitHubFinal.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream click_x {
+            get {
+                return ResourceManager.GetStream("click_x", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream coin_flip {
+            get {
+                return ResourceManager.GetStream("coin_flip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Connect4_21 {
@@ -125,6 +143,15 @@ namespace CIS153_GitHubFinal.Properties {
         internal static System.IO.UnmanagedMemoryStream connect4_Sound {
             get {
                 return ResourceManager.GetStream("connect4_Sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream fanfare_x {
+            get {
+                return ResourceManager.GetStream("fanfare_x", resourceCulture);
             }
         }
         
@@ -179,6 +206,15 @@ namespace CIS153_GitHubFinal.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream quick_fart_x {
+            get {
+                return ResourceManager.GetStream("quick_fart_x", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Connect 4 Rules,
         ///
         ///Objective:,
@@ -193,6 +229,15 @@ namespace CIS153_GitHubFinal.Properties {
         internal static string Rules {
             get {
                 return ResourceManager.GetString("Rules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream shotgun_x {
+            get {
+                return ResourceManager.GetStream("shotgun_x", resourceCulture);
             }
         }
     }
