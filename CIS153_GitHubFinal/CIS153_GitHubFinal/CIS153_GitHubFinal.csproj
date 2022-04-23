@@ -113,9 +113,7 @@
     <None Include="Resources\ArcadeScreen_Crop_Purple.png" />
     <None Include="Resources\Logo2.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Debug\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\PlayerTwo.png" />
   </ItemGroup>
@@ -181,6 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shotgun_x.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Records.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
