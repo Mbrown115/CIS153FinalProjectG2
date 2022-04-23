@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace CIS153_GitHubFinal
 {
-    class board
+    public class board
     {
         private string winner;
         private bool game_over;

@@ -13,8 +13,11 @@ namespace CIS153_GitHubFinal
     public partial class GameBoard : Form
     {
         board game;
+        board previewGame;
         Welcome menu;
         int[,] b = new int[6, 7];
+        bool isBot = false;
+        bool isPreviewGame = false;
 
 
         public GameBoard()
@@ -26,16 +29,28 @@ namespace CIS153_GitHubFinal
 
         public GameBoard(Welcome fml)
         {
+            SoundPlayer Sound = new SoundPlayer(Properties.Resources.shotgun_x);
+            Sound.Play();
+
             InitializeComponent();
-            GameTest();
+            if (isPreviewGame)
+            {
+                GameTest(previewGame);
+            }
+            else 
+            {
+                GameTest(game);
+            }
+            
             menu = fml;
 
             btn_NewGame.Visible = false;
             btn_Quit.Visible = false;
         }
 
-        public void GameTest()
+        public void GameTest(board previewGame)
         {
+            
             int columns = 7;
             int rows = 6;
             int streak = 4;
@@ -77,14 +92,16 @@ namespace CIS153_GitHubFinal
                     game.set_button(i, j, button);
                 }
             }
-            DrawBoard();
+            DrawBoard(game);
+            
+            
             // this makes the bot play first if it is player x
             if (game.get_bot() == "x")
             {
                 play_bot_round();
             }
         }
-        void DrawBoard()
+        void DrawBoard(board game)
         {
             Button button;
             string token;
@@ -141,6 +158,9 @@ namespace CIS153_GitHubFinal
             int column = Int16.Parse(indexes[1]);
             string token = game.get_token(row, column);
 
+            SoundPlayer Sound = new SoundPlayer(Properties.Resources.click_x);
+            Sound.Play();
+
             if (check_game_over() == false) // stops the game from continuing
             {
                 play_player_round(column);
@@ -163,6 +183,18 @@ namespace CIS153_GitHubFinal
                 if (game.get_player() == "x")
                 {
                     game.set_winner("o");
+
+                    if (isBot)
+                    {
+                        SoundPlayer winSound = new SoundPlayer(Properties.Resources.quick_fart_x);
+                        winSound.Play();
+                    }
+                    else 
+                    { 
+                        SoundPlayer Sound = new SoundPlayer(Properties.Resources.fanfare_x);
+                        Sound.Play();
+                    }
+                    
                     picBx_WinLose.Image = Properties.Resources.FinalPlayer_Opng;
                     lbl_NewGame.Visible = true;
                     btn_NewGame.Visible = true;
@@ -171,11 +203,27 @@ namespace CIS153_GitHubFinal
                 else if (game.get_player() == "o")
                 {
                     game.set_winner("x");
+
+                    if (isBot)
+                    {
+                        SoundPlayer winSound = new SoundPlayer(Properties.Resources.quick_fart_x);
+                        winSound.Play();
+                        isBot = false;
+                    }
+                    else
+                    {
+                        SoundPlayer Sound = new SoundPlayer(Properties.Resources.fanfare_x);
+                        Sound.Play();
+                        isBot = false;
+                    }
+
                     picBx_WinLose.Image = Properties.Resources.FinalPlayer_Xpng;
                     lbl_NewGame.Visible = true;
                     btn_NewGame.Visible = true;
                     btn_Quit.Visible = true;             
                 }
+                previewGame = game;
+                menu.setPreviewGame(previewGame);
                 Console.WriteLine("Winner is " + game.get_winner());
                 tableLayoutPanel1.Hide();
                 picBx_WinLose.Visible = true;
@@ -203,7 +251,7 @@ namespace CIS153_GitHubFinal
             }
             if (dropped == true)
             {
-                DrawBoard();
+                DrawBoard(game);
                 change_player();
             }
         }
@@ -212,7 +260,10 @@ namespace CIS153_GitHubFinal
             Thread.Sleep(100);
             game.bot_AI();
             Thread.Sleep(100);
-            DrawBoard();
+            DrawBoard(game);
+
+            isBot = true;
+
             Thread.Sleep(100);
             change_player();
         }
@@ -244,6 +295,12 @@ namespace CIS153_GitHubFinal
             {
                 Application.Exit();
             }
+        }
+
+        public void setPreviewGame(board game)
+        {
+            previewGame = game;
+            isPreviewGame = true;
         }
 
         private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e)

@@ -168,5 +168,20 @@
   <ItemGroup>
     <None Include="Resources\FinalPlayer_Xpng.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\click_x.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fanfare_x.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coin_flip.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quick_fart_x.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shotgun_x.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
