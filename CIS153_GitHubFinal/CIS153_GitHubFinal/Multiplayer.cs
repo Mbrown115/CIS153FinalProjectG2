@@ -170,7 +170,7 @@ namespace CIS153_GitHubFinal
                     lbl_NewGame.Visible = true;
                     btn_NewGame.Visible = true;
                     btn_Quit.Visible = true;
-                    btn
+                    
                 }
                 Console.WriteLine("Winner is " + game.get_winner());
                 tableLayoutPanel1.Hide();
