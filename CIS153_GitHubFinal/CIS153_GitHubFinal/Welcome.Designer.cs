@@ -44,6 +44,7 @@ namespace CIS153_GitHubFinal
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_stats = new System.Windows.Forms.Button();
             this.btn_multiplayer = new System.Windows.Forms.Button();
+            this.previewLastGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,23 +204,24 @@ namespace CIS153_GitHubFinal
             this.gameOptionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(980, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(980, 25);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // gameOptionsToolStripMenuItem
             // 
             this.gameOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitConnect4ToolStripMenuItem});
-            this.gameOptionsToolStripMenuItem.Font = new System.Drawing.Font("Source Code Pro", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitConnect4ToolStripMenuItem,
+            this.previewLastGameToolStripMenuItem});
+            this.gameOptionsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gameOptionsToolStripMenuItem.Name = "gameOptionsToolStripMenuItem";
-            this.gameOptionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.gameOptionsToolStripMenuItem.Size = new System.Drawing.Size(123, 21);
             this.gameOptionsToolStripMenuItem.Text = "Game Options";
             // 
             // exitConnect4ToolStripMenuItem
             // 
             this.exitConnect4ToolStripMenuItem.Name = "exitConnect4ToolStripMenuItem";
-            this.exitConnect4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitConnect4ToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.exitConnect4ToolStripMenuItem.Text = "Exit Connect4";
             this.exitConnect4ToolStripMenuItem.Click += new System.EventHandler(this.exitConnect4ToolStripMenuItem_Click);
             // 
@@ -227,7 +229,7 @@ namespace CIS153_GitHubFinal
             // 
             this.btn_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_exit.BackColor = System.Drawing.Color.MediumOrchid;
-            this.btn_exit.Font = new System.Drawing.Font("Source Code Pro Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.ForeColor = System.Drawing.Color.White;
             this.btn_exit.Location = new System.Drawing.Point(450, 475);
             this.btn_exit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 10);
@@ -242,7 +244,7 @@ namespace CIS153_GitHubFinal
             // 
             this.btn_stats.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_stats.BackColor = System.Drawing.Color.MediumOrchid;
-            this.btn_stats.Font = new System.Drawing.Font("Source Code Pro Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_stats.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_stats.ForeColor = System.Drawing.Color.White;
             this.btn_stats.Location = new System.Drawing.Point(499, 410);
             this.btn_stats.Margin = new System.Windows.Forms.Padding(4, 5, 4, 10);
@@ -257,7 +259,7 @@ namespace CIS153_GitHubFinal
             // 
             this.btn_multiplayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_multiplayer.BackColor = System.Drawing.Color.MediumOrchid;
-            this.btn_multiplayer.Font = new System.Drawing.Font("Source Code Pro Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_multiplayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_multiplayer.ForeColor = System.Drawing.Color.White;
             this.btn_multiplayer.Location = new System.Drawing.Point(402, 410);
             this.btn_multiplayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 10);
@@ -267,6 +269,13 @@ namespace CIS153_GitHubFinal
             this.btn_multiplayer.Text = "Start Game";
             this.btn_multiplayer.UseVisualStyleBackColor = false;
             this.btn_multiplayer.Click += new System.EventHandler(this.btn_multiplayer_Click);
+            // 
+            // previewLastGameToolStripMenuItem
+            // 
+            this.previewLastGameToolStripMenuItem.Name = "previewLastGameToolStripMenuItem";
+            this.previewLastGameToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.previewLastGameToolStripMenuItem.Text = "Preview Last Game";
+            this.previewLastGameToolStripMenuItem.Click += new System.EventHandler(this.previewLastGameToolStripMenuItem_Click);
             // 
             // Welcome
             // 
@@ -321,6 +330,7 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_stats;
         private System.Windows.Forms.Button btn_multiplayer;
+        private System.Windows.Forms.ToolStripMenuItem previewLastGameToolStripMenuItem;
     }
 }
 

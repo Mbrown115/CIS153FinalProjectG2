@@ -13,9 +13,11 @@ namespace CIS153_GitHubFinal
     public partial class GameBoard : Form
     {
         board game;
+        board previewGame;
         Welcome menu;
         int[,] b = new int[6, 7];
         bool isBot = false;
+        bool isPreviewGame = false;
 
 
         public GameBoard()
@@ -29,12 +31,21 @@ namespace CIS153_GitHubFinal
             Sound.Play();
 
             InitializeComponent();
-            GameTest();
+            if (isPreviewGame)
+            {
+                GameTest(previewGame);
+            }
+            else 
+            {
+                GameTest(game);
+            }
+            
             menu = fml;
         }
 
-        public void GameTest()
+        public void GameTest(board previewGame)
         {
+            
             int columns = 7;
             int rows = 6;
             int streak = 4;
@@ -76,14 +87,16 @@ namespace CIS153_GitHubFinal
                     game.set_button(i, j, button);
                 }
             }
-            DrawBoard();
+            DrawBoard(game);
+            
+            
             // this makes the bot play first if it is player x
             if (game.get_bot() == "x")
             {
                 play_bot_round();
             }
         }
-        void DrawBoard()
+        void DrawBoard(board game)
         {
             Button button;
             string token;
@@ -205,6 +218,8 @@ namespace CIS153_GitHubFinal
                     btn_Quit.Visible = true;
                     
                 }
+                previewGame = game;
+                menu.setPreviewGame(previewGame);
                 Console.WriteLine("Winner is " + game.get_winner());
                 tableLayoutPanel1.Hide();
                 picBx_WinLose.Visible = true;
@@ -232,7 +247,7 @@ namespace CIS153_GitHubFinal
             }
             if (dropped == true)
             {
-                DrawBoard();
+                DrawBoard(game);
                 change_player();
             }
         }
@@ -241,7 +256,7 @@ namespace CIS153_GitHubFinal
             Thread.Sleep(100);
             game.bot_AI();
             Thread.Sleep(100);
-            DrawBoard();
+            DrawBoard(game);
 
             isBot = true;
 
@@ -276,6 +291,12 @@ namespace CIS153_GitHubFinal
             {
                 Application.Exit();
             }
+        }
+
+        public void setPreviewGame(board game)
+        {
+            previewGame = game;
+            isPreviewGame = true;
         }
 
         private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e)
