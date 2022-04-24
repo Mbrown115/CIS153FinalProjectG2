@@ -27,12 +27,6 @@ namespace CIS153_GitHubFinal
         }
 
         //--------------------SETTERS--------------------------
-
-        public void setWins(int w)
-        {
-            wins = w;
-        }
-
         public void setPlayerWins(int w)
         {
             playerWin = w;
@@ -58,21 +52,6 @@ namespace CIS153_GitHubFinal
 
 
         //--------------------GETTERS--------------------------
-        public string getPlayerName()
-        {
-            return name;
-        }
-
-        public int getWins()
-        {
-            return wins;
-        }
-
-        public int getPlayerLoss()
-        {
-            return loss;
-        }
-
         public int getPlayerWins()
         {
             return playerWin++;
