@@ -333,8 +333,7 @@ namespace CIS153_GitHubFinal
         private void howToPlayToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HowToPlay rules = new HowToPlay();
-            rules.Show();
-            Close();
+            rules.Show();            
         }
 
         private void readMeToolStripMenuItem_Click(object sender, EventArgs e)

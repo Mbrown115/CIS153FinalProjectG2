@@ -115,8 +115,7 @@ namespace CIS153_GitHubFinal
         private void howToPlayToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HowToPlay rules = new HowToPlay();
-            rules.Show();
-            Hide();
+            rules.Show();            
         }
 
         private void readMeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -127,7 +126,6 @@ namespace CIS153_GitHubFinal
         private void leaderBoardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Stats viewStats = new Stats(this);
-
             viewStats.Show();
             Hide();
         }
