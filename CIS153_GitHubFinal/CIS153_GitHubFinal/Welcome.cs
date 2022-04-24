@@ -21,7 +21,7 @@ namespace CIS153_GitHubFinal
 
     public partial class Welcome : Form
     {
-        Board previewGame;
+        
         public static string bot_select = "-";
         public static int rows_select = 6;
         public static int columns_select = 7;
@@ -97,19 +97,6 @@ namespace CIS153_GitHubFinal
             {
                 Application.Exit();
             }
-        }
-
-        private void previewLastGameToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GameBoard reviewPlay = new GameBoard(this);
-            reviewPlay.Show();
-            Hide();
-            reviewPlay.setPreviewGame(previewGame);
-        }
-
-        public void setPreviewGame(Board game)
-        {
-            previewGame = game;
         }
 
         private void howToPlayToolStripMenuItem_Click(object sender, EventArgs e)

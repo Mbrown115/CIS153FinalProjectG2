@@ -13,11 +13,11 @@ namespace CIS153_GitHubFinal
     public partial class GameBoard : Form
     {
         Board game;
-        Board previewGame;
         Welcome menu;
         int[,] b = new int[6, 7];
         bool isBot = false;
         bool isPreviewGame = false;
+        //GameBoard play = new GameBoard();
 
 
         public GameBoard()
@@ -31,21 +31,14 @@ namespace CIS153_GitHubFinal
             Sound.Play();
 
             InitializeComponent();
-            if (isPreviewGame)
-            {
-                GameTest(previewGame);
-            }
-            else 
-            {
-                GameTest(game);
-            }
-            
+
+            GameTest(game);
             menu = fml;
         }
 
         public void GameTest(Board previewGame)
         {
-            
+
             int columns = 7;
             int rows = 6;
             int streak = 4;
@@ -72,22 +65,24 @@ namespace CIS153_GitHubFinal
             {
                 this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100 / rowCount));
             }
-
-            for (int i = 0; i < rowCount; i++)
+            if (!isPreviewGame)
             {
-                for (int j = 0; j < columnCount; j++)
+                for (int i = 0; i < rowCount; i++)
                 {
-                    var button = new Button();
-                    button.Name = string.Format("{0}:{1}", i, j);
-                    button.Click += MyButtonClick;
-                    button.MouseEnter += MyButtonHover;
-                    button.MouseLeave += MyButtonHoverExit;
-                    button.Dock = DockStyle.Fill;
-                    this.tableLayoutPanel1.Controls.Add(button, j, i);
-                    game.set_button(i, j, button);
-                }
+                    for (int j = 0; j < columnCount; j++)
+                    {
+                        var button = new Button();
+                        button.Name = string.Format("{0}:{1}", i, j);
+                        button.Click += MyButtonClick;
+                        button.MouseEnter += MyButtonHover;
+                        button.MouseLeave += MyButtonHoverExit;
+                        button.Dock = DockStyle.Fill;
+                        this.tableLayoutPanel1.Controls.Add(button, j, i);
+                        game.set_button(i, j, button);
+                    }
+                }DrawBoard(game);
             }
-            DrawBoard(game);
+            
             
             
             // this makes the bot play first if it is player x
@@ -125,46 +120,56 @@ namespace CIS153_GitHubFinal
         }
         void MyButtonHover(object sender, EventArgs e)
         {
-            Button button = sender as Button;
-            String[] indexes = button.Name.Split(':');
-            int row = Int16.Parse(indexes[0]);
-            int column = Int16.Parse(indexes[1]);
-
-            if (game.is_full(column) == false)
+            if (!isPreviewGame)
             {
-                game.hover_token(column);
+                Button button = sender as Button;
+                String[] indexes = button.Name.Split(':');
+                int row = Int16.Parse(indexes[0]);
+                int column = Int16.Parse(indexes[1]);
+
+                if (game.is_full(column) == false)
+                {
+                    game.hover_token(column);
+                }
             }
         }
         void MyButtonHoverExit(object sender, EventArgs e)
         {
-            cell lasttoken = game.get_last_token();
+            
+            
+                cell lasttoken = game.get_last_token();
             if (game.get_token(lasttoken.get_row(), lasttoken.get_column()) == "-")
             {
                 Button button = game.get_button(lasttoken.get_row(), lasttoken.get_column());
                 button.BackColor = Color.FromArgb(25, 192, 0, 192);
             }
+            
         }
         void MyButtonClick(object sender, EventArgs e)
         {
-            Button button = sender as Button;
-            //bool dropped = false;
-            String[] indexes = button.Name.Split(':');
-            int row = Int16.Parse(indexes[0]);
-            int column = Int16.Parse(indexes[1]);
-            string token = game.get_token(row, column);
-
-            SoundPlayer Sound = new SoundPlayer(Properties.Resources.click_x);
-            Sound.Play();
-
-            if (check_game_over() == false) // stops the game from continuing
+            if (!isPreviewGame)
             {
-                play_player_round(column);
+
+                Button button = sender as Button;
+                //bool dropped = false;
+                String[] indexes = button.Name.Split(':');
+                int row = Int16.Parse(indexes[0]);
+                int column = Int16.Parse(indexes[1]);
+                string token = game.get_token(row, column);
+
+                SoundPlayer Sound = new SoundPlayer(Properties.Resources.click_x);
+                Sound.Play();
+
+                if (check_game_over() == false) // stops the game from continuing
+                {
+                    play_player_round(column);
+                }
+                if ((game.get_bot() != "-") && (check_game_over() == false))
+                {
+                    play_bot_round();
+                }
+                check_game_over();
             }
-            if ((game.get_bot() != "-") && (check_game_over() == false))
-            {
-                play_bot_round();
-            }
-            check_game_over();
         }
         //here you can check which button was clicked by the sender
 
@@ -213,11 +218,10 @@ namespace CIS153_GitHubFinal
                     }
     
                 }
-                previewGame = game;
-                menu.setPreviewGame(previewGame);
+
                 Console.WriteLine("Winner is " + game.get_winner());                
                 game.set_game_over(true);
-                status = true;               
+                status = true;
 
             }
             else if (game.is_board_full() == true)
@@ -288,12 +292,6 @@ namespace CIS153_GitHubFinal
             }
         }
 
-        public void setPreviewGame(Board game)
-        {
-            previewGame = game;
-            isPreviewGame = true;
-        }
-
         private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SoundPlayer mainMenuSound = new SoundPlayer(Properties.Resources.alert1);
@@ -326,6 +324,10 @@ namespace CIS153_GitHubFinal
             string winner = w;
 
             GameOver showWinner = new GameOver(w);
+            isPreviewGame = true;
+            lbl_TurnIndicator.Visible = false;
+            showWinner.setGameBoard(this);
+            showWinner.setWelcome(menu);
             showWinner.Show();
             Hide();
         }

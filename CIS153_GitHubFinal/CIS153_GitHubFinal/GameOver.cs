@@ -12,7 +12,9 @@ namespace CIS153_GitHubFinal
 {
     public partial class GameOver : Form
     {
-        
+        GameBoard play;
+        Welcome menu;
+
         public GameOver()
         {
             InitializeComponent();
@@ -38,10 +40,20 @@ namespace CIS153_GitHubFinal
             }
         }
 
+
+        public void setWelcome(Welcome m)
+        {
+            menu = m;
+        }
+
+        public void setGameBoard(GameBoard p)
+        {
+            play = p;
+        }
+
         private void btn_NewGame_Click(object sender, EventArgs e)
         {
-            Welcome newGame = new Welcome();
-            newGame.Show();
+            menu.Show();
             Close();
         }
 
@@ -50,5 +62,11 @@ namespace CIS153_GitHubFinal
             Application.Exit();
         }
 
+        private void btn_Review_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            play.Show();
+            
+        }
     }
 }

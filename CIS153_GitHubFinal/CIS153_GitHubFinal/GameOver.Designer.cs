@@ -41,7 +41,7 @@ namespace CIS153_GitHubFinal
             // btn_NewGame
             // 
             this.btn_NewGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(145)))), ((int)(((byte)(129)))), ((int)(((byte)(206)))));
-            this.btn_NewGame.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_NewGame.Location = new System.Drawing.Point(358, 413);
             this.btn_NewGame.Margin = new System.Windows.Forms.Padding(4);
             this.btn_NewGame.Name = "btn_NewGame";
@@ -54,7 +54,7 @@ namespace CIS153_GitHubFinal
             // btn_Exit
             // 
             this.btn_Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(145)))), ((int)(((byte)(129)))), ((int)(((byte)(206)))));
-            this.btn_Exit.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.Location = new System.Drawing.Point(544, 413);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Exit.Name = "btn_Exit";
@@ -67,7 +67,7 @@ namespace CIS153_GitHubFinal
             // lbl_NewGame
             // 
             this.lbl_NewGame.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_NewGame.Font = new System.Drawing.Font("Source Code Pro Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NewGame.ForeColor = System.Drawing.Color.Black;
             this.lbl_NewGame.Location = new System.Drawing.Point(180, 343);
             this.lbl_NewGame.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -93,7 +93,7 @@ namespace CIS153_GitHubFinal
             // btn_Review
             // 
             this.btn_Review.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(145)))), ((int)(((byte)(129)))), ((int)(((byte)(206)))));
-            this.btn_Review.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Review.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Review.Location = new System.Drawing.Point(451, 413);
             this.btn_Review.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Review.Name = "btn_Review";
@@ -101,6 +101,7 @@ namespace CIS153_GitHubFinal
             this.btn_Review.TabIndex = 13;
             this.btn_Review.Text = "Review Game";
             this.btn_Review.UseVisualStyleBackColor = false;
+            this.btn_Review.Click += new System.EventHandler(this.btn_Review_Click);
             // 
             // lbl_gameOverStats
             // 
@@ -108,7 +109,7 @@ namespace CIS153_GitHubFinal
             this.lbl_gameOverStats.BackColor = System.Drawing.Color.Transparent;
             this.lbl_gameOverStats.Location = new System.Drawing.Point(458, 297);
             this.lbl_gameOverStats.Name = "lbl_gameOverStats";
-            this.lbl_gameOverStats.Size = new System.Drawing.Size(51, 20);
+            this.lbl_gameOverStats.Size = new System.Drawing.Size(35, 13);
             this.lbl_gameOverStats.TabIndex = 14;
             this.lbl_gameOverStats.Text = "label1";
             // 
@@ -118,6 +119,7 @@ namespace CIS153_GitHubFinal
             this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_screenimage_ref;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 960);
+            this.ControlBox = false;
             this.Controls.Add(this.lbl_gameOverStats);
             this.Controls.Add(this.btn_Review);
             this.Controls.Add(this.btn_NewGame);
