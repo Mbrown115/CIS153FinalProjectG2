@@ -16,5 +16,12 @@ namespace CIS153_GitHubFinal
         {
             InitializeComponent();
         }
+
+        private void btn_Done_Click(object sender, EventArgs e)
+        {
+            Welcome main = new Welcome();
+            main.Show();
+            Close();
+        }
     }
 }

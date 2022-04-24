@@ -329,6 +329,13 @@ namespace CIS153_GitHubFinal
             showWinner.Show();
             Hide();
         }
+
+        private void howToPlayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HowToPlay rules = new HowToPlay();
+            rules.Show();
+            Close();
+        }
     }
 }
 
