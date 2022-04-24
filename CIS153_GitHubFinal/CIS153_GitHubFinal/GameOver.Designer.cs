@@ -30,42 +30,45 @@ namespace CIS153_GitHubFinal
         private void InitializeComponent()
         {
             this.btn_NewGame = new System.Windows.Forms.Button();
-            this.btn_Quit = new System.Windows.Forms.Button();
+            this.btn_Exit = new System.Windows.Forms.Button();
             this.lbl_NewGame = new System.Windows.Forms.Label();
             this.picBx_WinLose = new System.Windows.Forms.PictureBox();
+            this.btn_Review = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBx_WinLose)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_NewGame
             // 
             this.btn_NewGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(145)))), ((int)(((byte)(129)))), ((int)(((byte)(206)))));
-            this.btn_NewGame.Font = new System.Drawing.Font("Source Code Pro", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_NewGame.Location = new System.Drawing.Point(386, 414);
+            this.btn_NewGame.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NewGame.Location = new System.Drawing.Point(358, 413);
             this.btn_NewGame.Margin = new System.Windows.Forms.Padding(4);
             this.btn_NewGame.Name = "btn_NewGame";
-            this.btn_NewGame.Size = new System.Drawing.Size(95, 68);
+            this.btn_NewGame.Size = new System.Drawing.Size(85, 60);
             this.btn_NewGame.TabIndex = 10;
             this.btn_NewGame.Text = "New Game";
             this.btn_NewGame.UseVisualStyleBackColor = false;
+            this.btn_NewGame.Click += new System.EventHandler(this.btn_NewGame_Click);
             // 
-            // btn_Quit
+            // btn_Exit
             // 
-            this.btn_Quit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(145)))), ((int)(((byte)(129)))), ((int)(((byte)(206)))));
-            this.btn_Quit.Font = new System.Drawing.Font("Source Code Pro", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Quit.Location = new System.Drawing.Point(513, 414);
-            this.btn_Quit.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Quit.Name = "btn_Quit";
-            this.btn_Quit.Size = new System.Drawing.Size(95, 68);
-            this.btn_Quit.TabIndex = 12;
-            this.btn_Quit.Text = "Main Menu";
-            this.btn_Quit.UseVisualStyleBackColor = false;
+            this.btn_Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(145)))), ((int)(((byte)(129)))), ((int)(((byte)(206)))));
+            this.btn_Exit.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.Location = new System.Drawing.Point(544, 413);
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(85, 60);
+            this.btn_Exit.TabIndex = 12;
+            this.btn_Exit.Text = "Exit";
+            this.btn_Exit.UseVisualStyleBackColor = false;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // lbl_NewGame
             // 
             this.lbl_NewGame.BackColor = System.Drawing.Color.Transparent;
             this.lbl_NewGame.Font = new System.Drawing.Font("Source Code Pro Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NewGame.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NewGame.Location = new System.Drawing.Point(180, 314);
+            this.lbl_NewGame.Location = new System.Drawing.Point(180, 343);
             this.lbl_NewGame.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_NewGame.Name = "lbl_NewGame";
             this.lbl_NewGame.Size = new System.Drawing.Size(638, 66);
@@ -78,23 +81,35 @@ namespace CIS153_GitHubFinal
             // 
             this.picBx_WinLose.BackColor = System.Drawing.Color.Transparent;
             this.picBx_WinLose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBx_WinLose.Location = new System.Drawing.Point(274, 147);
+            this.picBx_WinLose.Location = new System.Drawing.Point(283, 147);
             this.picBx_WinLose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBx_WinLose.Name = "picBx_WinLose";
-            this.picBx_WinLose.Size = new System.Drawing.Size(442, 165);
+            this.picBx_WinLose.Size = new System.Drawing.Size(433, 165);
             this.picBx_WinLose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBx_WinLose.TabIndex = 9;
             this.picBx_WinLose.TabStop = false;
             // 
+            // btn_Review
+            // 
+            this.btn_Review.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(145)))), ((int)(((byte)(129)))), ((int)(((byte)(206)))));
+            this.btn_Review.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Review.Location = new System.Drawing.Point(451, 413);
+            this.btn_Review.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Review.Name = "btn_Review";
+            this.btn_Review.Size = new System.Drawing.Size(85, 60);
+            this.btn_Review.TabIndex = 13;
+            this.btn_Review.Text = "Review Game";
+            this.btn_Review.UseVisualStyleBackColor = false;
+            // 
             // GameOver
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_screenimage_ref;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 960);
+            this.Controls.Add(this.btn_Review);
             this.Controls.Add(this.btn_NewGame);
-            this.Controls.Add(this.btn_Quit);
+            this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.lbl_NewGame);
             this.Controls.Add(this.picBx_WinLose);
             this.Name = "GameOver";
@@ -108,8 +123,9 @@ namespace CIS153_GitHubFinal
         #endregion
 
         private System.Windows.Forms.Button btn_NewGame;
-        private System.Windows.Forms.Button btn_Quit;
+        private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Label lbl_NewGame;
         private System.Windows.Forms.PictureBox picBx_WinLose;
+        private System.Windows.Forms.Button btn_Review;
     }
 }

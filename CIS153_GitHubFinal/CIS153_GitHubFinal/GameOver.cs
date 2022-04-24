@@ -33,5 +33,18 @@ namespace CIS153_GitHubFinal
                 picBx_WinLose.Image = CIS153_GitHubFinal.Properties.Resources.FinalPlayer_Opng;
             }
         }
+
+        private void btn_NewGame_Click(object sender, EventArgs e)
+        {
+            Welcome newGame = new Welcome();
+            newGame.Show();
+            Close();
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }
