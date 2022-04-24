@@ -41,10 +41,10 @@ namespace CIS153_GitHubFinal
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitConnect4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.previewLastGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_stats = new System.Windows.Forms.Button();
-            this.btn_multiplayer = new System.Windows.Forms.Button();
-            this.previewLastGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_startGame = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -225,6 +225,13 @@ namespace CIS153_GitHubFinal
             this.exitConnect4ToolStripMenuItem.Text = "Exit Connect4";
             this.exitConnect4ToolStripMenuItem.Click += new System.EventHandler(this.exitConnect4ToolStripMenuItem_Click);
             // 
+            // previewLastGameToolStripMenuItem
+            // 
+            this.previewLastGameToolStripMenuItem.Name = "previewLastGameToolStripMenuItem";
+            this.previewLastGameToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.previewLastGameToolStripMenuItem.Text = "Preview Last Game";
+            this.previewLastGameToolStripMenuItem.Click += new System.EventHandler(this.previewLastGameToolStripMenuItem_Click);
+            // 
             // btn_exit
             // 
             this.btn_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -255,27 +262,20 @@ namespace CIS153_GitHubFinal
             this.btn_stats.UseVisualStyleBackColor = false;
             this.btn_stats.Click += new System.EventHandler(this.btn_stats_Click);
             // 
-            // btn_multiplayer
+            // btn_startGame
             // 
-            this.btn_multiplayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_multiplayer.BackColor = System.Drawing.Color.MediumOrchid;
-            this.btn_multiplayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_multiplayer.ForeColor = System.Drawing.Color.White;
-            this.btn_multiplayer.Location = new System.Drawing.Point(402, 410);
-            this.btn_multiplayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 10);
-            this.btn_multiplayer.Name = "btn_multiplayer";
-            this.btn_multiplayer.Size = new System.Drawing.Size(80, 50);
-            this.btn_multiplayer.TabIndex = 3;
-            this.btn_multiplayer.Text = "Start Game";
-            this.btn_multiplayer.UseVisualStyleBackColor = false;
-            this.btn_multiplayer.Click += new System.EventHandler(this.btn_multiplayer_Click);
-            // 
-            // previewLastGameToolStripMenuItem
-            // 
-            this.previewLastGameToolStripMenuItem.Name = "previewLastGameToolStripMenuItem";
-            this.previewLastGameToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.previewLastGameToolStripMenuItem.Text = "Preview Last Game";
-            this.previewLastGameToolStripMenuItem.Click += new System.EventHandler(this.previewLastGameToolStripMenuItem_Click);
+            this.btn_startGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_startGame.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btn_startGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_startGame.ForeColor = System.Drawing.Color.White;
+            this.btn_startGame.Location = new System.Drawing.Point(402, 410);
+            this.btn_startGame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 10);
+            this.btn_startGame.Name = "btn_startGame";
+            this.btn_startGame.Size = new System.Drawing.Size(80, 50);
+            this.btn_startGame.TabIndex = 3;
+            this.btn_startGame.Text = "Start Game";
+            this.btn_startGame.UseVisualStyleBackColor = false;
+            this.btn_startGame.Click += new System.EventHandler(this.btn_startGame_Click);
             // 
             // Welcome
             // 
@@ -289,7 +289,7 @@ namespace CIS153_GitHubFinal
             this.Controls.Add(this.btn_stats);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.btn_multiplayer);
+            this.Controls.Add(this.btn_startGame);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.label3);
@@ -329,7 +329,7 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.ToolStripMenuItem exitConnect4ToolStripMenuItem;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_stats;
-        private System.Windows.Forms.Button btn_multiplayer;
+        private System.Windows.Forms.Button btn_startGame;
         private System.Windows.Forms.ToolStripMenuItem previewLastGameToolStripMenuItem;
     }
 }

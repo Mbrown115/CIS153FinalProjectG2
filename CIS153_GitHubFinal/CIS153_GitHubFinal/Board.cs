@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace CIS153_GitHubFinal
 {
-    public class board
+    public class Board
     {
         private string winner;
         private bool game_over;
@@ -32,7 +32,7 @@ namespace CIS153_GitHubFinal
 
 
 
-        public board(int c, int r, int s, string b)
+        public Board(int c, int r, int s, string b)
         {
             // enable bot
             if (b == "x")

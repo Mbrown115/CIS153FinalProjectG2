@@ -12,8 +12,8 @@ namespace CIS153_GitHubFinal
 {
     public partial class GameBoard : Form
     {
-        board game;
-        board previewGame;
+        Board game;
+        Board previewGame;
         Welcome menu;
         int[,] b = new int[6, 7];
         bool isBot = false;
@@ -43,7 +43,7 @@ namespace CIS153_GitHubFinal
             menu = fml;
         }
 
-        public void GameTest(board previewGame)
+        public void GameTest(Board previewGame)
         {
             
             int columns = 7;
@@ -54,7 +54,7 @@ namespace CIS153_GitHubFinal
             columns = Welcome.columns_select;
             streak = Welcome.streak_select;
             Console.WriteLine("in multiplayer col: {0} row: {1} streak: {2} bot: {3} ", columns, rows, streak, bot);
-            game = new board(columns, rows, streak, bot);
+            game = new Board(columns, rows, streak, bot);
             var rowCount = game.get_rows();
             var columnCount = game.get_columns();
 
@@ -96,7 +96,7 @@ namespace CIS153_GitHubFinal
                 play_bot_round();
             }
         }
-        void DrawBoard(board game)
+        void DrawBoard(Board game)
         {
             Button button;
             string token;
@@ -183,11 +183,13 @@ namespace CIS153_GitHubFinal
                     {
                         SoundPlayer winSound = new SoundPlayer(Properties.Resources.quick_fart_x);
                         winSound.Play();
+                        showWinner("o");
                     }
                     else 
                     { 
                         SoundPlayer Sound = new SoundPlayer(Properties.Resources.fanfare_x);
                         Sound.Play();
+                        showWinner("o");
                     }
                                     
                 }
@@ -200,21 +202,24 @@ namespace CIS153_GitHubFinal
                         SoundPlayer winSound = new SoundPlayer(Properties.Resources.quick_fart_x);
                         winSound.Play();
                         isBot = false;
+                        showWinner("x");
                     }
                     else
                     {
                         SoundPlayer Sound = new SoundPlayer(Properties.Resources.fanfare_x);
                         Sound.Play();
                         isBot = false;
+                        showWinner("x");
                     }
     
                 }
                 previewGame = game;
                 menu.setPreviewGame(previewGame);
-                Console.WriteLine("Winner is " + game.get_winner());
-                tableLayoutPanel1.Hide();
+                Console.WriteLine("Winner is " + game.get_winner());                
+                //tableLayoutPanel1.Hide();
                 game.set_game_over(true);
-                status = true;
+                status = true;               
+
             }
             else if (game.is_board_full() == true)
             {
@@ -283,7 +288,7 @@ namespace CIS153_GitHubFinal
             }
         }
 
-        public void setPreviewGame(board game)
+        public void setPreviewGame(Board game)
         {
             previewGame = game;
             isPreviewGame = true;
@@ -314,6 +319,15 @@ namespace CIS153_GitHubFinal
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void showWinner(string w)
+        {
+            string winner = w;
+
+            GameOver showWinner = new GameOver(w);
+            showWinner.Show();
+            Hide();
         }
     }
 }

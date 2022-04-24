@@ -21,7 +21,7 @@ namespace CIS153_GitHubFinal
 
     public partial class Welcome : Form
     {
-        board previewGame;
+        Board previewGame;
         public static string bot_select = "-";
         public static int rows_select = 6;
         public static int columns_select = 7;
@@ -50,7 +50,7 @@ namespace CIS153_GitHubFinal
         }
 
         // Brings up the multiplayer form
-        private void btn_multiplayer_Click(object sender, EventArgs e)
+        private void btn_startGame_Click(object sender, EventArgs e)
         {
             bot_select = comboBox1.Text;
             rows_select = Int32.Parse(comboBox2.Text);
@@ -107,7 +107,7 @@ namespace CIS153_GitHubFinal
             reviewPlay.setPreviewGame(previewGame);
         }
 
-        public void setPreviewGame(board game)
+        public void setPreviewGame(Board game)
         {
             previewGame = game;
         }
