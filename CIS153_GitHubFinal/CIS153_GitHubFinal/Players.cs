@@ -28,19 +28,9 @@ namespace CIS153_GitHubFinal
 
         //--------------------SETTERS--------------------------
 
-        public void setPlayerName(string n)
-        {
-            name = n;
-        }
-
         public void setWins(int w)
         {
             wins = w;
-        }
-
-        public void setPlayerLoss(int l)
-        {
-            loss = l;
         }
 
         public void setPlayerWins(int w)

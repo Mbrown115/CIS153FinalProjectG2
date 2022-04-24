@@ -191,6 +191,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Records.txt" />
+    <None Include="Resources\Draw_png.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

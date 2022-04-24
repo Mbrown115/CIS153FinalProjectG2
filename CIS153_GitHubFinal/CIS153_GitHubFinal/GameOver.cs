@@ -26,11 +26,15 @@ namespace CIS153_GitHubFinal
 
             if (winner == "x")
             {
-                picBx_WinLose.Image = CIS153_GitHubFinal.Properties.Resources.FinalPlayer_Xpng;
+                picBx_WinLose.Image = Properties.Resources.FinalPlayer_Xpng;
             }
             else if (winner == "o")
             {
-                picBx_WinLose.Image = CIS153_GitHubFinal.Properties.Resources.FinalPlayer_Opng;
+                picBx_WinLose.Image = Properties.Resources.FinalPlayer_Opng;
+            }
+            else if (winner == "D")
+            {
+                picBx_WinLose.Image = Properties.Resources.Draw_png;
             }
         }
 

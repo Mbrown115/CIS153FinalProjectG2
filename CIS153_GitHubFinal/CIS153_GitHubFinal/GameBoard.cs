@@ -216,7 +216,6 @@ namespace CIS153_GitHubFinal
                 previewGame = game;
                 menu.setPreviewGame(previewGame);
                 Console.WriteLine("Winner is " + game.get_winner());                
-                //tableLayoutPanel1.Hide();
                 game.set_game_over(true);
                 status = true;               
 
@@ -225,6 +224,7 @@ namespace CIS153_GitHubFinal
             {
                 Console.WriteLine("Draw");
                 status = true;
+                showWinner("D");
             }
             else
             {
