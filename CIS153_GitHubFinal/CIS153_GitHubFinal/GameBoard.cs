@@ -18,7 +18,7 @@ namespace CIS153_GitHubFinal
         bool isBot = false;
         bool isPreviewGame = false;
         //GameBoard play = new GameBoard();
-
+        Stats stats = new Stats();
 
         public GameBoard()
         {
@@ -176,6 +176,7 @@ namespace CIS153_GitHubFinal
         bool check_game_over()
         {
             bool status = false;
+            stats.updateList();
             Console.WriteLine("streak_size: {0}", game.get_streak());
             if (game.streak_of(game.get_streak()) == true)
             {
@@ -183,6 +184,8 @@ namespace CIS153_GitHubFinal
                 if (game.get_player() == "x")
                 {
                     game.set_winner("o");
+                    stats.updateOWins();
+                    stats.updateList();
 
                     if (isBot)
                     {
@@ -201,6 +204,8 @@ namespace CIS153_GitHubFinal
                 else if (game.get_player() == "o")
                 {
                     game.set_winner("x");
+                    stats.updateXWins();
+                    stats.updateList();
 
                     if (isBot)
                     {
@@ -222,13 +227,18 @@ namespace CIS153_GitHubFinal
                 Console.WriteLine("Winner is " + game.get_winner());                
                 game.set_game_over(true);
                 status = true;
-
+                stats.updateGames();
+                stats.updateList();
             }
             else if (game.is_board_full() == true)
             {
                 Console.WriteLine("Draw");
                 status = true;
                 showWinner("D");
+                stats.updateTies();
+                stats.updateList();
+                stats.updateGames();
+                stats.updateList();
             }
             else
             {
