@@ -15,8 +15,6 @@ namespace CIS153_GitHubFinal
     public partial class Stats : Form
     {
         Welcome menu;
-        Players newScores = new Players();
-        private List<Players> listOfScores = new List<Players>();
         public Stats()
         {
             InitializeComponent();
@@ -27,7 +25,8 @@ namespace CIS153_GitHubFinal
             InitializeComponent();
             menu = w;
 
-            updateList();
+            DisplayStats();
+            updateFile();
         }
 
         private void btn_Menu_Click (object sender , EventArgs e)
@@ -41,100 +40,42 @@ namespace CIS153_GitHubFinal
 
         }
 
-        public void updateList()
+        public void DisplayStats()
         {
             string filePath = "Records.txt";
-            Players newScores = new Players();
-            List<string> lines = File.ReadAllLines(filePath).ToList();
 
-            foreach(var line in lines)
+            StreamReader statsRead = new StreamReader(filePath);
+            string line = statsRead.ReadLine();
+
+            while (line != null)
             {
                 String[] words = line.Split(',');
+                Players newScores = new Players();
 
-                newScores.setXWins(Int32.Parse(words[0]));
-                newScores.setOWins(Int32.Parse(words[1]));
+                newScores.setPlayerWins(Int32.Parse(words[0]));
+                newScores.setAIWins(Int32.Parse(words[1]));
                 newScores.setTies(Int32.Parse(words[2]));
                 newScores.setTimesPlayed(Int32.Parse(words[3]));
 
-                listOfScores.Add(newScores);
+                line = statsRead.ReadLine();
+                //Console.WriteLine(newScores.getPlayerWins());
             }
+
+            statsRead.Close();
         }
 
-        public void updateXWins()
+        public void updateFile()
         {
             string filePath = "Records.txt";
+
             StreamWriter statsWrite = new StreamWriter(filePath);
+            Players newScores = new Players();
+            statsWrite.WriteLine(newScores.getPlayerWins() + "," + newScores.getAIWins() + "," + newScores.getTies() + "," + newScores.getTimesPlayed());
 
-            for (int i = 0; i < listOfScores.Count; i++)
-            {
-                newScores.setXWins(listOfScores[i].getXWins() + 1);
-                newScores.setOWins(listOfScores[i].getOWins());
-                newScores.setTies(listOfScores[i].getTies());
-                newScores.setTimesPlayed(listOfScores[i].getTimesPlayed());
-            }
+            //Console.WriteLine(newScores.getPlayerWins());
 
-            statsWrite.WriteLine(newScores.getXWins() + "," + newScores.getOWins() + "," + newScores.getTies() + "," + newScores.getTimesPlayed());
             statsWrite.Flush();
             statsWrite.Close();
-        }
-
-        public void updateOWins()
-        {
-            string filePath = "Records.txt";
-            StreamWriter statsWrite = new StreamWriter(filePath);
-
-            for (int i = 0; i < listOfScores.Count; i++)
-            {
-                newScores.setXWins(listOfScores[i].getXWins());
-                newScores.setOWins(listOfScores[i].getOWins() + 1);
-                newScores.setTies(listOfScores[i].getTies());
-                newScores.setTimesPlayed(listOfScores[i].getTimesPlayed());
-            }
-
-            statsWrite.WriteLine(newScores.getXWins() + "," + newScores.getOWins() + "," + newScores.getTies() + "," + newScores.getTimesPlayed());
-            statsWrite.Flush();
-            statsWrite.Close();
-        }
-
-        public void updateTies()
-        {
-            string filePath = "Records.txt";
-            StreamWriter statsWrite = new StreamWriter(filePath);
-
-            for (int i = 0; i < listOfScores.Count; i++)
-            {
-                newScores.setXWins(listOfScores[i].getXWins());
-                newScores.setOWins(listOfScores[i].getOWins());
-                newScores.setTies(listOfScores[i].getTies() + 1);
-                newScores.setTimesPlayed(listOfScores[i].getTimesPlayed());
-            }
-
-            statsWrite.WriteLine(newScores.getXWins() + "," + newScores.getOWins() + "," + newScores.getTies() + "," + newScores.getTimesPlayed());
-            statsWrite.Flush();
-            statsWrite.Close();
-        }
-
-        public void updateGames()
-        {
-            string filePath = "Records.txt";
-            StreamWriter statsWrite = new StreamWriter(filePath);
-
-            for (int i = 0; i < listOfScores.Count; i++)
-            {
-                newScores.setXWins(listOfScores[i].getXWins());
-                newScores.setOWins(listOfScores[i].getOWins());
-                newScores.setTies(listOfScores[i].getTies());
-                newScores.setTimesPlayed(listOfScores[i].getTimesPlayed() + 1);
-            }
-
-            statsWrite.WriteLine(newScores.getXWins() + "," + newScores.getOWins() + "," + newScores.getTies() + "," + newScores.getTimesPlayed());
-            statsWrite.Flush();
-            statsWrite.Close();
-
-            //Console.WriteLine(newScores.getXWins());
-            //Console.WriteLine(newScores.getOWins());
-            //Console.WriteLine(newScores.getTies());
-            //Console.WriteLine(newScores.getTimesPlayed());
         }
 
         private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e)

@@ -17,9 +17,6 @@ namespace CIS153_GitHubFinal
 
         private int playerWin;
         private int aiWin;
-
-        private int xWin;
-        private int oWin;
         private int tie;
         private int timesPlayed;
 
@@ -40,16 +37,6 @@ namespace CIS153_GitHubFinal
             aiWin = w;
         }
 
-        public void setXWins(int w)
-        {
-            xWin = w;
-        }
-
-        public void setOWins(int w)
-        {
-            oWin = w;
-        }
-
         public void setTies(int t)
         {
             tie = t;
@@ -67,22 +54,12 @@ namespace CIS153_GitHubFinal
         //--------------------GETTERS--------------------------
         public int getPlayerWins()
         {
-            return playerWin;
+            return playerWin++;
         }
 
         public int getAIWins()
         {
             return aiWin;
-        }
-
-        public int getXWins()
-        {
-            return xWin;
-        }
-
-        public int getOWins()
-        {
-            return oWin;
         }
 
         public int getTies()
@@ -95,5 +72,6 @@ namespace CIS153_GitHubFinal
             return timesPlayed;
         }
         //-----------------------------------------------------
+
     }
 }
