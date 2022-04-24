@@ -42,11 +42,14 @@ namespace CIS153_GitHubFinal
             this.gameOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitConnect4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.previewLastGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.howToPlayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_stats = new System.Windows.Forms.Button();
             this.btn_startGame = new System.Windows.Forms.Button();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.howToPlayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.readMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.leaderBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -206,7 +209,8 @@ namespace CIS153_GitHubFinal
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gameOptionsToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(980, 33);
@@ -216,8 +220,9 @@ namespace CIS153_GitHubFinal
             // gameOptionsToolStripMenuItem
             // 
             this.gameOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitConnect4ToolStripMenuItem,
-            this.previewLastGameToolStripMenuItem});
+            this.previewLastGameToolStripMenuItem,
+            this.leaderBoardToolStripMenuItem,
+            this.exitConnect4ToolStripMenuItem});
             this.gameOptionsToolStripMenuItem.Font = new System.Drawing.Font("Source Code Pro Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gameOptionsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.gameOptionsToolStripMenuItem.Name = "gameOptionsToolStripMenuItem";
@@ -237,6 +242,23 @@ namespace CIS153_GitHubFinal
             this.previewLastGameToolStripMenuItem.Size = new System.Drawing.Size(318, 34);
             this.previewLastGameToolStripMenuItem.Text = "Preview Last Game";
             this.previewLastGameToolStripMenuItem.Click += new System.EventHandler(this.previewLastGameToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.howToPlayToolStripMenuItem});
+            this.helpToolStripMenuItem.Font = new System.Drawing.Font("Source Code Pro Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(76, 29);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // howToPlayToolStripMenuItem
+            // 
+            this.howToPlayToolStripMenuItem.Name = "howToPlayToolStripMenuItem";
+            this.howToPlayToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.howToPlayToolStripMenuItem.Text = "How to Play";
+            this.howToPlayToolStripMenuItem.Click += new System.EventHandler(this.howToPlayToolStripMenuItem_Click);
             // 
             // btn_exit
             // 
@@ -283,22 +305,28 @@ namespace CIS153_GitHubFinal
             this.btn_startGame.UseVisualStyleBackColor = false;
             this.btn_startGame.Click += new System.EventHandler(this.btn_startGame_Click);
             // 
-            // helpToolStripMenuItem
+            // aboutToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.howToPlayToolStripMenuItem});
-            this.helpToolStripMenuItem.Font = new System.Drawing.Font("Source Code Pro Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(76, 29);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.readMeToolStripMenuItem});
+            this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
-            // howToPlayToolStripMenuItem
+            // readMeToolStripMenuItem
             // 
-            this.howToPlayToolStripMenuItem.Name = "howToPlayToolStripMenuItem";
-            this.howToPlayToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.howToPlayToolStripMenuItem.Text = "How to Play";
-            this.howToPlayToolStripMenuItem.Click += new System.EventHandler(this.howToPlayToolStripMenuItem_Click);
+            this.readMeToolStripMenuItem.Name = "readMeToolStripMenuItem";
+            this.readMeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.readMeToolStripMenuItem.Text = "ReadMe";
+            this.readMeToolStripMenuItem.Click += new System.EventHandler(this.readMeToolStripMenuItem_Click);
+            // 
+            // leaderBoardToolStripMenuItem
+            // 
+            this.leaderBoardToolStripMenuItem.Name = "leaderBoardToolStripMenuItem";
+            this.leaderBoardToolStripMenuItem.Size = new System.Drawing.Size(318, 34);
+            this.leaderBoardToolStripMenuItem.Text = "Leader Board";
+            this.leaderBoardToolStripMenuItem.Click += new System.EventHandler(this.leaderBoardToolStripMenuItem_Click);
             // 
             // Welcome
             // 
@@ -356,6 +384,9 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.ToolStripMenuItem previewLastGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem howToPlayToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem readMeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem leaderBoardToolStripMenuItem;
     }
 }
 

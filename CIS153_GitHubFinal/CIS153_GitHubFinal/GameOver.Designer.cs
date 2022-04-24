@@ -34,6 +34,7 @@ namespace CIS153_GitHubFinal
             this.lbl_NewGame = new System.Windows.Forms.Label();
             this.picBx_WinLose = new System.Windows.Forms.PictureBox();
             this.btn_Review = new System.Windows.Forms.Button();
+            this.lbl_gameOverStats = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBx_WinLose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,10 +82,10 @@ namespace CIS153_GitHubFinal
             // 
             this.picBx_WinLose.BackColor = System.Drawing.Color.Transparent;
             this.picBx_WinLose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBx_WinLose.Location = new System.Drawing.Point(283, 147);
+            this.picBx_WinLose.Location = new System.Drawing.Point(283, 162);
             this.picBx_WinLose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBx_WinLose.Name = "picBx_WinLose";
-            this.picBx_WinLose.Size = new System.Drawing.Size(433, 165);
+            this.picBx_WinLose.Size = new System.Drawing.Size(418, 119);
             this.picBx_WinLose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBx_WinLose.TabIndex = 9;
             this.picBx_WinLose.TabStop = false;
@@ -101,12 +102,23 @@ namespace CIS153_GitHubFinal
             this.btn_Review.Text = "Review Game";
             this.btn_Review.UseVisualStyleBackColor = false;
             // 
+            // lbl_gameOverStats
+            // 
+            this.lbl_gameOverStats.AutoSize = true;
+            this.lbl_gameOverStats.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_gameOverStats.Location = new System.Drawing.Point(458, 297);
+            this.lbl_gameOverStats.Name = "lbl_gameOverStats";
+            this.lbl_gameOverStats.Size = new System.Drawing.Size(51, 20);
+            this.lbl_gameOverStats.TabIndex = 14;
+            this.lbl_gameOverStats.Text = "label1";
+            // 
             // GameOver
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::CIS153_GitHubFinal.Properties.Resources.ArcadeScreen_screenimage_ref;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 960);
+            this.Controls.Add(this.lbl_gameOverStats);
             this.Controls.Add(this.btn_Review);
             this.Controls.Add(this.btn_NewGame);
             this.Controls.Add(this.btn_Exit);
@@ -117,6 +129,7 @@ namespace CIS153_GitHubFinal
             this.Text = "Game Over";
             ((System.ComponentModel.ISupportInitialize)(this.picBx_WinLose)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -127,5 +140,6 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.Label lbl_NewGame;
         private System.Windows.Forms.PictureBox picBx_WinLose;
         private System.Windows.Forms.Button btn_Review;
+        private System.Windows.Forms.Label lbl_gameOverStats;
     }
 }

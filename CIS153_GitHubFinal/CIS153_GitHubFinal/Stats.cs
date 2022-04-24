@@ -37,12 +37,7 @@ namespace CIS153_GitHubFinal
 
         private void btn_Exit_Click (object sender , EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Confirm Exit. Clicking Yes will end the game.", "Exiting Game!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
         }
 
         public void DisplayStats()
@@ -100,6 +95,18 @@ namespace CIS153_GitHubFinal
             {
                 Application.Exit();
             }
+        }
+
+        private void howToPlayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HowToPlay rules = new HowToPlay();
+            rules.Show();
+            Close();
+        }
+
+        private void readMeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

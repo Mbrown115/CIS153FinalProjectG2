@@ -336,6 +336,11 @@ namespace CIS153_GitHubFinal
             rules.Show();
             Close();
         }
+
+        private void readMeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

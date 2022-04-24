@@ -118,6 +118,19 @@ namespace CIS153_GitHubFinal
             rules.Show();
             Hide();
         }
+
+        private void readMeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void leaderBoardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Stats viewStats = new Stats(this);
+
+            viewStats.Show();
+            Hide();
+        }
     }
 
 }
