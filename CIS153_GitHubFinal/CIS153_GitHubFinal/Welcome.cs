@@ -111,6 +111,13 @@ namespace CIS153_GitHubFinal
         {
             previewGame = game;
         }
+
+        private void howToPlayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HowToPlay rules = new HowToPlay();
+            rules.Show();
+            Hide();
+        }
     }
 
 }

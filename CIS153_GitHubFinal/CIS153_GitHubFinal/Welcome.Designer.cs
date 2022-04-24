@@ -45,6 +45,8 @@ namespace CIS153_GitHubFinal
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_stats = new System.Windows.Forms.Button();
             this.btn_startGame = new System.Windows.Forms.Button();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.howToPlayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +67,7 @@ namespace CIS153_GitHubFinal
             this.comboBox1.Location = new System.Drawing.Point(571, 334);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(102, 28);
+            this.comboBox1.Size = new System.Drawing.Size(102, 37);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.Text = "2 Player";
             // 
@@ -80,7 +82,7 @@ namespace CIS153_GitHubFinal
             this.lbl_bot.ForeColor = System.Drawing.Color.White;
             this.lbl_bot.Location = new System.Drawing.Point(567, 281);
             this.lbl_bot.Name = "lbl_bot";
-            this.lbl_bot.Size = new System.Drawing.Size(88, 40);
+            this.lbl_bot.Size = new System.Drawing.Size(128, 58);
             this.lbl_bot.TabIndex = 6;
             this.lbl_bot.Text = "Select\r\nOpponent";
             // 
@@ -101,7 +103,7 @@ namespace CIS153_GitHubFinal
             this.comboBox2.Location = new System.Drawing.Point(311, 334);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(49, 28);
+            this.comboBox2.Size = new System.Drawing.Size(49, 37);
             this.comboBox2.TabIndex = 7;
             this.comboBox2.Text = "6";
             // 
@@ -122,7 +124,7 @@ namespace CIS153_GitHubFinal
             this.comboBox3.Location = new System.Drawing.Point(393, 334);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(49, 28);
+            this.comboBox3.Size = new System.Drawing.Size(49, 37);
             this.comboBox3.TabIndex = 8;
             this.comboBox3.Text = "7";
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
@@ -138,7 +140,7 @@ namespace CIS153_GitHubFinal
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(307, 281);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 40);
+            this.label1.Size = new System.Drawing.Size(78, 58);
             this.label1.TabIndex = 9;
             this.label1.Text = "# Of\r\nRows";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -154,7 +156,7 @@ namespace CIS153_GitHubFinal
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(389, 281);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 40);
+            this.label2.Size = new System.Drawing.Size(115, 58);
             this.label2.TabIndex = 10;
             this.label2.Text = "# Of\r\nColumns";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -176,7 +178,7 @@ namespace CIS153_GitHubFinal
             this.comboBox4.Location = new System.Drawing.Point(490, 334);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(49, 28);
+            this.comboBox4.Size = new System.Drawing.Size(49, 37);
             this.comboBox4.TabIndex = 11;
             this.comboBox4.Text = "4";
             // 
@@ -191,7 +193,7 @@ namespace CIS153_GitHubFinal
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(486, 281);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 40);
+            this.label3.Size = new System.Drawing.Size(88, 58);
             this.label3.TabIndex = 12;
             this.label3.Text = "Win\r\nStreak";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -199,12 +201,15 @@ namespace CIS153_GitHubFinal
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Font = new System.Drawing.Font("Source Code Pro Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gameOptionsToolStripMenuItem});
+            this.gameOptionsToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(980, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(980, 33);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -213,22 +218,23 @@ namespace CIS153_GitHubFinal
             this.gameOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitConnect4ToolStripMenuItem,
             this.previewLastGameToolStripMenuItem});
-            this.gameOptionsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameOptionsToolStripMenuItem.Font = new System.Drawing.Font("Source Code Pro Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameOptionsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.gameOptionsToolStripMenuItem.Name = "gameOptionsToolStripMenuItem";
-            this.gameOptionsToolStripMenuItem.Size = new System.Drawing.Size(123, 21);
+            this.gameOptionsToolStripMenuItem.Size = new System.Drawing.Size(172, 29);
             this.gameOptionsToolStripMenuItem.Text = "Game Options";
             // 
             // exitConnect4ToolStripMenuItem
             // 
             this.exitConnect4ToolStripMenuItem.Name = "exitConnect4ToolStripMenuItem";
-            this.exitConnect4ToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.exitConnect4ToolStripMenuItem.Size = new System.Drawing.Size(318, 34);
             this.exitConnect4ToolStripMenuItem.Text = "Exit Connect4";
             this.exitConnect4ToolStripMenuItem.Click += new System.EventHandler(this.exitConnect4ToolStripMenuItem_Click);
             // 
             // previewLastGameToolStripMenuItem
             // 
             this.previewLastGameToolStripMenuItem.Name = "previewLastGameToolStripMenuItem";
-            this.previewLastGameToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.previewLastGameToolStripMenuItem.Size = new System.Drawing.Size(318, 34);
             this.previewLastGameToolStripMenuItem.Text = "Preview Last Game";
             this.previewLastGameToolStripMenuItem.Click += new System.EventHandler(this.previewLastGameToolStripMenuItem_Click);
             // 
@@ -276,6 +282,23 @@ namespace CIS153_GitHubFinal
             this.btn_startGame.Text = "Start Game";
             this.btn_startGame.UseVisualStyleBackColor = false;
             this.btn_startGame.Click += new System.EventHandler(this.btn_startGame_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.howToPlayToolStripMenuItem});
+            this.helpToolStripMenuItem.Font = new System.Drawing.Font("Source Code Pro Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(76, 29);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // howToPlayToolStripMenuItem
+            // 
+            this.howToPlayToolStripMenuItem.Name = "howToPlayToolStripMenuItem";
+            this.howToPlayToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.howToPlayToolStripMenuItem.Text = "How to Play";
+            this.howToPlayToolStripMenuItem.Click += new System.EventHandler(this.howToPlayToolStripMenuItem_Click);
             // 
             // Welcome
             // 
@@ -331,6 +354,8 @@ namespace CIS153_GitHubFinal
         private System.Windows.Forms.Button btn_stats;
         private System.Windows.Forms.Button btn_startGame;
         private System.Windows.Forms.ToolStripMenuItem previewLastGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem howToPlayToolStripMenuItem;
     }
 }
 
