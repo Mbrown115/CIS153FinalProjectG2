@@ -49,6 +49,12 @@
     <Compile Include="Board.cs" />
     <Compile Include="cell.cs" />
     <Compile Include="Cell_old.cs" />
+    <Compile Include="GameOver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameOver.Designer.cs">
+      <DependentUpon>GameOver.cs</DependentUpon>
+    </Compile>
     <Compile Include="line.cs" />
     <Compile Include="Players.cs" />
     <Compile Include="Stats.cs">
@@ -74,6 +80,9 @@
     <Compile Include="RoundPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="GameOver.resx">
+      <DependentUpon>GameOver.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stats.resx">
       <DependentUpon>Stats.cs</DependentUpon>
     </EmbeddedResource>

@@ -23,8 +23,6 @@ namespace CIS153_GitHubFinal
         public GameBoard()
         {
             InitializeComponent();
-            btn_NewGame.Visible = false;
-            btn_Quit.Visible = false;
         }
 
         public GameBoard(Welcome fml)
@@ -43,9 +41,6 @@ namespace CIS153_GitHubFinal
             }
             
             menu = fml;
-
-            btn_NewGame.Visible = false;
-            btn_Quit.Visible = false;
         }
 
         public void GameTest(board previewGame)
@@ -194,11 +189,7 @@ namespace CIS153_GitHubFinal
                         SoundPlayer Sound = new SoundPlayer(Properties.Resources.fanfare_x);
                         Sound.Play();
                     }
-                    
-                    picBx_WinLose.Image = Properties.Resources.FinalPlayer_Opng;
-                    lbl_NewGame.Visible = true;
-                    btn_NewGame.Visible = true;
-                    btn_Quit.Visible = true;                    
+                                    
                 }
                 else if (game.get_player() == "o")
                 {
@@ -216,17 +207,12 @@ namespace CIS153_GitHubFinal
                         Sound.Play();
                         isBot = false;
                     }
-
-                    picBx_WinLose.Image = Properties.Resources.FinalPlayer_Xpng;
-                    lbl_NewGame.Visible = true;
-                    btn_NewGame.Visible = true;
-                    btn_Quit.Visible = true;             
+    
                 }
                 previewGame = game;
                 menu.setPreviewGame(previewGame);
                 Console.WriteLine("Winner is " + game.get_winner());
                 tableLayoutPanel1.Hide();
-                picBx_WinLose.Visible = true;
                 game.set_game_over(true);
                 status = true;
             }
@@ -326,16 +312,6 @@ namespace CIS153_GitHubFinal
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btn_NewGame_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Quit_Click(object sender, EventArgs e)
         {
 
         }
