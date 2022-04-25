@@ -1,8 +1,8 @@
-﻿//-=----------------------=-
-//Authors: Michael Brown, Blake Taylor
+﻿//-=----------------------=-----------------------=
+//Authors: Michael Brown, Blake Taylor, Remi Ethun
 //Date:    3/28/2022
 //Desc:    Connect 4
-//-=----------------------=-
+//-=----------------------=-----------------------=
 
 using System;
 using System.Collections.Generic;

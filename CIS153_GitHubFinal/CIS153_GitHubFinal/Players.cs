@@ -4,19 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//This class will be responsible for Creating list of Players
-//These players will be used to store Win/Loss STATS for individual players
-
 namespace CIS153_GitHubFinal
 {
     public class Players
     {
-        private string name;
-        private int wins;
-        private int loss;
-
-        private int playerWin;
-        private int aiWin;
+        private int xWin;
+        private int oWin;
         private int tie;
         private int timesPlayed;
 
@@ -27,16 +20,15 @@ namespace CIS153_GitHubFinal
         }
 
         //--------------------SETTERS--------------------------
-        public void setPlayerWins(int w)
+        public void setXWins(int w)
         {
-            playerWin = w;
+            xWin = w;
         }
 
-        public void setAIWins(int w)
+        public void setOWins(int w)
         {
-            aiWin = w;
+            oWin = w;
         }
-
         public void setTies(int t)
         {
             tie = t;
@@ -52,14 +44,14 @@ namespace CIS153_GitHubFinal
 
 
         //--------------------GETTERS--------------------------
-        public int getPlayerWins()
+        public int getXWins()
         {
-            return playerWin++;
+            return xWin;
         }
 
-        public int getAIWins()
+        public int getOWins()
         {
-            return aiWin;
+            return oWin;
         }
 
         public int getTies()
@@ -72,6 +64,5 @@ namespace CIS153_GitHubFinal
             return timesPlayed;
         }
         //-----------------------------------------------------
-
     }
 }
